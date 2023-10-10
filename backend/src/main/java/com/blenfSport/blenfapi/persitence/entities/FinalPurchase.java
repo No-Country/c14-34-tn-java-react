@@ -3,6 +3,8 @@ package com.blenfSport.blenfapi.persitence.entities;
 import java.util.Date;
 import java.util.List;
 
+import com.blenfSport.blenfapi.utils.PaymentType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
