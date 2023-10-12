@@ -2,7 +2,9 @@ package com.blenfSport.blenfapi.persitence.entities;
 
 import java.util.List;
 
+import com.blenfSport.blenfapi.dtos.ProductDto;
 import com.blenfSport.blenfapi.utils.Color;
+import com.blenfSport.blenfapi.utils.Genere;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -40,8 +42,22 @@ public class Product {
 	@Enumerated(EnumType.STRING)
 	private Color color;
 	private String size;
+	@Enumerated(EnumType.STRING)
+	private Genere genere;
     @OneToMany(mappedBy = "product")
     private List<PurchaseOrder> purchaseOrders;
+    
+    
+    public Product(ProductDto productDto, Category category) {
+    	this.name = productDto.name();
+    	this.price = productDto.price();
+    	this.description = productDto.description();
+    	this.stock = productDto.stock();
+    	this.category = category;
+    	this.color = productDto.color();
+    	this.size = productDto.size();
+    	this.genere = productDto.genere();
+	}
 	
 
 }
