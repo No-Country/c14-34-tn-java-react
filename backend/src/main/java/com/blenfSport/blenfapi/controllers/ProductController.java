@@ -2,7 +2,10 @@ package com.blenfSport.blenfapi.controllers;
 
 import java.net.URI;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +30,7 @@ public class ProductController {
 	private final ProductService productService;
 	private final CategoryService categoryService;
 
-	@PostMapping(value = "save")
+	@PostMapping(value = "saveProducts")
 	public ResponseEntity<ProductResponseDto> SaveProduct(@RequestBody @Valid ProductDto productDto,
 			UriComponentsBuilder builder) {
 		Category category = categoryService.findCategoryById(productDto.category_id());
@@ -37,6 +40,10 @@ public class ProductController {
 		return ResponseEntity.created(url).body(responseDto);
 
 	}
-	
+	@GetMapping(value = "showProducts")
+	public ResponseEntity<Page<ProductResponseDto>> ShowAllProducts(Pageable pageable){
+		return ResponseEntity.ok(productService.getAllProducts(pageable).map(ProductResponseDto::new));
+		
+	}
 	
 }

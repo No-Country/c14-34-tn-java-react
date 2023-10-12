@@ -2,6 +2,8 @@ package com.blenfSport.blenfapi.services;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.blenfSport.blenfapi.dtos.ProductDto;
@@ -22,8 +24,8 @@ public class ProductService {
 
 	}
 
-	public List<Product> getAllProducts() {
-		return productRepository.findAll();
+	public Page<Product> getAllProducts(Pageable pageable) {
+		return productRepository.findAll(pageable);
 	}
 
 }
