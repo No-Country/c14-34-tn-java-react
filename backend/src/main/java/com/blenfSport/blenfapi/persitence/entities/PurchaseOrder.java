@@ -13,8 +13,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
-@Entity(name = "PurchaseOrder")
-@Table(name = "purchase_orders")
+@Entity(name ="PurchaseOrder")
+@Table(name ="purchase_orders")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,5 +28,8 @@ public class PurchaseOrder {
 	private Product product;
 	private Integer amount;
 	private Double subtotal;
+	@ManyToOne
+	@JoinColumn(name = "final_purchase_id", nullable = false)
+	private FinalPurchase finalPurchase;
 
 }

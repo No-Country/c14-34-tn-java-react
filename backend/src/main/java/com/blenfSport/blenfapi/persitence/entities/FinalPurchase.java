@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -35,6 +36,7 @@ public class FinalPurchase {
 	private Date date;
 	@Enumerated(EnumType.STRING)
 	private PaymentType paymentType;
+	@OneToMany(mappedBy = "finalPurchase")
 	private List<PurchaseOrder> purchaseOrders;
 	private Double subtotal;
 	private Double iva;
