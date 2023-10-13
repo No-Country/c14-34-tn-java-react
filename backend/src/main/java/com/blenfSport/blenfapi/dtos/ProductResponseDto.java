@@ -4,11 +4,11 @@ import com.blenfSport.blenfapi.persitence.entities.Product;
 import com.blenfSport.blenfapi.utils.Color;
 import com.blenfSport.blenfapi.utils.Genere;
 
-public record ProductResponseDto(String name, Double price, String description, Integer stock, String category,
+public record ProductResponseDto(Long id , String name, Double price, String description, Integer stock, String category,
 		Color color, String size, Genere genere) {
 
 	public ProductResponseDto(Product product) {
-		this(product.getName(), product.getPrice(), product.getDescription(), 
+		this(product.getId() , product.getName(), product.getPrice(), product.getDescription(), 
 				product.getStock(), product.getCategory().getName(),
 				product.getColor(), product.getSize(), product.getGenere());
 	}

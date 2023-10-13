@@ -6,4 +6,6 @@ import com.blenfSport.blenfapi.persitence.entities.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
+	Category findIdByName(String name);
+
 }

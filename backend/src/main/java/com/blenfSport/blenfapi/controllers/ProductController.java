@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +31,8 @@ public class ProductController {
 	private final ProductService productService;
 	private final CategoryService categoryService;
 
-	@PostMapping(value = "saveProducts")
-	public ResponseEntity<ProductResponseDto> SaveProduct(@RequestBody @Valid ProductDto productDto,
+	@PostMapping(value = "save")
+	public ResponseEntity<ProductResponseDto> saveProduct(@RequestBody @Valid ProductDto productDto,
 			UriComponentsBuilder builder) {
 		Category category = categoryService.findCategoryById(productDto.category_id());
 		Product product = productService.saveProduct(productDto, category);
@@ -40,10 +41,21 @@ public class ProductController {
 		return ResponseEntity.created(url).body(responseDto);
 
 	}
-	@GetMapping(value = "showProducts")
-	public ResponseEntity<Page<ProductResponseDto>> ShowAllProducts(Pageable pageable){
+
+	@GetMapping(value = "show")
+	public ResponseEntity<Page<ProductResponseDto>> showAllProducts(Pageable pageable) {
 		return ResponseEntity.ok(productService.getAllProducts(pageable).map(ProductResponseDto::new));
-		
+
 	}
-	
+
+	@GetMapping("/{name}")
+	public ResponseEntity<Page<ProductResponseDto>> showAllProductsByCategory(Pageable pageable,
+			@PathVariable String name) {
+		
+		Category categoryId = categoryService.FindCategoryIdByname(name);
+		return ResponseEntity.ok(productService.FindProductsByCategory(pageable, categoryId.getId()).map(ProductResponseDto::new));
+		
+
+	}
+
 }

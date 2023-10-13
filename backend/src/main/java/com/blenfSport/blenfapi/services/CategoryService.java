@@ -19,4 +19,8 @@ public class CategoryService {
 		return categoryRepository.getReferenceById(id);
 	}
 	
+	public Category FindCategoryIdByname(String name) {
+		return categoryRepository.findIdByName(name);
+	}
+	
 }
