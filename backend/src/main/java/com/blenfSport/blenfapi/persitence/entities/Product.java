@@ -49,6 +49,7 @@ public class Product {
     
     
     public Product(ProductDto productDto, Category category) {
+		this.id = productDto.id();
     	this.name = productDto.name();
     	this.price = productDto.price();
     	this.description = productDto.description();

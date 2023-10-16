@@ -44,4 +44,13 @@ public class ProductService {
 		}
 	}
 
+	public Product updateProduct(Product product) {
+		Optional<Product> productFound = productRepository.findById(product.getId());
+		if(productFound.isPresent()) {
+			return productRepository.save(product);
+		} else {
+			throw new ResourceNotFoundException("Product not found.");
+		}
+	}
+
 }

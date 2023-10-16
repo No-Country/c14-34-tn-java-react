@@ -5,7 +5,11 @@ import com.blenfSport.blenfapi.utils.Genere;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+
 public record ProductDto(
+
+		Long id,
 		@NotBlank
 		String name,
 		@NotNull
