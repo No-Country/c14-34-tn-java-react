@@ -44,10 +44,10 @@ public class ProductService {
 		}
 	}
 
-	public Product updateProduct(Product product) {
-		Optional<Product> productFound = productRepository.findById(product.getId());
+	public Optional<Product> FindProductById(Long productId) {
+		Optional<Product> productFound = productRepository.findById(productId);
 		if(productFound.isPresent()) {
-			return productRepository.save(product);
+			return productFound;
 		} else {
 			throw new ResourceNotFoundException("Product not found.");
 		}

@@ -16,11 +16,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 
 @Entity(name = "Product")
 @Table(name = "products")
@@ -44,21 +44,32 @@ public class Product {
 	private String size;
 	@Enumerated(EnumType.STRING)
 	private Genere genere;
-    @OneToMany(mappedBy = "product")
-    private List<PurchaseOrder> purchaseOrders;
-    
-    
-    public Product(ProductDto productDto, Category category) {
-		this.id = productDto.id();
-    	this.name = productDto.name();
-    	this.price = productDto.price();
-    	this.description = productDto.description();
-    	this.stock = productDto.stock();
-    	this.category = category;
-    	this.color = productDto.color();
-    	this.size = productDto.size();
-    	this.genere = productDto.genere();
+	@OneToMany(mappedBy = "product")
+	private List<PurchaseOrder> purchaseOrders;
+
+	public Product(ProductDto productDto, Category category) {
+
+		this.name = productDto.name();
+		this.price = productDto.price();
+		this.description = productDto.description();
+		this.stock = productDto.stock();
+		this.category = category;
+		this.color = productDto.color();
+		this.size = productDto.size();
+		this.genere = productDto.genere();
 	}
-	
+
+	public void UpdateProduct(@Valid ProductDto productDto, Category category) {
+
+		this.name = productDto.name();
+		this.price = productDto.price();
+		this.description = productDto.description();
+		this.stock = productDto.stock();
+		this.category = category;
+		this.color = productDto.color();
+		this.size = productDto.size();
+		this.genere = productDto.genere();
+
+	}
 
 }
