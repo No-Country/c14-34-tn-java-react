@@ -1,0 +1,43 @@
+.video-background {
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+  
+  video {
+    object-fit: cover;
+  }
+/* cards configurations */
+
+
+  /* Footer config */
+.footer-container{
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(30px);
+  border:1px solid #1f3d47;
+  border-radius: 20px;
+  margin: 10px;
+  color: #fff;
+}
+.footer-container ul li a{
+  color: #fff;
+}
+/* Navbar Config */
+.navbar{
+ position: fixed;
+ z-index: 50;
+ width: 100%;
+ border-radius: 20px;
+}
+
+/* Carrusel config */
+.carrusel-title-Zapatillas, .carrusel-p-zapatillas{
+  color: #1f3d47;
+}
+carrusel{
+  z-index: -1;
+}
