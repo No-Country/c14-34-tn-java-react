@@ -44,6 +44,7 @@ public class Product {
 	private String size;
 	@Enumerated(EnumType.STRING)
 	private Genere genere;
+	private String urlImg;
 	@OneToMany(mappedBy = "product")
 	private List<PurchaseOrder> purchaseOrders;
 
