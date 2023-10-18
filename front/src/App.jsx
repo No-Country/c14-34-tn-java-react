@@ -5,6 +5,7 @@ import Videobc from "./Components/Videobc";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Carrusel from "./Components/Carrusel";
+import Card from "./Components/Card";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function App() {
     <div>
       <Videobc />
       <Navbar />
+      <Card />
       <Carrusel />
       <Footer />
     </div>
