@@ -26,12 +26,11 @@ public class User {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "facturation_id", referencedColumnName = "id")
 	private FacturationInfo facturation;
-	private String username;
+	private String email;
 	private String password;
 	private String name;
 	private String lastname;
 	private Boolean verifyEmail;
-	private String email;
 	private Integer age;
 
 }

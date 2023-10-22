@@ -1,4 +1,4 @@
-INSERT INTO products (name, price, description, stock, color, genere, size, category_id, url_img)
+INSERT INTO products (name, price, description, stock, color, genere, size, category_id, url_Img)
 VALUES
 	('Pelota de Basket', 20.99, 'Pelota de basket marca blenf', 50, 'NARANJA', null, null, 3, 'ACCESORIO-BALONDEBASKET.jpg'),
 	('Balon de futbol', 25.50, 'Balon de la final de la champions 2022', 30, 'AZUL', null, null, 3, 'ACCESORIO-BALONFUTBOL.jpg'),
