@@ -1,6 +1,7 @@
-
 import useFetch from "./Components/useFetch";
-
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Carrusel from "./Components/Carrusel";
 import "./App.css";
 
 function App() {
@@ -10,9 +11,12 @@ function App() {
   return (
     <div>
       {/* <Videobc />
+      
+       */}
       <Navbar />
+      
       <Carrusel />
-      <Footer /> */}
+
       <h1>Lista de Productos</h1>
       {cargando ? (
         <p>Cargando...</p>
@@ -28,6 +32,7 @@ function App() {
           ))}
         </div>
       )}
+      <Footer />
     </div>
   );
 }
