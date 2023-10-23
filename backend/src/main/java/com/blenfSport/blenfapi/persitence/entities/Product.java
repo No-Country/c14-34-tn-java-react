@@ -6,6 +6,7 @@ import com.blenfSport.blenfapi.dtos.ProductDto;
 import com.blenfSport.blenfapi.utils.Color;
 import com.blenfSport.blenfapi.utils.Genere;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -44,6 +45,8 @@ public class Product {
 	private String size;
 	@Enumerated(EnumType.STRING)
 	private Genere genere;
+	@Column(name = "urlImg")
+	private String urlImg;
 	@OneToMany(mappedBy = "product")
 	private List<PurchaseOrder> purchaseOrders;
 

@@ -10,13 +10,8 @@ function App() {
 
   return (
     <div>
-      {/* <Videobc />
-      
-       */}
       <Navbar />
-      
       <Carrusel />
-
       <h1>Lista de Productos</h1>
       {cargando ? (
         <p>Cargando...</p>
