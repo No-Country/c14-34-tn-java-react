@@ -5,46 +5,62 @@ function Register() {
     <div id="Register-component">
       <div className="register-container">
         <form className="form">
-          <p className="title">Register </p>
-          <p className="message">Signup now and get full access to our app. </p>
+          <p className="title">Registrate </p>
+          <p className="message">
+            Regístrese ahora y obtenga acceso completo a nuestra app.{" "}
+          </p>
           <div className="flex">
-            <label>
-              <input className="input" type="text" placeholder="" required="" />
-              <span>Firstname</span>
+            <label htmlFor="Input">
+              <input
+                className="input"
+                type="text"
+                placeholder="Juan"
+                required="Campo Obligatorio"
+              />
+              <span>Nombre</span>
             </label>
-
-            <label>
-              <input className="input" type="text" placeholder="" required="" />
-              <span>Lastname</span>
+            <label htmlFor="Input">
+              <input
+                className="input"
+                type="text"
+                placeholder="Perez"
+                required="Campo Obligatorio"
+              />
+              <span>Apellido</span>
             </label>
           </div>
 
-          <label>
-            <input className="input" type="email" placeholder="" required="" />
+          <label htmlFor="Input">
+            <input
+              className="input"
+              type="email"
+              placeholder="Ejemplo@ejemplo.com"
+              required="Campo Obligatorio"
+            />
             <span>Email</span>
           </label>
 
-          <label>
+          <label htmlFor="Input">
             <input
               className="input"
               type="password"
               placeholder=""
-              required=""
+              required="Campo Obligatorio"
             />
-            <span>Password</span>
+            <span>Contraseña</span>
           </label>
           <label>
             <input
               className="input"
               type="password"
               placeholder=""
-              required=""
+              required="Campo Obligatorio"
             />
             <span>Confirm password</span>
           </label>
-          <button className="submit">Submit</button>
+          <button className="submit">Enviar</button>
           <p className="signin">
-            Already have an acount ? <a href="#">Signin</a>{" "}
+            ¿Ya tienes una cuenta? <a href="#Login-component">Ingresa</a>{" "}
           </p>
         </form>
       </div>

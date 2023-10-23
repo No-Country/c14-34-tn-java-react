@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import Carrusel from "./Components/Carrusel";
+import ImgPrinsipal from "./Components/ImgPrinsipal";
 import Card from "./Components/Card";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
@@ -18,16 +18,14 @@ function App() {
     <div className="container-gral">
       <Navbar />
       {/* <CarsButton /> */}
-      <Carrusel />
+      <ImgPrinsipal />
       <hr />
       <Blon />
       <Card />
-
       <Login />
       <Register />
-
       <Productos />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

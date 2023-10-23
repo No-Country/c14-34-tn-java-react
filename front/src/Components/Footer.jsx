@@ -47,7 +47,7 @@ function Footer() {
                 Ofertas
               </p>
               <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" className="visually-hidden">
+                <label htmlFor="newsletter1" className="visually-hidden">
                   Email
                 </label>
                 <input
@@ -73,21 +73,21 @@ function Footer() {
             <li className="ms-3">
               <a className="link-body-emphasis" href="#">
                 <svg className="bi" width="24" height="24">
-                  <use xlink:href="#twitter" />
+                  <use linkHref="#twitter" />
                 </svg>
               </a>
             </li>
             <li className="ms-3">
               <a className="link-body-emphasis" href="#">
                 <svg className="bi" width="24" height="24">
-                  <use xlink:href="#instagram" />
+                  <use linkHref="#instagram" />
                 </svg>
               </a>
             </li>
             <li className="ms-3">
               <a className="link-body-emphasis" href="#">
                 <svg className="bi" width="24" height="24">
-                  <use xlink:href="#facebook" />
+                  <use linkHref="#facebook" />
                 </svg>
               </a>
             </li>
