@@ -10,14 +10,15 @@ import Register from "./Components/Register";
 import Productos from "./Components/Productos";
 import Blon from "./Components/Blon";
 import CarsButton from "./Components/CarsButton";
+import Terminos from "./Components/Terminos";
+import { BrowserRouter, Link } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="container-gral">
+    <div>
       <Navbar />
-      {/* <CarsButton /> */}
       <ImgPrinsipal />
       <hr />
       <Blon />
@@ -25,6 +26,7 @@ function App() {
       <Login />
       <Register />
       <Productos />
+      <Terminos />
       {/* <Footer /> */}
     </div>
   );

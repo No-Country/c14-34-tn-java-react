@@ -25,99 +25,32 @@ function Navbar() {
             id="navbarsExample11"
           >
             <a className="navbar-brand col-lg-3 me-0" href="#">
-              <h1 className="nav-title">Blon Sports</h1>
+              <h1 className="nav-title bounce-in-top ">Blon Sports</h1>
             </a>
-            <ul className="navbar-nav col-lg-6 justify-content-lg-center">
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Damas
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Calzados
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Accesorios
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Prendas
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Caballeros
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Calzados
-                    </a>
-                  </li>
+            <div className="nav-menu">
+              <ul>
+                <li className="menu ">
+                  <a href="">Productos</a>
+                </li>
+                <li className="menu">
+                  <a href="">Calzados</a>
+                </li>
+                <li className="menu">
+                  <a href="">Accesorios</a>
+                </li>
+                <li className="menu">
+                  <a href="">Prendas</a>
+                </li>
+              </ul>
+            </div>
 
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Accesorios
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Prendas
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Productos
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Medios de Pagos
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Envios
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Ayuda
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Terminos y Condiciones
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <div className="d-lg-flex col-lg-3 justify-content-lg-end">
-              <button className="btn btn-primary">Registrate</button>
+            <div className=" btn-nav-container">
+              <div className="ingresar-btn">
+                <button className="btn btn-dark">Ingresar</button>
+              </div>
+              <div className="btn-nav-registrate">
+                <button className="btn btn-dark">Registrate</button>
+              </div>
             </div>
           </div>
         </div>
