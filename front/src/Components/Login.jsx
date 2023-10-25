@@ -2,21 +2,21 @@ import React from "react";
 
 function Login() {
   return (
-    <div className="login-container">
-      <div class="login-box">
-        <h2 className="login-title">Si no Tenes una Cuenta Registrate</h2>
+    <div className="login-container" id="Login-component">
+      <div className="login-box">
+        <h2 className="login-title">Ingresar</h2>
         <form>
-          <div class="user-box">
-            <input type="text" name="" required="" />
-            <label>Username</label>
+          <div className="user-box">
+            <input type="Email" name="" required="Campo Obligatorio" />
+            <label htmlFor="Input"> Email</label>
           </div>
-          <div class="user-box">
-            <input type="password" name="" required="" />
-            <label>Password</label>
+          <div className="user-box">
+            <input type="password" name="" required="Campo Obligatorio" />
+            <label htmlFor="Input">Contraseña</label>
           </div>
           <center>
-            <a href="#">
-              SEND
+            <a linkhref="#">
+              Enviar
               <span></span>
             </a>
           </center>

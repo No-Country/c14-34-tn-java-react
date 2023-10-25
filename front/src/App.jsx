@@ -1,33 +1,26 @@
-import useFetch from "./Components/useFetch";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import Carrusel from "./Components/Carrusel";
-import "./App.css";
+import ImgPrinsipal from "./Components/ImgPrinsipal";
+import Card from "./Components/Card";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Productos from "./Components/Productos";
+import Blon from "./Components/Blon";
+import CarsButton from "./Components/CarsButton";
+import Terminos from "./Components/Terminos";
+import { BrowserRouter, Link } from "react-router-dom";
 
 function App() {
-
-  const { data, cargando } = useFetch('https://c14-34-tn-java-react-production.up.railway.app/products/show');
-
   return (
     <div>
       <Navbar />
-      <Carrusel />
-      <h1>Lista de Productos</h1>
-      {cargando ? (
-        <p>Cargando...</p>
-      ) : (
-        <div className="card-container">
-          {data.map(product => (
-            <li key={product.id}>
-              <h2>{product.name}</h2>
-              <img src={product.UrlImg} alt={product.name}/>
-              <p>Precio: ${product.price}</p>
-              <p>Descripción: {product.description}</p>
-            </li>
-          ))}
-        </div>
-      )}
-      <Footer />
+      <ImgPrinsipal />
+      <hr />
+      <Blon />
+      <Card />
+      <Login />
+      <Register />
+      <Productos />
+      <Terminos />
+      {/* <Footer /> */}
     </div>
   );
 }
