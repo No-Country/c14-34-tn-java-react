@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.blenfSport.blenfapi.utils.PaymentType;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -21,7 +22,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity(name = "FinalPurchase")
-@Table(name = "final_purchases")
+@Table(name = "finalPurchases")
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,6 +36,7 @@ public class FinalPurchase {
 	private User user;
 	private Date date;
 	@Enumerated(EnumType.STRING)
+	@Column(name = "paymentType")
 	private PaymentType paymentType;
 	@OneToMany(mappedBy = "finalPurchase")
 	private List<PurchaseOrder> purchaseOrders;

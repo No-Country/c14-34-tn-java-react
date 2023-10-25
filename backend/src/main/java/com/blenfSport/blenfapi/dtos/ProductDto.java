@@ -25,6 +25,7 @@ public record ProductDto(
 		@NotBlank
 		String size,
 		@NotNull
-		Genere genere) {
+		Genere genere
+		) {
 
 }

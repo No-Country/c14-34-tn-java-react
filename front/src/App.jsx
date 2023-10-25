@@ -1,8 +1,3 @@
-import { useState } from "react";
-
-import "./App.css";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import ImgPrinsipal from "./Components/ImgPrinsipal";
 import Card from "./Components/Card";
 import Login from "./Components/Login";
@@ -14,8 +9,6 @@ import Terminos from "./Components/Terminos";
 import { BrowserRouter, Link } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <Navbar />
