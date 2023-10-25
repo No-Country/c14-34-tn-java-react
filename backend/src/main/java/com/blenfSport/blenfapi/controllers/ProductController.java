@@ -41,7 +41,7 @@ public class ProductController {
 	}
 
 	@GetMapping(value = "show")
-	public ResponseEntity<Page<ProductResponseDto>> showAllProducts(@PageableDefault(size = 50) Pageable pageable) {
+	public ResponseEntity<Page<ProductResponseDto>> showAllProducts(@PageableDefault(size = 10) Pageable pageable) {
 		return ResponseEntity.ok(productService.getAllProducts(pageable).map(ProductResponseDto::new));
 
 	}
