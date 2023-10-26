@@ -2,98 +2,43 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer-container">
-      <footer className="py-5">
-        <div className="row">
-          <div className="col-6 col-md-2 mb-3">
-            <h5>Secciones</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <a
-                  href="#Index-component"
-                  className="nav-link p-0 text-body-secondary"
-                >
-                  Inicio
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Productos
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Contactanos
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Politica de Privacidad
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">
-                  Atencion al Cliente
-                </a>
-              </li>
-            </ul>
-          </div>
+    <div>
+      <div className="footer-container">
+        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p className="col-md-4 mb-0">&copy; 2023 Company, Inc</p>
+          <a
+            href="/"
+            className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          >
+            <svg className="bi me-2" width="40" height="32">
+              <use xlinkHref="#bootstrap" />
+            </svg>
+          </a>
 
-          <div className="col-md-5 offset-md-1 mb-3">
-            <form>
-              <h5>Subscribete a Nuestra Pagina</h5>
-              <p>
-                Subscribete para recibir Noticias, Novedades y las mejores
-                Ofertas
-              </p>
-              <div className="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label htmlFor="newsletter1" className="visually-hidden">
-                  Email
-                </label>
-                <input
-                  id="newsletter1"
-                  type="text"
-                  className="form-control"
-                  placeholder="Email"
-                />
-                <button className="btn btn-primary" type="button">
-                  Subscribirse
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div
-          id="F-container"
-          className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
-        >
-          <p>&copy; 2023 Company, Inc. All rights reserved.</p>
-          <ul className="list-unstyled d-flex">
-            <li className="ms-3">
-              <a className="link-body-emphasis" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use linkHref="#twitter" />
-                </svg>
+          <ul className="nav col-md-4 justify-content-end">
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2">
+                Inicio
               </a>
             </li>
-            <li className="ms-3">
-              <a className="link-body-emphasis" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use linkHref="#instagram" />
-                </svg>
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
+                Productos
               </a>
             </li>
-            <li className="ms-3">
-              <a className="link-body-emphasis" href="#">
-                <svg className="bi" width="24" height="24">
-                  <use linkHref="#facebook" />
-                </svg>
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
+                T&C.
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link px-2 ">
+                FAQs
               </a>
             </li>
           </ul>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }

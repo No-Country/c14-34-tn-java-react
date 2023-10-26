@@ -2,9 +2,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #4f86e7 100%);
-  
+  background-image: url(img\fondo3.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* ---------------------------------CarsButton Config-------------------------- */
 .carsbutton-container{
@@ -272,18 +272,9 @@ font-weight: 200;
 
   /* -------------------------------------------------------Footer config -------------------------------------*/
 .footer-container{
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(30px);
-  border:1px solid #1f3d47;
-  border-radius: 20px;
-  /* margin: 10px; */
-  color: #fff;
-  height: 10%;
+ color: #fff;
 }
-.footer-container ul li a{
-  color: #fff;
-}
-.ms-3 ul li a{
+.footer-container a{
   color: #fff;
 }
 /* -----------------------------------------Navbar Config-------------------------------------- */
@@ -449,7 +440,12 @@ background: rgba(0, 0, 0, 0.2);
 border-radius: 5px;
 width: 40%;
   }
-  
+  .nav-menu a{
+    font-size: 25px;
+  }
+.navGral{
+  display: block;
+}
 }
 /* ----------------------------------------------------------Imagen Prinsipal config---------------------------------- */
 .img-prinsipal img{

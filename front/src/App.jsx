@@ -27,7 +27,7 @@ function App() {
       <Register />
       <Productos />
       <Terminos />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

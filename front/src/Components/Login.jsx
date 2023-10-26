@@ -7,12 +7,16 @@ function Login() {
         <h2 className="login-title">Ingresar</h2>
         <form>
           <div className="user-box">
-            <input type="Email" name="" required="Campo Obligatorio" />
-            <label htmlFor="Input"> Email</label>
+            <input type="Email" id="login-email" required="Campo Obligatorio" />
+            <label htmlFor="login-email"> Email</label>
           </div>
           <div className="user-box">
-            <input type="password" name="" required="Campo Obligatorio" />
-            <label htmlFor="Input">Contraseña</label>
+            <input
+              type="password"
+              id="login-pass"
+              required="Campo Obligatorio"
+            />
+            <label htmlFor="login-pass">Contraseña</label>
           </div>
           <center>
             <a linkhref="#">

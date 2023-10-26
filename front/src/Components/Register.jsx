@@ -10,8 +10,9 @@ function Register() {
             Regístrese ahora y obtenga acceso completo a nuestra app.{" "}
           </p>
           <div className="flex">
-            <label htmlFor="Input">
+            <label htmlFor="nombre">
               <input
+                id="nombre"
                 className="input"
                 type="text"
                 placeholder="Juan"
@@ -19,8 +20,9 @@ function Register() {
               />
               <span>Nombre</span>
             </label>
-            <label htmlFor="Input">
+            <label htmlFor="apellido">
               <input
+                id="apellido"
                 className="input"
                 type="text"
                 placeholder="Perez"
@@ -30,8 +32,9 @@ function Register() {
             </label>
           </div>
 
-          <label htmlFor="Input">
+          <label htmlFor="email">
             <input
+              id="email"
               className="input"
               type="email"
               placeholder="Ejemplo@ejemplo.com"
@@ -40,8 +43,19 @@ function Register() {
             <span>Email</span>
           </label>
 
-          <label htmlFor="Input">
+          <label htmlFor="age">
             <input
+              id="age"
+              className="input"
+              type="number"
+              placeholder="Ingrese su edad"
+              required="Campo Obligatorio"
+            />
+            <span>Edad</span>
+          </label>
+          <label htmlFor="pass">
+            <input
+              id="pass"
               className="input"
               type="password"
               placeholder=""
@@ -49,6 +63,7 @@ function Register() {
             />
             <span>Contraseña</span>
           </label>
+
           <label>
             <input
               className="input"
@@ -56,7 +71,7 @@ function Register() {
               placeholder=""
               required="Campo Obligatorio"
             />
-            <span>Confirm password</span>
+            <span>Confirmar contraseña</span>
           </label>
           <button className="submit">Enviar</button>
           <p className="signin">
