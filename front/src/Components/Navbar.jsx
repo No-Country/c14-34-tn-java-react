@@ -1,70 +1,57 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="nav-container">
-      <nav className="navbar navbar-expand-lg ">
+    <div className="navGral">
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary rounded"
+        aria-label="Thirteenth navbar example"
+      >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#" id="nav-bg">
-            Ecommerce Sport
-          </a>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
+            data-bs-target="#navbarsExample11"
+            aria-controls="navbarsExample11"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Inicio
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Productos
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="">
-                  Registrate
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Categorias
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Zapatos
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Ropa
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Accesorios
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+
+          <div
+            className="collapse navbar-collapse d-lg-flex"
+            id="navbarsExample11"
+          >
+            <NavLink to={"/"} className="navbar-brand col-lg-3 me-0" href="#">
+              <h1 className="nav-title bounce-in-top ">Blon Sports</h1>
+            </NavLink>
+            <div className="nav-menu">
+              <ul>
+                <li className="menu ">
+                <NavLink to={"/productos"} >Productos</NavLink>
+                </li>
+                <li className="menu">
+                  <NavLink to={"/calzados"} >Calzados</NavLink>
+                </li>
+                <li className="menu">
+                  <NavLink to={"/accesorios"} >Accesorios</NavLink>
+                </li>
+                <li className="menu">
+                  <NavLink to={"/prendas"} >Prendas</NavLink>
+                </li>
+              </ul>
+            </div>
+
+            <div className=" btn-nav-container">
+              <div className="ingresar-btn">
+                <NavLink to={"/ingresar"} className="btn btn-dark">Ingresar</NavLink>
+              </div>
+              <div className="btn-nav-registrate">
+                <NavLink to={"/registro"} className="btn btn-dark">Registrate</NavLink>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
