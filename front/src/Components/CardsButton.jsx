@@ -1,5 +1,3 @@
-import React from "react";
-
 function CarsButton() {
   return (
     <div className="carsbutton-container">
