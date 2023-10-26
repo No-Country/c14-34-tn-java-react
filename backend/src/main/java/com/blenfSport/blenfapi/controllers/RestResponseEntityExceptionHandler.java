@@ -3,6 +3,8 @@ package com.blenfSport.blenfapi.controllers;
 import com.blenfSport.blenfapi.exceptions.BadRequestException;
 import com.blenfSport.blenfapi.exceptions.ErrorResponse;
 import com.blenfSport.blenfapi.exceptions.ResourceNotFoundException;
+import com.blenfSport.blenfapi.exceptions.UsernameOrPasswordIncorretException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -29,6 +31,12 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
     public ResponseEntity<Object> handlerResourceNotFoundException(java.lang.NullPointerException ex, WebRequest request) {
         return new ResponseEntity<>(new ErrorResponse("Resource Not Found", ex.getMessage(), LocalDateTime.now()),
                 HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    
+    @ExceptionHandler(UsernameOrPasswordIncorretException.class)
+    public ResponseEntity<Object> handlerUsernameOrPasswordIncorretException(UsernameOrPasswordIncorretException ex, WebRequest request){
+    	return new ResponseEntity<>(new ErrorResponse("User or password incorret", ex.getMessage(), LocalDateTime.now()),
+    			HttpStatus.FORBIDDEN);
     }
 
 }

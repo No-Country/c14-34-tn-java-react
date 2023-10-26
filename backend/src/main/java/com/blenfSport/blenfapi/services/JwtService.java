@@ -25,9 +25,11 @@ public class JwtService {
 
 	private String getToken(HashMap<String, Object> extraClaims, UserDetails user) {
 
-		return Jwts.builder().setClaims(extraClaims).setSubject(user.getUsername())
+		return Jwts.builder()
+				.setClaims(extraClaims)
+				.setSubject(user.getUsername())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+				.setExpiration(new Date(System.currentTimeMillis() + 100000 * 60 * 24))
 				.signWith(getKey(), SignatureAlgorithm.HS256).compact();
 	}
 
