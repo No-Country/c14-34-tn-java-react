@@ -6,6 +6,8 @@ import Productos from "./Components/Productos";
 import Calzados from "./Components/Calzados";
 import Accesorios from './Components/Accesorios';
 import Prendas from './Components/Prendas';
+import Login from './Components/Login';
+import Register from './Components/Register';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/calzados' element={<Calzados />} />
         <Route path='/accesorios' element={<Accesorios />} />
         <Route path='/prendas' element={<Prendas />} />
+        <Route path='/ingresar' element={<Login />} />
+        <Route path='/registro' element={<Register />} />
       </Routes>
       <Footer />
       </BrowserRouter>   
