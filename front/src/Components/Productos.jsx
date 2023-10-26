@@ -1,7 +1,8 @@
 import useFetch from "./useFetch";
+import "../App.css";
 
 function Productos() {
-  const { data, cargando} = useFetch("https://jsonplaceholder.typicode.com/todos/");
+  const { data, cargando} = useFetch("http://18.220.229.238/products/show?page=3");
 
   return (
     <div>
@@ -9,16 +10,19 @@ function Productos() {
       {cargando ? (
         <p>Cargando...</p>
       ) : (
-        <ul>
+        <div className="card-general">
           {data.map(product => (
-            <li key={product.id}>
+            <div key={product.id} className="card">
+              <div className="card-img">
+                <img src={product.UrlImg} alt={product.name} />
+              </div>
               <h2 className="card-title">{product.name}</h2>
               <p className="card-sub-title">Precio: ${product.price}</p>
               <p className="card-info">Descripción: {product.description}</p>
               <button className="card-btn">Detalles</button>
-            </li>
+            </div>              
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
