@@ -46,14 +46,21 @@ public class ProductController {
 
 	}
 
-	@GetMapping("/{name}")
+	@GetMapping("/{category}")
 	public ResponseEntity<Page<ProductResponseDto>> showAllProductsByCategory(Pageable pageable,
-			@PathVariable String name) {
+			@PathVariable String category) {
 
-		Category categoryId = categoryService.FindCategoryIdByname(name);
+		Category categoryId = categoryService.FindCategoryIdByname(category);
 		return ResponseEntity
 				.ok(productService.FindProductsByCategory(pageable, categoryId.getId()).map(ProductResponseDto::new));
 
+	}
+	@GetMapping(value ="find/{id}")
+	public ResponseEntity<ProductResponseDto> findProductById(@PathVariable Long id){
+		Optional<Product> productOptional =  productService.FindProductById(id);
+		Product product = productOptional.get();
+		return ResponseEntity.ok(new ProductResponseDto(product));
+		
 	}
 
 	@DeleteMapping("/{id}")
