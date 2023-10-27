@@ -1,4 +1,4 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -24,32 +24,32 @@ function Navbar() {
             className="collapse navbar-collapse d-lg-flex"
             id="navbarsExample11"
           >
-            <a className="navbar-brand col-lg-3 me-0" href="#">
+            <NavLink to={"/"} className="navbar-brand col-lg-3 me-0" href="#">
               <h1 className="nav-title bounce-in-top ">Blon Sports</h1>
-            </a>
+            </NavLink>
             <div className="nav-menu">
               <ul>
                 <li className="menu ">
-                  <a href="">Productos</a>
+                <NavLink to={"/productos"} >Productos</NavLink>
                 </li>
                 <li className="menu">
-                  <a href="">Calzados</a>
+                  <NavLink to={"/calzados"} >Calzados</NavLink>
                 </li>
                 <li className="menu">
-                  <a href="">Accesorios</a>
+                  <NavLink to={"/accesorios"} >Accesorios</NavLink>
                 </li>
                 <li className="menu">
-                  <a href="">Prendas</a>
+                  <NavLink to={"/prendas"} >Prendas</NavLink>
                 </li>
               </ul>
             </div>
 
             <div className=" btn-nav-container">
               <div className="ingresar-btn">
-                <button className="btn btn-dark">Ingresar</button>
+                <NavLink to={"/ingresar"} className="btn btn-dark">Ingresar</NavLink>
               </div>
               <div className="btn-nav-registrate">
-                <button className="btn btn-dark">Registrate</button>
+                <NavLink to={"/registro"} className="btn btn-dark">Registrate</NavLink>
               </div>
             </div>
           </div>
@@ -60,5 +60,3 @@ function Navbar() {
 }
 
 export default Navbar;
-{
-}

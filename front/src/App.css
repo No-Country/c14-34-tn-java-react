@@ -101,14 +101,14 @@ body {
 }
 .card-h4 {
   margin-top:40px ;
-  font-family: 'puppins',sans-serif;
+  font-family: 'poppins',sans-serif;
   font-weight: 700;
  
   
   
 }
 .card-h2{
-  font-family: 'puppins',sans-serif;
+  font-family: 'poppins',sans-serif;
   font-size: 50px;
   font-weight: 700;
   color: #fff;
@@ -120,7 +120,7 @@ body {
   
 }
 .card-h5{
-  font-family: 'puppins',sans-serif;
+  font-family: 'poppins',sans-serif;
   font-size: 20px;
   font-weight: 100;
   color: #fff;
@@ -403,7 +403,7 @@ font-weight: 200;
 
 .nav-menu a{
   text-decoration: none;
-  font-family: 'puppins',sans-serif;
+  font-family: 'poppins',sans-serif;
   font-weight: 600;
   color: #000; 
 }
@@ -762,5 +762,58 @@ center a{
   }
   20% {
     transform: translateY(-20px);
+  }
+}
+/*---------------------------- Terminos Configurations---------------------------------------- */
+.terminos-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 20px;
+  margin: 10px;
+  color: #fff;
+  font-family: 'poppins', sans-serif;
+  text-align: center;
+}
+.terminos-title{
+  text-align: center;
+  color: #bdb8b8;
+  font-family: 'poppins',sans-serif;
+  font-weight: 700;
+}
+/*--------------------------- FAQS Configurations -------------------------*/
+.preguntas-gral{
+  display: grid;
+  grid-template-columns:repeat(1,1fr) ;
+  grid-template-rows:repeat(4,1fr) ;
+}
+.faqs-container h1{
+  text-align: center;
+  color: #bdb8b8;
+  font-family: 'poppins', sans-serif;
+}
+.faqs-info{
+  width: 90%;
+  text-align: center;
+  color:#ffffff;
+  font-family: 'poppins', sans-serif;
+  margin: 10px;
+}
+.pregunta-container{
+  text-align: center;
+  display: block;
+  width: 60%;
+  height: auto;
+  position:relative;
+  color:#fff;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 20px;
+  margin:10px;
+  padding: 2rem;
+}
+@media screen and (max-width: 767px){
+  .pregunta-container{
+    width: 100%;
   }
 }

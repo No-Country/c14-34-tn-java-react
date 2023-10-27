@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -40,19 +41,26 @@ public class ProductController {
 	}
 
 	@GetMapping(value = "show")
-	public ResponseEntity<Page<ProductResponseDto>> showAllProducts(Pageable pageable) {
+	public ResponseEntity<Page<ProductResponseDto>> showAllProducts(@PageableDefault(size = 10) Pageable pageable) {
 		return ResponseEntity.ok(productService.getAllProducts(pageable).map(ProductResponseDto::new));
 
 	}
 
-	@GetMapping("/{name}")
+	@GetMapping("/{category}")
 	public ResponseEntity<Page<ProductResponseDto>> showAllProductsByCategory(Pageable pageable,
-			@PathVariable String name) {
+			@PathVariable String category) {
 
-		Category categoryId = categoryService.FindCategoryIdByname(name);
+		Category categoryId = categoryService.FindCategoryIdByname(category);
 		return ResponseEntity
 				.ok(productService.FindProductsByCategory(pageable, categoryId.getId()).map(ProductResponseDto::new));
 
+	}
+	@GetMapping(value ="find/{id}")
+	public ResponseEntity<ProductResponseDto> findProductById(@PathVariable Long id){
+		Optional<Product> productOptional =  productService.FindProductById(id);
+		Product product = productOptional.get();
+		return ResponseEntity.ok(new ProductResponseDto(product));
+		
 	}
 
 	@DeleteMapping("/{id}")
