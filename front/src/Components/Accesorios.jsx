@@ -1,9 +1,9 @@
-
-
 function Accesorios() {
   return (
-    <div>Accesorios</div>
-  )
+    <div>
+      <h1>Accesorios</h1>
+    </div>
+  );
 }
 
-export default Accesorios
+export default Accesorios;
