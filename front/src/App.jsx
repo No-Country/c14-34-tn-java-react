@@ -8,12 +8,16 @@ import Accesorios from "./Components/Accesorios";
 import Prendas from "./Components/Prendas";
 import Terminos from "./Components/Terminos";
 import Faqs from "./Components/Faqs";
+import Blon from "./Components/Blon";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Card />} />
           <Route path="/productos" element={<Productos />} />
@@ -22,7 +26,11 @@ function App() {
           <Route path="/prendas" element={<Prendas />} />
           <Route path="/T&C" element={<Terminos />} />
           <Route path="/FAQs" element={<Faqs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
+        {/*   <Login />
+        <Register /> */}
         <Footer />
       </BrowserRouter>
     </>
