@@ -1,16 +1,20 @@
+import Blon from "./Blon";
 import useFetch from "./useFetch";
 
 function Productos() {
-  const { data, cargando} = useFetch("https://jsonplaceholder.typicode.com/todos/");
+  const { data, cargando } = useFetch(
+    "https://jsonplaceholder.typicode.com/todos/"
+  );
 
   return (
-    <div>
+    <d iv>
       <h1>Lista de Productos</h1>
+      <Blon />
       {cargando ? (
         <p>Cargando...</p>
       ) : (
         <ul>
-          {data.map(product => (
+          {data.map((product) => (
             <li key={product.id}>
               <h2 className="card-title">{product.name}</h2>
               <p className="card-sub-title">Precio: ${product.price}</p>
@@ -20,7 +24,7 @@ function Productos() {
           ))}
         </ul>
       )}
-    </div>
+    </d>
   );
 }
 
