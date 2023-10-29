@@ -1,6 +1,6 @@
 package com.blenfSport.blenfapi.dtos;
 
-import org.springframework.security.core.userdetails.UserDetails;
+
 
 import com.blenfSport.blenfapi.persitence.entities.FacturationInfo;
 import com.blenfSport.blenfapi.persitence.entities.User;

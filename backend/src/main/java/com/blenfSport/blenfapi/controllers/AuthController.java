@@ -2,7 +2,7 @@ package com.blenfSport.blenfapi.controllers;
 
 import java.util.Optional;
 
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
