@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+// eslint-disable-next-line react/prop-types
 const Contador = ({stock}) => {
     const [counter, setCounter] = useState(0); 
     const incrementarContador = () => {

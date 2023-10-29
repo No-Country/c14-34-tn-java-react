@@ -1,5 +1,7 @@
 import Contador from "./Contador";
 
+
+// eslint-disable-next-line react/prop-types
 export const ProductDetail = ({ id, name, UrlImg, price, description, color, size, stock}) => {
   return (
     <div key={id}>
