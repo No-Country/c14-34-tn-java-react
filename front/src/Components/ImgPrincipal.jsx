@@ -1,6 +1,6 @@
-import React from "react";
 
-function ImgPrinsipal() {
+
+function ImgPrincipal() {
   return (
     <div className="img-prinsipal ">
       <img src="src\img\botines.PNG" alt="Botines" />
@@ -8,4 +8,4 @@ function ImgPrinsipal() {
   );
 }
 
-export default ImgPrinsipal;
+export default ImgPrincipal;

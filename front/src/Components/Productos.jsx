@@ -1,31 +1,43 @@
-import Blon from "./Blon";
 import useFetch from "./useFetch";
+import Blon from "./Blon";
+import "../App.css";
+import { Link } from "react-router-dom";
 
 function Productos() {
   const { data, cargando } = useFetch(
-    "https://jsonplaceholder.typicode.com/todos/"
+    "http://18.220.229.238/products/show?page=3"
   );
 
   return (
-    <d iv>
+    <div>
       <h1>Lista de Productos</h1>
       <Blon />
       {cargando ? (
         <p>Cargando...</p>
       ) : (
-        <ul>
+        <div className="card-general">
           {data.map((product) => (
-            <li key={product.id}>
-              <h2 className="card-title">{product.name}</h2>
-              <p className="card-sub-title">Precio: ${product.price}</p>
-              <p className="card-info">Descripción: {product.description}</p>
-              <button className="card-btn">Detalles</button>
-            </li>
+            <div key={product.id} className="card">
+              <div className="card-img">
+                <img src={product.UrlImg} alt={product.name} />
+              </div>
+              <div className="card-body">
+                <h2 className="card-title">{product.name}</h2>
+                <p className="card-sub-title">Precio: ${product.price}</p>
+                <p className="card-info">Descripción: {product.description}</p>
+                <Link to={`/producto/${product.id}`}>
+                  <button className="card-btn">
+                    Detalles
+                  </button>
+                </Link>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
-    </d>
+    </div>
   );
 }
 
 export default Productos;
+
