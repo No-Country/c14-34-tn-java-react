@@ -1,10 +1,13 @@
 package com.blenfSport.blenfapi.persitence.entities;
 
+import com.blenfSport.blenfapi.dtos.ShoppingCartDto;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -13,25 +16,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Entity(name ="PurchaseOrder")
-@Table(name ="purchase_orders")
+@Entity
+@Table
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class PurchaseOrder {
+public class ShoppingCart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@ManyToOne
-	@JoinColumn(name = "product_id", nullable = false)
+	@ManyToOne(optional = false,cascade = CascadeType.DETACH,fetch = FetchType.EAGER)
 	private Product product;
+	@ManyToOne(optional = false,cascade = CascadeType.DETACH,fetch = FetchType.EAGER)
+	private User user;
 	private Integer amount;
-	private Double subtotal;
-	@ManyToOne
-	@JoinColumn(name = "final_purchase_id", nullable = false)
-	private FinalPurchase finalPurchase;
+	
+	public ShoppingCart(ShoppingCartDto shoppingCartDto) {
+		this.product = shoppingCartDto.product();
+		this.user = shoppingCartDto.user();
+		this.amount = shoppingCartDto.amount();
+	}
 
 }
