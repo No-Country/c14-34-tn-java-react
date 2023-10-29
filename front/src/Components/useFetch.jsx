@@ -15,7 +15,7 @@ export default function useFetch(url) {
       console.error('Error al cargar los datos:', error);
       setCargando(false);
     });
-}, []);
+}, [url]);
 
   return { data, cargando };
 }

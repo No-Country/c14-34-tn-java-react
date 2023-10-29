@@ -2,12 +2,23 @@ import useFetch from "./useFetch";
 import Blon from "./Blon";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Productos() {
-  const { data, cargando } = useFetch(
-    "http://18.220.229.238/products/show?page=3"
-  );
 
+  const [currentPage, setCurrentPage] = useState(0);
+
+
+  const { data, cargando } = useFetch(
+    `http://18.220.229.238/products/show?page=${currentPage}`
+  );
+  
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const pageNumbers = [0, 1, 2, 3, 4];
+  
   return (
     <div>
       <h1>Lista de Productos</h1>
@@ -33,6 +44,27 @@ function Productos() {
               </div>
             </div>
           ))}
+
+      <div>
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 0}
+        >
+          Anterior
+        </button>
+        {pageNumbers.map((page) => (
+        <button
+          key={page}
+          onClick={() => handlePageChange(page)}
+          disabled={currentPage === page}
+        >
+          {page}
+        </button>
+      ))}
+        <button onClick={() => handlePageChange(currentPage + 1)}>Siguiente</button>
+      </div>
+
+
         </div>
       )}
     </div>

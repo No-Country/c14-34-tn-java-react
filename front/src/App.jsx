@@ -11,7 +11,6 @@ import Register from './Components/Register';
 import ProductDetailContainer from './Components/ProductDetailContainer';
 import Terminos from "./Components/Terminos";
 import Faqs from "./Components/Faqs";
-import Blon from "./Components/Blon";
 
 function App() {
   return (
