@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.blenfSport.blenfapi.dtos.ShoppingCartDto;
+import com.blenfSport.blenfapi.dtos.ShoppingCartResponseDto;
 import com.blenfSport.blenfapi.persitence.entities.ShoppingCart;
 import com.blenfSport.blenfapi.services.ShoppingCartService;
 
@@ -31,10 +32,10 @@ public class ShoppingCartController {
 	
 	
 	@GetMapping
-	public ResponseEntity<List<ShoppingCart>> getListByUser(){
+	public ResponseEntity<List<ShoppingCartResponseDto>> getListByUser(){
 		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String email = userDetails.getUsername();
-		return ResponseEntity.ok(shoppingCartService.getListByUser(email));
+		return ResponseEntity.ok(shoppingCartService.getListByUser(email).stream().map(ShoppingCartResponseDto::new).toList());
 	}
 	
 	@GetMapping(value = "count/{user_id}")

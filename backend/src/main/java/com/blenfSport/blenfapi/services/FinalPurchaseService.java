@@ -36,7 +36,7 @@ public class FinalPurchaseService {
 		return finalPurchaseRepository.findByUser_Email(UserEmail);
 	}
 
-	public void createFinalPurchase (String userEmail,PaymentType paymentType) {
+	public FinalPurchase createFinalPurchase (String userEmail,PaymentType paymentType) {
 		Optional<UserDetails> userOptional = userRepository.findByEmail(userEmail);
 		User user = (User) userOptional.get();
 		List<ShoppingCart> shoppingCartList = shoppingCartService.getListByUser(user.getEmail());
@@ -58,6 +58,7 @@ public class FinalPurchaseService {
 		}
 		
 		shoppingCartService.cleanShoppingCart(user.getId());
+		return finalPurchaseSave;
 	}
 
 }
