@@ -43,5 +43,15 @@ public class FinalPurchase {
 	private Double subtotal;
 	private Double iva;
 	private Double total;
+	
+	public FinalPurchase(Double subTotal, Date date, User user,PaymentType paymentType) {
+		this.date = date;
+		this.user = user;
+		this.paymentType = paymentType;
+		this.subtotal = subTotal;
+		this.iva = subTotal * 0.12;
+		this.total = this.subtotal + this.iva;
+		
+	}
 
 }
