@@ -1,10 +1,10 @@
 import "../App.css";
-import ImgPrisipal from './ImgPrinsipal'
+import ImgPrincipal from './ImgPrincipal'
 
 function Card() {
   return (
     <>
-      <ImgPrisipal />
+      <ImgPrincipal />
       <div className="card-general">
         {/* Calzado*/}
         <div className="card">

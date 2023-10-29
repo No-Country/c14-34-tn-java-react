@@ -8,6 +8,8 @@ import Accesorios from './Components/Accesorios';
 import Prendas from './Components/Prendas';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import ProductDetailContainer from './Components/ProductDetailContainer';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Card />} />
         <Route path='/productos' element={<Productos />} />
+        <Route path='/producto/:productId' element={<ProductDetailContainer />} /> 
         <Route path='/calzados' element={<Calzados />} />
         <Route path='/accesorios' element={<Accesorios />} />
         <Route path='/prendas' element={<Prendas />} />
