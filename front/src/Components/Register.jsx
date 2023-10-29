@@ -1,66 +1,148 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Register() {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    apellido: "",
+    email: "",
+    age: "",
+    pass: "",
+    confirmPassword: "",
+  });
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (formData.pass !== formData.confirmPassword) {
+      setErrorMessage("Las contraseñas no coinciden");
+      return;
+    }
+
+    const url = "http://18.220.229.238/auth/register";
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    };
+
+    try {
+      const response = await fetch(url, requestOptions);
+      if (response.ok) {
+        // Registro exitoso
+        setSuccessMessage("Registro exitoso");
+      } else {
+        // Error en la solicitud
+        setErrorMessage("Error al registrar");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+      setErrorMessage("Error en la solicitud");
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  };
+
   return (
     <div id="Register-component">
       <div className="register-container">
-        <form className="form">
-          <p className="title">Registrate </p>
+        <form className="form" onSubmit={handleSubmit}>
+          <p className="title">Regístrate</p>
           <p className="message">
-            Regístrese ahora y obtenga acceso completo a nuestra app.{" "}
+            Regístrate ahora y obtén acceso completo a nuestra app.
           </p>
           <div className="flex">
-            <label htmlFor="Input">
+            <label htmlFor="nombre">
               <input
+                id="nombre"
                 className="input"
                 type="text"
                 placeholder="Juan"
-                required="Campo Obligatorio"
+                required
+                value={formData.nombre}
+                onChange={handleInputChange}
               />
               <span>Nombre</span>
             </label>
-            <label htmlFor="Input">
+            <label htmlFor="apellido">
               <input
+                id="apellido"
                 className="input"
                 type="text"
                 placeholder="Perez"
-                required="Campo Obligatorio"
+                required
+                value={formData.apellido}
+                onChange={handleInputChange}
               />
               <span>Apellido</span>
             </label>
           </div>
 
-          <label htmlFor="Input">
+          <label htmlFor="email">
             <input
+              id="email"
               className="input"
               type="email"
               placeholder="Ejemplo@ejemplo.com"
-              required="Campo Obligatorio"
+              required
+              value={formData.email}
+              onChange={handleInputChange}
             />
             <span>Email</span>
           </label>
 
-          <label htmlFor="Input">
+          <label htmlFor="age">
             <input
+              id="age"
+              className="input"
+              type="number"
+              placeholder="Ingrese su edad"
+              required
+              value={formData.age}
+              onChange={handleInputChange}
+            />
+            <span>Edad</span>
+          </label>
+          <label htmlFor="pass">
+            <input
+              id="pass"
               className="input"
               type="password"
-              placeholder=""
-              required="Campo Obligatorio"
+              placeholder="Ingrese una contraseña"
+              required
+              value={formData.pass}
+              onChange={handleInputChange}
             />
             <span>Contraseña</span>
           </label>
-          <label>
+
+          <label htmlFor="passConfirm">
             <input
+              id="passConfirm"
               className="input"
               type="password"
-              placeholder=""
-              required="Campo Obligatorio"
+              placeholder="Ingrese de nuevo la contraseña"
+              required
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
             />
-            <span>Confirm password</span>
+            <span>Confirmar contraseña</span>
           </label>
-          <button className="submit">Enviar</button>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {successMessage && (
+            <p className="success-message">{successMessage}</p>
+          )}
+          <button type="submit" className="submit">
+            Enviar
+          </button>
           <p className="signin">
-            ¿Ya tienes una cuenta? <a href="#Login-component">Ingresa</a>{" "}
+            ¿Ya tienes una cuenta? <NavLink to={"/login"}>Ingresa</NavLink>{" "}
           </p>
         </form>
       </div>

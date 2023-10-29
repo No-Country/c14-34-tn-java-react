@@ -35,4 +35,4 @@ function Accesorios() {
   )
 }
 
-export default Accesorios
+export default Accesorios;

@@ -1,4 +1,5 @@
 import useFetch from "./useFetch";
+import Blon from "./Blon";
 import "../App.css";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,7 @@ function Productos() {
   return (
     <div>
       <h1>Lista de Productos</h1>
+      <Blon />
       {cargando ? (
         <p>Cargando...</p>
       ) : (
@@ -38,3 +40,4 @@ function Productos() {
 }
 
 export default Productos;
+
