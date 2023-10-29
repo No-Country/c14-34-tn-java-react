@@ -39,7 +39,7 @@ public class FinalPurchase {
 	@Column(name = "paymentType")
 	private PaymentType paymentType;
 	@OneToMany(mappedBy = "finalPurchase")
-	private List<PurchaseOrder> purchaseOrders;
+	private List<Detail> detail;
 	private Double subtotal;
 	private Double iva;
 	private Double total;

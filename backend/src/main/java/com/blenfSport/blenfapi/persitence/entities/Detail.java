@@ -14,14 +14,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@Entity(name ="PurchaseOrder")
-@Table(name ="purchase_orders")
+@Entity(name ="Detail")
+@Table(name ="details")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class PurchaseOrder {
+public class Detail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -29,7 +29,6 @@ public class PurchaseOrder {
 	@JoinColumn(name = "product_id", nullable = false)
 	private Product product;
 	private Integer amount;
-	private Double subtotal;
 	@ManyToOne
 	@JoinColumn(name = "final_purchase_id", nullable = false)
 	private FinalPurchase finalPurchase;

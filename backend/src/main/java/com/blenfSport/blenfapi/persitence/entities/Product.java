@@ -48,7 +48,7 @@ public class Product {
 	@Column(name = "urlImg")
 	private String urlImg;
 	@OneToMany(mappedBy = "product")
-	private List<PurchaseOrder> purchaseOrders;
+	private List<Detail> detail;
 
 	public Product(ProductDto productDto, Category category) {
 
