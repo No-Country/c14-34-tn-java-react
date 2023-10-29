@@ -7,15 +7,14 @@ import com.blenfSport.blenfapi.exceptions.UsernameOrPasswordIncorretException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
 import java.time.LocalDateTime;
 
-@ControllerAdvice
-public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+@RestControllerAdvice
+public class RestResponseEntityExceptionHandler{
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<Object> handlerBadRequest(BadRequestException ex, WebRequest request) {
         return new ResponseEntity<>(new ErrorResponse("Bad Request", ex.getMessage(), LocalDateTime.now()),
@@ -37,6 +36,11 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
     public ResponseEntity<Object> handlerUsernameOrPasswordIncorretException(UsernameOrPasswordIncorretException ex, WebRequest request){
     	return new ResponseEntity<>(new ErrorResponse("User or password incorret", ex.getMessage(), LocalDateTime.now()),
     			HttpStatus.FORBIDDEN);
+    }
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Object> handlerMethodArgumentNotValidException(MethodArgumentNotValidException ex){
+    	var errors = ex.getFieldErrors().stream().map(ErrorResponse::new).toList();
+    	return ResponseEntity.badRequest().body(errors);
     }
 
 }
