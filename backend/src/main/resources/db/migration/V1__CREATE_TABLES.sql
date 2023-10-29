@@ -49,27 +49,12 @@ CREATE TABLE products (
 );
 
 -- Tabla 'purchase_orders'
-CREATE TABLE purchase_orders (
+CREATE TABLE details (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     product_id BIGINT NOT NULL,
     amount INT NOT NULL,
-    subtotal DOUBLE NOT NULL,
-    final_purchase_id BIGINT,
-    state BOOLEAN NOT NULL
+    final_purchase_id BIGINT
+    
 );
 
--- Restricciones de clave externa
-ALTER TABLE users ADD CONSTRAINT FK_User_Facturation
-FOREIGN KEY (facturation_id) REFERENCES facturations_Info(id);
 
-ALTER TABLE final_purchases ADD CONSTRAINT FK_FinalPurchase_User
-FOREIGN KEY (user_id) REFERENCES users(id);
-
-ALTER TABLE products ADD CONSTRAINT FK_Product_Category
-FOREIGN KEY (category_id) REFERENCES categories(id);
-
-ALTER TABLE purchase_orders ADD CONSTRAINT FK_PurchaseOrder_Product
-FOREIGN KEY (product_id) REFERENCES products(id);
-
-ALTER TABLE purchase_orders ADD CONSTRAINT FK_PurchaseOrder_FinalPurchase
-FOREIGN KEY (final_purchase_id) REFERENCES final_purchases(id);
