@@ -46,34 +46,36 @@ function Login() {
 
   return (
     <div className="login-container" id="Login-component">
-      <div className="login-box">
-        <h2 className="login-title">Ingresar</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="user-box">
-            <input
-              type="email"
-              id="email"
-              required="Campo Obligatorio"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <label htmlFor="email"> Email</label>
-          </div>
-          <div className="user-box">
-            <input
-              type="password"
-              id="password"
-              required="Campo Obligatorio"
-              value={formData.password}
-              onChange={handleInputChange}
-            />
-            <label htmlFor="password">Contraseña</label>
-          </div>
-          <center>
-            <button type="submit">Enviar</button>
-            <p id="rta-login"></p>
-          </center>
-        </form>
+      <div className="login-box-container">
+        <div className="login-box">
+          <h2 className="login-title">Ingresar</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="user-box">
+              <input
+                type="email"
+                id="email"
+                required="Campo Obligatorio"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="email"> Email</label>
+            </div>
+            <div className="user-box">
+              <input
+                type="password"
+                id="password"
+                required="Campo Obligatorio"
+                value={formData.password}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="password">Contraseña</label>
+            </div>
+            <center>
+              <button type="submit">Enviar</button>
+              <p id="rta-login"></p>
+            </center>
+          </form>
+        </div>
       </div>
     </div>
   );
