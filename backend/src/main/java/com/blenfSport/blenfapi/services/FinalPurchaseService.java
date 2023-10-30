@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.blenfSport.blenfapi.persitence.entities.FinalPurchase;
+import com.blenfSport.blenfapi.dtos.PaymentTypeDto;
 import com.blenfSport.blenfapi.persitence.entities.Detail;
 import com.blenfSport.blenfapi.persitence.entities.ShoppingCart;
 import com.blenfSport.blenfapi.persitence.entities.User;
@@ -36,7 +37,7 @@ public class FinalPurchaseService {
 		return finalPurchaseRepository.findByUser_Email(UserEmail);
 	}
 
-	public FinalPurchase createFinalPurchase (String userEmail,PaymentType paymentType) {
+	public FinalPurchase createFinalPurchase (String userEmail,PaymentTypeDto paymentType) {
 		Optional<UserDetails> userOptional = userRepository.findByEmail(userEmail);
 		User user = (User) userOptional.get();
 		List<ShoppingCart> shoppingCartList = shoppingCartService.getListByUser(user.getEmail());
@@ -46,7 +47,8 @@ public class FinalPurchaseService {
 		Double total = shoppingCartList.stream().mapToDouble(shoppingCartItem ->
 		shoppingCartItem.getProduct().getPrice() * shoppingCartItem.getAmount()).sum();
 		
-		FinalPurchase finalPurchase = new FinalPurchase(Double.parseDouble(decimalFormat.format(total)),new Date(),user, paymentType);
+		FinalPurchase finalPurchase = new FinalPurchase(Double.parseDouble(decimalFormat.format(total)),new Date(),user);
+		finalPurchase.setPaymentType(paymentType.paymentType());
 		FinalPurchase finalPurchaseSave = finalPurchaseRepository.save(finalPurchase);
 		
 		for(ShoppingCart shoppingCart : shoppingCartList) {
@@ -54,7 +56,7 @@ public class FinalPurchaseService {
 			detail.setProduct(shoppingCart.getProduct());
 			detail.setAmount(shoppingCart.getAmount());
 			detail.setFinalPurchase(finalPurchaseSave);
-			detailService.createPurchaseOrder(detail);
+			detailService.createDetail(detail);
 		}
 		
 		shoppingCartService.cleanShoppingCart(user.getId());

@@ -3,6 +3,7 @@ package com.blenfSport.blenfapi.persitence.entities;
 import java.util.Date;
 import java.util.List;
 
+
 import com.blenfSport.blenfapi.utils.PaymentType;
 
 import jakarta.persistence.Column;
@@ -20,10 +21,12 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "FinalPurchase")
 @Table(name = "finalPurchases")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -44,14 +47,15 @@ public class FinalPurchase {
 	private Double iva;
 	private Double total;
 	
-	public FinalPurchase(Double subTotal, Date date, User user,PaymentType paymentType) {
+	public FinalPurchase(Double subTotal, Date date, User user) {
 		this.date = date;
 		this.user = user;
-		this.paymentType = paymentType;
 		this.subtotal = subTotal;
 		this.iva = subTotal * 0.12;
 		this.total = this.subtotal + this.iva;
 		
 	}
+
+
 
 }

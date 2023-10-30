@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.blenfSport.blenfapi.dtos.DetailResponseDto;
+import com.blenfSport.blenfapi.persitence.entities.Detail;
 import com.blenfSport.blenfapi.services.DetailService;
 
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/finalPurchaseDetail")
+@RequestMapping("/FinalPurchaseDetail")
 @RequiredArgsConstructor
 public class DetailController {
 
@@ -21,8 +22,14 @@ public class DetailController {
 
 	@GetMapping("/{finalPurchase_id}")
 	public ResponseEntity<List<DetailResponseDto>> getDetailsByFinalPurchase(@PathVariable Long finalPurchase_id) {
-		return ResponseEntity.ok(detailService.getPurchaseOrderByFinalPurchase(finalPurchase_id).stream()
-				.map(DetailResponseDto::new).toList());
+		return ResponseEntity.ok(
+				detailService.getDetailByFinalPurchase(finalPurchase_id).stream().
+				map(DetailResponseDto::new).toList());
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<Detail>> getAll(){
+		return ResponseEntity.ok(detailService.getAll());
 	}
 
 }

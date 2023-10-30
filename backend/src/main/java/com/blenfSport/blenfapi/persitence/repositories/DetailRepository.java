@@ -8,6 +8,8 @@ import com.blenfSport.blenfapi.persitence.entities.Detail;
 
 public interface DetailRepository extends JpaRepository<Detail, Long>{
 	
-	List<Detail> findByFinalPurchase_id(Long finalPurchaseId);
+	boolean existsByFinalPurchase_id(Long finalPurchase_id);
+
+	List<Detail> findByFinalPurchase_Id(Long finalPurchase_Id);
 
 }

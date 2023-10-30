@@ -3,6 +3,7 @@ package com.blenfSport.blenfapi.persitence.entities;
 import java.util.List;
 
 import com.blenfSport.blenfapi.dtos.ProductDto;
+import com.blenfSport.blenfapi.dtos.ProductResponseDto;
 import com.blenfSport.blenfapi.utils.Color;
 import com.blenfSport.blenfapi.utils.Genere;
 
@@ -75,4 +76,5 @@ public class Product {
 
 	}
 
+	
 }

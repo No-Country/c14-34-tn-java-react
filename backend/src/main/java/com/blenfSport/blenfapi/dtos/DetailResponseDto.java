@@ -1,5 +1,7 @@
 package com.blenfSport.blenfapi.dtos;
 
+
+
 import com.blenfSport.blenfapi.persitence.entities.Detail;
 import com.blenfSport.blenfapi.persitence.entities.FinalPurchase;
 import com.blenfSport.blenfapi.persitence.entities.Product;
