@@ -5,6 +5,9 @@ import java.util.List;
 
 
 import com.blenfSport.blenfapi.utils.PaymentType;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,6 +33,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class FinalPurchase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,8 +46,6 @@ public class FinalPurchase {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "paymentType")
 	private PaymentType paymentType;
-	@OneToMany(mappedBy = "finalPurchase")
-	private List<Detail> detail;
 	private Double subtotal;
 	private Double iva;
 	private Double total;
