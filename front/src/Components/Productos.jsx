@@ -7,7 +7,7 @@ function Productos() {
   );
 
   return (
-    <d iv>
+    <div>
       <h1>Lista de Productos</h1>
       <Blon />
       {cargando ? (
@@ -24,7 +24,7 @@ function Productos() {
           ))}
         </ul>
       )}
-    </d>
+    </div>
   );
 }
 

@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
 function Register() {
   const [formData, setFormData] = useState({
+    email: "",
+    pass: "",
     nombre: "",
     apellido: "",
-    email: "",
     age: "",
-    pass: "",
-    confirmPassword: "",
   });
 
   const [successMessage, setSuccessMessage] = useState("");
@@ -17,7 +15,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.pass !== formData.confirmPassword) {
+    if (formData.pass !== confirmPassword) {
       setErrorMessage("Las contraseñas no coinciden");
       return;
     }
@@ -46,6 +44,15 @@ function Register() {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
+    if (id === "confirmPassword") {
+      if (value !== formData.pass) {
+        // Las contraseñas no coinciden
+        // Puedes mostrar un mensaje de error, deshabilitar el botón de envío, etc.
+      } else {
+        // Las contraseñas coinciden
+        // Puedes ocultar el mensaje de error si estaba visible
+      }
+    }
     setFormData((prevData) => ({ ...prevData, [id]: value }));
   };
 
@@ -114,7 +121,6 @@ function Register() {
               id="pass"
               className="input"
               type="password"
-              placeholder="Ingrese una contraseña"
               required
               value={formData.pass}
               onChange={handleInputChange}
@@ -122,15 +128,12 @@ function Register() {
             <span>Contraseña</span>
           </label>
 
-          <label htmlFor="passConfirm">
+          <label htmlFor="confirmPassword">
             <input
-              id="passConfirm"
+              id="confirmPassword"
               className="input"
               type="password"
-              placeholder="Ingrese de nuevo la contraseña"
               required
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
             />
             <span>Confirmar contraseña</span>
           </label>
@@ -142,7 +145,7 @@ function Register() {
             Enviar
           </button>
           <p className="signin">
-            ¿Ya tienes una cuenta? <NavLink to={"/login"}>Ingresa</NavLink>{" "}
+            ¿Ya tienes una cuenta? <NavLink to={"/login"}>Ingresa</NavLink>
           </p>
         </form>
       </div>
