@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import "../App.css";
 import Blon from "./Blon";
-import ImgPrisipal from "./ImgPrinsipal";
+import ImgPrincipal from './ImgPrincipal'
 
 function Card() {
   return (
     <>
-      <ImgPrisipal />
+      <ImgPrincipal />
       <Blon />
       <div className="card-general">
         {/* Calzado*/}
@@ -20,7 +21,11 @@ function Card() {
               Ingresa a Nuestros Catalogos y encontra las mejores Zapatillas del
               Mercado al Mejor Precio
             </p>
-            <button className="card-btn">Detalles</button>
+            <Link to={`/calzados`}>
+              <button className="card-btn">
+                Detalles
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -36,7 +41,11 @@ function Card() {
               La Mejor Calidad y Variedad en Prendas de todos los Talles para la
               Dama y el Caballero
             </p>
-            <button className="card-btn">Detalles</button>
+            <Link to={`/prendas`}>
+              <button className="card-btn">
+                Detalles
+              </button>
+            </Link>
           </div>
         </div>
         {/* CONJUNTOS */}
@@ -50,7 +59,11 @@ function Card() {
             <p className="card-info">
               Variedad en Colores y Los Mas Atractivos Conjuntos.
             </p>
-            <button className="card-btn">Detalles</button>
+            <Link to={`/prendas`}>
+              <button className="card-btn">
+                Detalles
+              </button>
+            </Link>
           </div>
         </div>
         {/* Accesorios */}
@@ -67,7 +80,11 @@ function Card() {
             <p className="card-info">
               Amplio Stock en Accesorios Deportivos Ingresa y encopntra el tuyo
             </p>
-            <button className="card-btn">Detalles</button>
+            <Link to={`/accesorios`}>
+              <button className="card-btn">
+                Detalles
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -85,7 +102,11 @@ function Card() {
             <p className="card-info">
               Encontra aca el que mas Te guste y arma tu pedido con un click
             </p>
-            <button className="card-btn">Detalles</button>
+            <Link to={`/prendas`}>
+              <button className="card-btn">
+                Detalles
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -102,7 +123,11 @@ function Card() {
             <p className="card-info">
               Encontra aca el que mas Te guste y arma tu pedido con un click
             </p>
-            <button className="card-btn">Detalles</button>
+            <Link to={`/prendas`}>
+              <button className="card-btn">
+                Detalles
+              </button>
+            </Link>
           </div>
         </div>
       </div>

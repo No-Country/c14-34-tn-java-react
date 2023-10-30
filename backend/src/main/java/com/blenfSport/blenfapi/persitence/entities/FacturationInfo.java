@@ -1,5 +1,7 @@
 package com.blenfSport.blenfapi.persitence.entities;
 
+import com.blenfSport.blenfapi.dtos.FacturationInfoDto;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,10 +19,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class FacturationInfo {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String address;
 	private String phoneNumber;
+	
+	public FacturationInfo(FacturationInfoDto facturationInfoDto) {
+		this.address = facturationInfoDto.address();
+		this.phoneNumber= facturationInfoDto.phoneNumber();
+		
+	}
 	
 }
