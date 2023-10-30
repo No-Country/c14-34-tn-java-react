@@ -24,32 +24,36 @@ function Navbar() {
             className="collapse navbar-collapse d-lg-flex"
             id="navbarsExample11"
           >
-            <NavLink to={"/"} className="navbar-brand col-lg-3 me-0" href="#">
+            <NavLink to={"/"} className="navbar-brand col-lg-3 me-0">
               <h1 className="nav-title bounce-in-top ">Blon Sports</h1>
             </NavLink>
             <div className="nav-menu">
               <ul>
                 <li className="menu ">
-                <NavLink to={"/productos"} >Productos</NavLink>
+                  <NavLink to={"/productos"}>Productos</NavLink>
                 </li>
                 <li className="menu">
-                  <NavLink to={"/calzados"} >Calzados</NavLink>
+                  <NavLink to={"/calzados"}>Calzados</NavLink>
                 </li>
                 <li className="menu">
-                  <NavLink to={"/accesorios"} >Accesorios</NavLink>
+                  <NavLink to={"/accesorios"}>Accesorios</NavLink>
                 </li>
                 <li className="menu">
-                  <NavLink to={"/prendas"} >Prendas</NavLink>
+                  <NavLink to={"/prendas"}>Prendas</NavLink>
                 </li>
               </ul>
             </div>
 
             <div className=" btn-nav-container">
               <div className="ingresar-btn">
-                <NavLink to={"/ingresar"} className="btn btn-dark">Ingresar</NavLink>
+                <NavLink to={"/login"} className="btn btn-dark">
+                  Ingresar
+                </NavLink>
               </div>
               <div className="btn-nav-registrate">
-                <NavLink to={"/registro"} className="btn btn-dark">Registrate</NavLink>
+                <NavLink to={"/register"} className="btn btn-dark">
+                  Registrate
+                </NavLink>
               </div>
             </div>
           </div>

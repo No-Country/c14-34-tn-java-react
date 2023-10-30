@@ -3,8 +3,12 @@ package com.blenfSport.blenfapi.persitence.entities;
 import java.util.List;
 
 import com.blenfSport.blenfapi.dtos.ProductDto;
+import com.blenfSport.blenfapi.dtos.ProductResponseDto;
 import com.blenfSport.blenfapi.utils.Color;
 import com.blenfSport.blenfapi.utils.Genere;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,6 +33,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,8 +53,6 @@ public class Product {
 	private Genere genere;
 	@Column(name = "urlImg")
 	private String urlImg;
-	@OneToMany(mappedBy = "product")
-	private List<PurchaseOrder> purchaseOrders;
 
 	public Product(ProductDto productDto, Category category) {
 
@@ -75,4 +79,5 @@ public class Product {
 
 	}
 
+	
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useFetch(url) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function useFetch(url) {
       console.error('Error al cargar los datos:', error);
       setCargando(false);
     });
-}, []);
+}, [url]);
 
   return { data, cargando };
 }
