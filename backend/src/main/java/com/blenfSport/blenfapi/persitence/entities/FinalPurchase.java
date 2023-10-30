@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.blenfSport.blenfapi.utils.PaymentType;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -41,6 +42,7 @@ public class FinalPurchase {
 	private Long id;
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)
+	@JsonIgnore
 	private User user;
 	private Date date;
 	@Enumerated(EnumType.STRING)

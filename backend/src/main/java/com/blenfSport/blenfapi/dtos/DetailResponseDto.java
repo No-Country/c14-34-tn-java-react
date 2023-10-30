@@ -11,4 +11,6 @@ public record DetailResponseDto(Long id, Product product, Integer amount, FinalP
 	public DetailResponseDto (Detail detail) {
 		this(detail.getId(),detail.getProduct(),detail.getAmount(),detail.getFinalPurchase());
 	}
+
+	
 }
