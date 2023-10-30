@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.blenfSport.blenfapi.dtos.AuthResponseDto;
 import com.blenfSport.blenfapi.dtos.LoginRequestDto;
 import com.blenfSport.blenfapi.dtos.RegisterRequestDto;
+import com.blenfSport.blenfapi.exceptions.UserAlreadyExistException;
 import com.blenfSport.blenfapi.exceptions.UsernameOrPasswordIncorretException;
 import com.blenfSport.blenfapi.persitence.entities.User;
 import com.blenfSport.blenfapi.persitence.repositories.UserRepository;
@@ -42,10 +43,18 @@ public class AuthService {
 	}
 
 	public AuthResponseDto register(@Valid RegisterRequestDto registerRequestDto) {
+		
 		User user = new User(registerRequestDto, passwordEncoder);
+		if(userRepository.existsByEmail(user.getEmail())) {
+			throw new UserAlreadyExistException("Este email ya se encuentra registrado");
+		}
 		userRepository.save(user);
 
 		return new AuthResponseDto(jwtService.getToken(user));
+	}
+
+	public Optional<UserDetails> getByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 
 }

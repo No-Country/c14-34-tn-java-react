@@ -3,8 +3,10 @@ package com.blenfSport.blenfapi.controllers;
 import com.blenfSport.blenfapi.exceptions.BadRequestException;
 import com.blenfSport.blenfapi.exceptions.ErrorResponse;
 import com.blenfSport.blenfapi.exceptions.ResourceNotFoundException;
+import com.blenfSport.blenfapi.exceptions.UserAlreadyExistException;
 import com.blenfSport.blenfapi.exceptions.UsernameOrPasswordIncorretException;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -41,6 +43,15 @@ public class RestResponseEntityExceptionHandler{
     public ResponseEntity<Object> handlerMethodArgumentNotValidException(MethodArgumentNotValidException ex){
     	var errors = ex.getFieldErrors().stream().map(ErrorResponse::new).toList();
     	return ResponseEntity.badRequest().body(errors);
+    }
+    
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<Object> handlerMethodDataIntegrityViolationException(DataIntegrityViolationException ex){
+    	return new ResponseEntity<>(new ErrorResponse("Duplicate entry",ex.getMessage(),LocalDateTime.now()),HttpStatus.BAD_GATEWAY);
+    }
+    @ExceptionHandler(UserAlreadyExistException.class)
+    public ResponseEntity<Object> handlerMethodUserAlreadyExistException(UserAlreadyExistException ex){
+    	return new ResponseEntity<> (new ErrorResponse("User Already exist", ex.getMessage(),LocalDateTime.now()), HttpStatus.BAD_GATEWAY);
     }
 
 }

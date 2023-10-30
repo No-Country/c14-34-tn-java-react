@@ -3,7 +3,12 @@ package com.blenfSport.blenfapi.persitence.entities;
 import java.util.Date;
 import java.util.List;
 
+
 import com.blenfSport.blenfapi.utils.PaymentType;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,38 +25,42 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name = "FinalPurchase")
 @Table(name = "finalPurchases")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class FinalPurchase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)
+	@JsonIgnore
 	private User user;
 	private Date date;
 	@Enumerated(EnumType.STRING)
 	@Column(name = "paymentType")
 	private PaymentType paymentType;
-	@OneToMany(mappedBy = "finalPurchase")
-	private List<PurchaseOrder> purchaseOrders;
 	private Double subtotal;
 	private Double iva;
 	private Double total;
 	
-	public FinalPurchase(Double subTotal, Date date, User user,PaymentType paymentType) {
+	public FinalPurchase(Double subTotal, Date date, User user) {
 		this.date = date;
 		this.user = user;
-		this.paymentType = paymentType;
 		this.subtotal = subTotal;
 		this.iva = subTotal * 0.12;
 		this.total = this.subtotal + this.iva;
 		
 	}
+
+
 
 }
