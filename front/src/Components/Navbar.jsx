@@ -1,6 +1,37 @@
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Navbar() {
+  const [user, setUser] = useState(null);
+  const [userVisible, setUserVisible] = useState(false);
+  const handleLogout = () => {
+    localStorage.removeItem("jwtToken");
+    setUser(null);
+    setUserVisible(false);
+  };
+
+  useEffect(() => {
+    // Verificar si hay un token JWT en el localStorage
+    const jwtToken = localStorage.getItem("jwtToken");
+    if (jwtToken) {
+      
+      fetch("http://18.220.229.238/auth/details", {
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((userData) => {
+          setUser(userData);
+        })
+        .catch((error) => {
+          console.error("Error al obtener los detalles del usuario: ", error);
+        });
+    }
+  }, []);
+
+
+
   return (
     <div className="navGral">
       <nav
@@ -44,17 +75,36 @@ function Navbar() {
               </ul>
             </div>
 
-            <div className=" btn-nav-container">
-              <div className="ingresar-btn">
-                <NavLink to={"/login"} className="btn btn-dark">
-                  Ingresar
-                </NavLink>
-              </div>
-              <div className="btn-nav-registrate">
-                <NavLink to={"/register"} className="btn btn-dark">
-                  Registrate
-                </NavLink>
-              </div>
+           
+            <div className="btn-nav-container">
+              {user ? (
+                // Si hay un usuario, mostrar su nombre y apellido
+                <div className="user-info">
+                  <button onClick={() => setUserVisible(!userVisible)}>
+                    {user.name} {user.lastname}
+                  </button>
+                  {userVisible && (
+                    <div>
+                      <p>Email: {user.email}</p>
+                      <button onClick={handleLogout}>Cerrar Sesión</button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                // Si no hay usuario, mostrar los botones de "Ingresar" y "Registrarse"
+                <>
+                  <div className="ingresar-btn">
+                    <NavLink to={"/login"} className="btn btn-dark">
+                      Ingresar
+                    </NavLink>
+                  </div>
+                  <div className="btn-nav-registrate">
+                    <NavLink to={"/register"} className="btn btn-dark">
+                      Regístrate
+                    </NavLink>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -62,5 +112,6 @@ function Navbar() {
     </div>
   );
 }
+
 
 export default Navbar;
