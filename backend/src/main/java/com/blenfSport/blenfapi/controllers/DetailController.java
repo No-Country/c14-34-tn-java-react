@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.blenfSport.blenfapi.dtos.DetailResponseDto;
-import com.blenfSport.blenfapi.dtos.ProductResponseDto;
 import com.blenfSport.blenfapi.persitence.entities.Detail;
 import com.blenfSport.blenfapi.services.DetailService;
 
