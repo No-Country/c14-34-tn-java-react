@@ -58,7 +58,7 @@ function Login() {
                 value={formData.email}
                 onChange={handleInputChange}
               />
-              <label htmlFor="email"> Email</label>
+              <label htmlhtmlFor="email"> Email</label>
             </div>
             <div className="user-box">
               <input
@@ -68,7 +68,7 @@ function Login() {
                 value={formData.password}
                 onChange={handleInputChange}
               />
-              <label htmlFor="password">Contraseña</label>
+              <label htmlhtmlFor="password">Contraseña</label>
             </div>
             <center>
               <button type="submit">Enviar</button>

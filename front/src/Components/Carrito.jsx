@@ -9,7 +9,7 @@ function Carrito() {
         width="16"
         height="16"
         fill="currentColor"
-        class="bi bi-cart-check"
+        className="bi bi-cart-check"
         viewBox="0 0 16 16"
       >
         <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />

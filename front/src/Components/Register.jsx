@@ -66,24 +66,22 @@ function Register() {
               Regístrate ahora y obtén acceso completo a nuestra app.
             </p>
             <div className="flex">
-              <label htmlFor="nombre">
+              <label htmlhtmlFor="nombre">
                 <input
                   id="nombre"
                   className="input"
                   type="text"
-                  placeholder="Juan"
                   required
                   value={formData.nombre}
                   onChange={handleInputChange}
                 />
                 <span>Nombre</span>
               </label>
-              <label htmlFor="apellido">
+              <label htmlhtmlFor="apellido">
                 <input
                   id="apellido"
                   className="input"
                   type="text"
-                  placeholder="Perez"
                   required
                   value={formData.apellido}
                   onChange={handleInputChange}
@@ -92,12 +90,11 @@ function Register() {
               </label>
             </div>
 
-            <label htmlFor="email">
+            <label htmlhtmlFor="email">
               <input
                 id="email"
                 className="input"
                 type="email"
-                placeholder="Ejemplo@ejemplo.com"
                 required
                 value={formData.email}
                 onChange={handleInputChange}
@@ -105,19 +102,18 @@ function Register() {
               <span>Email</span>
             </label>
 
-            <label htmlFor="age">
+            <label htmlhtmlFor="age">
               <input
                 id="age"
                 className="input"
                 type="number"
-                placeholder="Ingrese su edad"
                 required
                 value={formData.age}
                 onChange={handleInputChange}
               />
               <span>Edad</span>
             </label>
-            <label htmlFor="pass">
+            <label htmlhtmlFor="pass">
               <input
                 id="pass"
                 className="input"
@@ -129,7 +125,7 @@ function Register() {
               <span>Contraseña</span>
             </label>
 
-            <label htmlFor="confirmPassword">
+            <label htmlhtmlFor="confirmPassword">
               <input
                 id="confirmPassword"
                 className="input"

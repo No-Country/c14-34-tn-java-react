@@ -1,3 +1,4 @@
+import Carrito from "./Carrito";
 import Contador from "./Contador";
 import { useState } from "react";
 // eslint-disable-next-line react/prop-types
@@ -13,6 +14,7 @@ export const ProductDetail = ({
 }) => {
   return (
     <div className="detail-container-gral">
+      <Carrito />
       <h1 className="detail-title">Detalle del Producto</h1>
       <div className="detail-container">
         <div key={id} className="contador">
@@ -64,7 +66,7 @@ export const ProductDetail = ({
             <div className="contador-container">
               <div className="contador">
                 <h3>Cantidad:</h3>
-                <label for="cantidad"></label>
+                <label htmlFor="cantidad"></label>
                 <input
                   className="cantidad"
                   type="number"
