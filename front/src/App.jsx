@@ -17,6 +17,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Card />} />
           <Route path="/productos" element={<Productos />} />

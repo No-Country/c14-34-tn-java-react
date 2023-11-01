@@ -274,14 +274,17 @@ font-weight: 200;
   /* --------------------------------------Footer config -------------------------------------*/
 .footer-container{
  color: #fff;
+
 }
 .footer-container a{
   color: #fff;
+  text-decoration: none;
 }
 .nav-item:hover{
 border-bottom: 3px solid #fff;
 border-radius: 20px;
-background: rgba(0, 0, 0, .2);
+background: rgba(232, 224, 224, 0.2);
+
 }
 /* --------------------------------------Navbar Config-------------------------------------- */
 .container-fluid{
@@ -790,7 +793,7 @@ padding: 50px;
 .products-title{
   text-align: end;
   color: #bdb8b8;
-  margin: 20px;
+  margin: 20px 50px;
   font-family: 'poppins',sans-serif;
 }
 
@@ -923,6 +926,7 @@ padding: 50px;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, .3);
+  backdrop-filter: blur(50px);
 }
 .detail-span{
 color: #fff;
@@ -943,22 +947,18 @@ padding: 10px;
   height: 30px;
 }
 .detail-addToCars{
-  width: 10rem;
-  height: 5rem;
-  background-color: #00A97F;
-}
-.detail-price{
+  width: 12rem;
+  height: 3rem;
+  background-color: transparent;
   color: #fff;
+  font-family: 'poppins',sans-serif;
+  font-size: 16px;
+  padding: 2px;
 }
-.detail-color{
-  color: #fff;
-}
-.detail-detail{
+.addToCars-container{
   display: flex;
-  justify-content: center;
-  background: #000;
-  border-radius: 20px;
-  padding: 20px;
+  justify-content: end;
+  margin-right: 25%;
 }
 
 @media screen and (max-width: 767px){
@@ -967,5 +967,228 @@ padding: 10px;
     width: 200px;
     height: 230px;
     align-items: center;
+  }
+}
+/*----------------------------------- price config------------------------------ */
+.detail-price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  /* border: 1px solid #fff; */
+  background-color: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+}
+.price{
+  font-family: 'poppins',sans-serif;
+  margin-top: 20px;
+}
+.price-shadow{
+  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+  padding: 10px;
+  height:50px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+}
+/*------------------------------------ colours config-------------------------------- */
+.btn-select-colours{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  /* border: 1px solid #fff; */
+  background-color: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+
+}
+.btn-select-colours button{
+  width: 2rem;
+  margin: 0px 5px 0px 5px;
+ 
+}
+.select-black{
+  background: #1a1a1a;
+  border: 1px solid #fff; 
+  height: 30px;
+  color: transparent;
+}
+.select-blue{
+  background: #4a7bed;
+  border: 1px solid #fff;
+  height: 30px;
+  color: transparent;
+}
+.select-green{
+  background: #a4ed5b;
+  border: 1px solid #fff;
+  height: 30px;
+  color: transparent;
+}
+.select-white{
+  background: #f7f2f2;
+  border: 1px solid #fff;
+  height: 30px;
+  color: transparent;
+}
+#btnCol {
+  transition: all 1s;
+}
+
+#btnCol:hover {
+  transform: rotate(180deg);
+}
+
+#btnCol:not(:hover) {
+  transform: rotate(0deg);
+}
+
+.select-h3{
+  color: #fff;
+  font-family: 'poppins',sans-serif;
+  font-size: 16px;
+  margin-left: 10px;
+}
+#rpta-color{
+  margin-right: 10px;
+  color: #fff;
+  font-family:'poppins',sans-serif;
+}
+/* -------------------------------Contador config-------------------------- */
+.contador-container{
+  background: transparent;
+  /* border: 1px solid #fff; */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+  padding: 10px;
+}
+.btn-contador{ 
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  text-align: center;
+}
+.cantidad{
+  text-align: center;
+  font-family: 'poppins',sans-serif;
+}
+.contador label{
+  text-align: center;
+  font-family: 'poppins',sans-serif;
+  color: #fff;
+  margin-right: 10px;
+}
+/* --------------------------------Carrito Config----------------------------------- */
+.cars-container{
+  display: flex;
+  position: fixed;
+  background: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
+  height: 100px;
+  width: 100px;
+  left: 62%;
+  bottom: 395px;
+  align-items: center;
+  text-align: center;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+border-radius: 50%;
+
+}
+.cars-container svg{
+  position: absolute;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin: 0;
+  color: #000;
+  z-index: 2000;
+  border: 2px solid rgb(246, 246, 249);
+  border-radius: 50%;
+  padding: 15px;
+  background-color: #31f413;
+  
+}
+#cars-count{
+  display: flex;
+  right: 65px;
+  bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(246, 246, 249);
+  border-radius: 50%;
+  position: absolute;
+  color: #000;
+  background-color: #31f413;
+  font-weight: 700;
+  font-family: 'poppins',sans-serif;
+  z-index: 2001;
+}
+.vibrate-1 {
+	-webkit-animation: vibrate-1 0.3s linear infinite both;
+	        animation: vibrate-1 0.3s linear infinite both;
+}
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
