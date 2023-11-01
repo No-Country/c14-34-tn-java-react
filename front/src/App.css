@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url(img\fondo3.webp);
+  background-image: url(img\fondo5.webp);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 /* ---------------------------------CarsButton Config-------------------------- */
 .carsbutton-container{
@@ -270,7 +271,7 @@ font-weight: 200;
 }
 
 
-  /* -------------------------------------------------------Footer config -------------------------------------*/
+  /* --------------------------------------Footer config -------------------------------------*/
 .footer-container{
  color: #fff;
 }
@@ -282,7 +283,7 @@ border-bottom: 3px solid #fff;
 border-radius: 20px;
 background: rgba(0, 0, 0, .2);
 }
-/* -----------------------------------------Navbar Config-------------------------------------- */
+/* --------------------------------------Navbar Config-------------------------------------- */
 .container-fluid{
   display: flex;
 }
@@ -457,20 +458,36 @@ width: 40%;
   }
 .navGral{
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+z-index: 1000;
 }
 }
-/* ----------------------------------------------------------Imagen Prinsipal config---------------------------------- */
+.navbar{
+  background: rgba(0, 0, 0, .2);
+}
+/* -------------------------------------Imagen Prinsipal config---------------------------------- */
 .img-prinsipal img{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 85%;
+  
+}
+@media screen and (max-width: 868px){
+  .img-prinsipal img{
+    margin-top: 4rem;
+  }
 }
 /* -----------------------------------LOGIN CONFIG----------------------------------------*/
 .login-container{
   width: 100%;
   height: 400px;
+  margin: 5rem 0px 5rem 0px;
+  padding:  20rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -527,8 +544,9 @@ width: 40%;
 }
 .login-container{
   position: relative;
- 
+
 }
+
 
 .login-box form button {
   position: relative;
@@ -595,10 +613,24 @@ center button{
 .user-box{
   background: transparent;
 }
+
+
 /*------------------------------------------------ REGISTER CONFIG------------------------------------- */
+.register-shadow{
+width: 75%;
+height: 110%;
+background: rgba(0, 0, 0, 0.35);
+backdrop-filter: blur(60px);
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 15px;
+padding: 20px;
+}
 .register-container{
   width: 100%;
-  height: 600px;
+  margin: 5rem 0px 5rem 0px;
+  height:600px;
   display: flex;
   gap: 10;
   justify-content: center;
@@ -745,7 +777,22 @@ center button{
     opacity: 0;
   }
 }
-/* ----------------------------PRODUCTOS CONFIG--------------------------------------------------------- */
+/* ----------------------------CONFIG. general de productos,calzado,accesorios,prendas--------------------------------------------------------- */
+.img-config{
+padding: 50px;
+}
+.paginations-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.products-title{
+  text-align: end;
+  color: #bdb8b8;
+  margin: 20px;
+  font-family: 'poppins',sans-serif;
+}
 
 /*---------------------------- BLON config-------------- */
 .waviy {
@@ -831,5 +878,94 @@ center button{
 @media screen and (max-width: 767px){
   .pregunta-container{
     width: 100%;
+  }
+}
+/* ----------------------------Detail Config------------------------------- */
+.detail-contailer-gral{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(215, 215, 36);
+  border-radius: 20px;
+  margin: 10px;
+}
+.detail-container{
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ padding: 5px;
+  border-radius: 20px;
+
+}
+.detail-name{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  width: 100%;
+  height: 40px;
+  font-family: 'poppins',sans-serif;
+  margin: 10px;
+}
+.detail-title{
+  color: #bdb8b8;
+}
+
+.detail-descriptions{
+  color: #fff;
+}
+.detail-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(1,1fr);
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .3);
+}
+.detail-span{
+color: #fff;
+text-align: center;
+padding: 10px;
+}
+.detail-img{
+  border-radius: 20px;
+  width: 320px;
+  height: auto;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+}
+.detail-size{
+  color: #fff;
+  width: 30px;
+  height: 30px;
+}
+.detail-addToCars{
+  width: 10rem;
+  height: 5rem;
+  background-color: #00A97F;
+}
+.detail-price{
+  color: #fff;
+}
+.detail-color{
+  color: #fff;
+}
+.detail-detail{
+  display: flex;
+  justify-content: center;
+  background: #000;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 767px){
+  .detail-img{
+    margin: 20px;
+    width: 200px;
+    height: 230px;
+    align-items: center;
   }
 }

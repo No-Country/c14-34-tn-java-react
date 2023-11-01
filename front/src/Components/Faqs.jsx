@@ -29,6 +29,17 @@ function Faqs() {
             enim, voluptates illo sit minima maxime numquam repudiandae quod
             aliquid sapiente possimus!
           </p>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-toggle="popover"
+            data-bs-placement="right"
+            data-bs-custom-class="custom-popover"
+            data-bs-title="Custom popover"
+            data-bs-content="This popover is themed via CSS variables."
+          >
+            Custom popover
+          </button>
         </section>
 
         <section className="pregunta-container">
