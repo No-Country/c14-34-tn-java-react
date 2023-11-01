@@ -3,20 +3,23 @@ import { NavLink } from "react-router-dom";
 function Register() {
   const [formData, setFormData] = useState({
     email: "",
-    pass: "",
-    nombre: "",
-    apellido: "",
-    age: "",
+    password: "",
+    name: "",
+    lastname: "",
+    age: ""
   });
-
+  const [passwordConfirm, setPasswordConfirm] = useState(""); 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.pass !== confirmPassword) {
+    if (formData.password !== passwordConfirm) {
       setErrorMessage("Las contraseñas no coinciden");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
       return;
     }
 
@@ -45,15 +48,11 @@ function Register() {
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     if (id === "confirmPassword") {
-      if (value !== formData.pass) {
-        // Las contraseñas no coinciden
-        // Puedes mostrar un mensaje de error, deshabilitar el botón de envío, etc.
-      } else {
-        // Las contraseñas coinciden
-        // Puedes ocultar el mensaje de error si estaba visible
-      }
+      setPasswordConfirm(value);
+    } else {
+      setFormData((prevData) => ({ ...prevData, [id]: value }));
     }
-    setFormData((prevData) => ({ ...prevData, [id]: value }));
+   
   };
 
   return (
@@ -66,26 +65,26 @@ function Register() {
               Regístrate ahora y obtén acceso completo a nuestra app.
             </p>
             <div className="flex">
-              <label htmlFor="nombre">
+              <label htmlFor="name">
                 <input
-                  id="nombre"
+                  id="name"
                   className="input"
                   type="text"
                   placeholder="Juan"
                   required
-                  value={formData.nombre}
+                  value={formData.name}
                   onChange={handleInputChange}
                 />
                 <span>Nombre</span>
               </label>
-              <label htmlFor="apellido">
+              <label htmlFor="lastname">
                 <input
-                  id="apellido"
+                  id="lastname"
                   className="input"
                   type="text"
                   placeholder="Perez"
                   required
-                  value={formData.apellido}
+                  value={formData.lastname}
                   onChange={handleInputChange}
                 />
                 <span>Apellido</span>
@@ -117,13 +116,13 @@ function Register() {
               />
               <span>Edad</span>
             </label>
-            <label htmlFor="pass">
+            <label htmlFor="password">
               <input
-                id="pass"
+                id="password"
                 className="input"
                 type="password"
                 required
-                value={formData.pass}
+                value={formData.password}
                 onChange={handleInputChange}
               />
               <span>Contraseña</span>
@@ -135,6 +134,8 @@ function Register() {
                 className="input"
                 type="password"
                 required
+                value={passwordConfirm}
+                onChange={handleInputChange}
               />
               <span>Confirmar contraseña</span>
             </label>
