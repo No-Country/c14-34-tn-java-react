@@ -969,3 +969,52 @@ padding: 10px;
     align-items: center;
   }
 }
+
+/* -------------------------------------Perfil config---------------------------------- */
+.profile-container {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.profile-title{
+  text-align: end;
+  color: #bdb8b8;
+  margin: 20px;
+  font-family: 'poppins',sans-serif;
+}
+.profile-general {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.profile {
+  
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-size: 18px;
+  color: #fff;
+}
+
+.profile-email {
+  font-size: 16px;
+  color: #fff;
+}
+
+.profile-age {
+  font-size: 16px;
+  color: #fff;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}

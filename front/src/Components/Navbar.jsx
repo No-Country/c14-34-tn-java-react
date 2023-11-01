@@ -11,7 +11,6 @@ function Navbar() {
   };
 
   useEffect(() => {
-    // Verificar si hay un token JWT en el localStorage
     const jwtToken = localStorage.getItem("jwtToken");
     if (jwtToken) {
       
@@ -84,10 +83,17 @@ function Navbar() {
                     {user.name} {user.lastname}
                   </button>
                   {userVisible && (
-                    <div>
-                      <p>Email: {user.email}</p>
+                    <ul>
+                      <li className="UserInfoMenu">
+                      <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
+                      </li>
+                      <li className="UserInfoMenu">
+                      <NavLink to={"/ListaCompras"}>Mis compras</NavLink>
+                      </li>
+                      <li className="UserInfoMenu">
                       <button onClick={handleLogout}>Cerrar Sesión</button>
-                    </div>
+                      </li>
+                    </ul>
                   )}
                 </div>
               ) : (
