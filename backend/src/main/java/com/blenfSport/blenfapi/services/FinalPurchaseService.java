@@ -19,7 +19,7 @@ import com.blenfSport.blenfapi.persitence.entities.ShoppingCart;
 import com.blenfSport.blenfapi.persitence.entities.User;
 import com.blenfSport.blenfapi.persitence.repositories.FinalPurchaseRepository;
 import com.blenfSport.blenfapi.persitence.repositories.UserRepository;
-import com.blenfSport.blenfapi.utils.PaymentType;
+
 
 import lombok.RequiredArgsConstructor;
 

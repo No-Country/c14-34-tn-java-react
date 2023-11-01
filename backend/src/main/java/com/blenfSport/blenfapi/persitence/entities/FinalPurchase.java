@@ -1,7 +1,7 @@
 package com.blenfSport.blenfapi.persitence.entities;
 
 import java.util.Date;
-import java.util.List;
+
 
 
 import com.blenfSport.blenfapi.utils.PaymentType;
@@ -19,7 +19,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
