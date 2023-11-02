@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [user, setUser] = useState(null);
@@ -94,8 +93,12 @@ function Navbar() {
                         <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
                       </li>
                       <li className="UserInfoMenu">
+<<<<<<< HEAD
+                        <NavLink to={"/Compras"}>Mis compras</NavLink>
+=======
 
                       <NavLink to={"/Compras"}>Mis compras</NavLink>
+>>>>>>> d747f01c095adb72566c11e7103f5a9780b59656
                       </li>
                       <li className="UserInfoMenu">
                         <button className="cerrarSesion" onClick={handleLogout}>
@@ -106,7 +109,7 @@ function Navbar() {
                   </div>
                 ) : (
                   <div className="ing-nav-btn">
-                    <div className="ingresar-btn">
+                    <div className="btn-nav-ingresar">
                       <NavLink to={"/login"} className="btn btn-dark">
                         Ingresar
                       </NavLink>
