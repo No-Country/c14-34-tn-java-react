@@ -13,7 +13,6 @@ function Navbar() {
   useEffect(() => {
     const jwtToken = localStorage.getItem("jwtToken");
     if (jwtToken) {
-      
       fetch("http://18.220.229.238/auth/details", {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
@@ -28,8 +27,6 @@ function Navbar() {
         });
     }
   }, []);
-
-
 
   return (
     <div className="navGral">
@@ -74,7 +71,6 @@ function Navbar() {
               </ul>
             </div>
 
-           
             <div className="btn-nav-container">
               {user ? (
                 // Si hay un usuario, mostrar su nombre y apellido
@@ -85,13 +81,13 @@ function Navbar() {
                   {userVisible && (
                     <ul>
                       <li className="UserInfoMenu">
-                      <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
+                        <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
                       </li>
                       <li className="UserInfoMenu">
-                      <NavLink to={"/ListaCompras"}>Mis compras</NavLink>
+                        <NavLink to={"/ListaCompras"}>Mis compras</NavLink>
                       </li>
                       <li className="UserInfoMenu">
-                      <button onClick={handleLogout}>Cerrar Sesión</button>
+                        <button onClick={handleLogout}>Cerrar Sesión</button>
                       </li>
                     </ul>
                   )}
@@ -118,6 +114,5 @@ function Navbar() {
     </div>
   );
 }
-
 
 export default Navbar;
