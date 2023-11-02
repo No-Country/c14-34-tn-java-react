@@ -8,7 +8,7 @@ function Compras() {
     const token = localStorage.getItem('token');
 
     if (token) {
-      axios.get('http://localhost:8080/FinalPurchase/user', {
+      axios.get('http://18.220.229.238/FinalPurchase/user', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
