@@ -31,10 +31,10 @@ function Faqs() {
           </p>
           <button
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             data-bs-toggle="popover"
             data-bs-placement="right"
-            data-bs-custom-class="custom-popover"
+            data-bs-custom-className="custom-popover"
             data-bs-title="Custom popover"
             data-bs-content="This popover is themed via CSS variables."
           >

@@ -1,11 +1,16 @@
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+
 
 function Navbar() {
   const [user, setUser] = useState(null);
   const [userVisible, setUserVisible] = useState(false);
+
   const navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     setUser(null);
@@ -16,7 +21,6 @@ function Navbar() {
   useEffect(() => {
     const jwtToken = localStorage.getItem("token");
     if (jwtToken) {
-      
       fetch("http://18.220.229.238/auth/details", {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
@@ -31,8 +35,6 @@ function Navbar() {
         });
     }
   }, []);
-
-
 
   return (
     <div className="navGral">
@@ -77,43 +79,48 @@ function Navbar() {
               </ul>
             </div>
 
-           
             <div className="btn-nav-container">
-              {user ? (
-                // Si hay un usuario, mostrar su nombre y apellido
-                <div className="user-info">
-                  <button onClick={() => setUserVisible(!userVisible)}>
-                    {user.name} {user.lastname}
-                  </button>
-                  {userVisible && (
-                    <ul>
+              <div className="user-container">
+                {user ? (
+                  <div className="dropdown">
+                    <button
+                      className="btn btn-secondary dropdown-toggle d-flex justify-content-start "
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {user.name} {user.lastname}
+                    </button>
+                    <ul className="dropdown-menu text-center ">
                       <li className="UserInfoMenu">
-                      <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
+                        <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
                       </li>
                       <li className="UserInfoMenu">
+
                       <NavLink to={"/Compras"}>Mis compras</NavLink>
                       </li>
                       <li className="UserInfoMenu">
-                      <button onClick={handleLogout}>Cerrar Sesión</button>
+                        <button className="cerrarSesion" onClick={handleLogout}>
+                          Cerrar Sesión
+                        </button>
                       </li>
                     </ul>
-                  )}
-                </div>
-              ) : (
-                // Si no hay usuario, mostrar los botones de "Ingresar" y "Registrarse"
-                <>
-                  <div className="ingresar-btn">
-                    <NavLink to={"/login"} className="btn btn-dark">
-                      Ingresar
-                    </NavLink>
                   </div>
-                  <div className="btn-nav-registrate">
-                    <NavLink to={"/register"} className="btn btn-dark">
-                      Regístrate
-                    </NavLink>
+                ) : (
+                  <div className="ing-nav-btn">
+                    <div className="ingresar-btn">
+                      <NavLink to={"/login"} className="btn btn-dark">
+                        Ingresar
+                      </NavLink>
+                    </div>
+                    <div className="btn-nav-registrate">
+                      <NavLink to={"/register"} className="btn btn-dark">
+                        Regístrate
+                      </NavLink>
+                    </div>
                   </div>
-                </>
-              )}
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -121,6 +128,5 @@ function Navbar() {
     </div>
   );
 }
-
 
 export default Navbar;
