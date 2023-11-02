@@ -52,6 +52,7 @@ public class FinalPurchase {
 	private Double total;
 	
 	public FinalPurchase(Double subTotal, Date date, User user) {
+
 		this.date = date;
 		this.user = user;
 		this.subtotal = subTotal;
