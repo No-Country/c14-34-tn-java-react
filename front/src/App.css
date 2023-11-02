@@ -1022,18 +1022,8 @@ p {
 
 
 
-/* -------------------------------------Compras config---------------------------------- */
-.compras-container {
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-image: url(img\fondo5.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
+
 /* ---------------------------------CarsButton Config-------------------------- */
 .carsbutton-container{
    display: flex;
@@ -1191,51 +1181,44 @@ body {
   color: #fff;
   /* padding: 40px; */
   margin-bottom: 30px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
   margin: 20px;
   
 }
+/* -------------------------------------Compras config---------------------------------- */
 
-.compras-title {
+.purchase-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.purchase-title {
   font-size: 40px;
-  margin-bottom: 30px;
-  color: #ffffff;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
 .purchase-card {
-  width: 50%;
-  padding: 10px;
+  border: 1px solid #ddd;
+  padding: 5px;
   margin: 10px;
   box-shadow: 2px 2px 5px #ccc;
-  border-bottom: 1px solid #ddd
+  border-radius: 5px;
+  width: 30%;
+}
+.purchase-card p{
+  color: #fff;
+  font-size: 20px;
 }
 
-.purchase-date {
-  font-size: 18px;
-  color: #ffffff;
-}
-
-.purchase-paymentType {
-  font-size: 16px;
-}
-
-.purchase-subTotal {
-  font-size: 16px;
-}
-
-.purchase-iva {
-  font-size: 16px;
-}
-
-.purchase-total {
-  font-size: 16px;
-}
 
 /* -------------------------------------ModalDetail config---------------------------------- */
 
@@ -1314,10 +1297,11 @@ body {
 }
 
 
-  transition: 2s;
-}
+  
+
 .card:hover .card-body{
 right: 0;
+transition: 2s;
 }
 .card-title{
 text-align: center;
@@ -1433,6 +1417,32 @@ background: rgba(232, 224, 224, 0.2);
 
 }
 /* --------------------------------------Navbar Config-------------------------------------- */
+.user-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  
+}
+.ing-nav-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 80px;
+}
+.ing-nav-btn .btn {
+ display: flex;
+margin: 10px;
+}
+
+@media screen and (max-width: 767px){
+  .user-container{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    
+  }
+}
 .container-fluid{
   display: flex;
 }
@@ -1441,6 +1451,7 @@ background: rgba(232, 224, 224, 0.2);
 	-webkit-animation: bounce-in-top 1.8s both;
 	        animation: bounce-in-top 1.8s both;
 }
+
 @-webkit-keyframes bounce-in-top {
   0% {
     -webkit-transform: translateY(-500px);
@@ -1546,6 +1557,7 @@ background: rgba(232, 224, 224, 0.2);
   }
 }
 /* aca finaliza el efecto de rebote del titulo nav --------------*/
+
 .btn-nav-container{
   width: 100%;
   display: flex;

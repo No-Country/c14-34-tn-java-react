@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [user, setUser] = useState(null);
@@ -97,11 +94,14 @@ function Navbar() {
                       </li>
                       <li className="UserInfoMenu">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <NavLink to={"/ListaCompras"}>Mis compras</NavLink>
                       </li>
                       <li className="UserInfoMenu">
                         <button onClick={handleLogout}>Cerrar Sesión</button>
 =======
+=======
+>>>>>>> a4611d9cf623a50a8385d0ae39cc5bf28e5108d5
 
                       <NavLink to={"/Compras"}>Mis compras</NavLink>
                       </li>
@@ -109,13 +109,16 @@ function Navbar() {
                         <button className="cerrarSesion" onClick={handleLogout}>
                           Cerrar Sesión
                         </button>
+<<<<<<< HEAD
 >>>>>>> 560d7e8250aac1cb8bd03a2185da34e602ef6d64
+=======
+>>>>>>> a4611d9cf623a50a8385d0ae39cc5bf28e5108d5
                       </li>
                     </ul>
                   </div>
                 ) : (
                   <div className="ing-nav-btn">
-                    <div className="ingresar-btn">
+                    <div className="btn-nav-ingresar">
                       <NavLink to={"/login"} className="btn btn-dark">
                         Ingresar
                       </NavLink>
