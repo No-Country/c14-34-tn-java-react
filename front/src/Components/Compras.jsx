@@ -53,18 +53,18 @@ function Compras() {
   console.log(selectedPurchaseIndex)
   console.log(selectedPurchases)
   return (
-    <div className="compras-container">
-      <h1 className="compras-title">Mis compras</h1>
+    <div className="purchase-container">
+      <h1 className="purchase-title">Mis compras</h1>
       {purchases.length === 0 ? (
         <p>No hay compras disponibles.</p>
       ) : (
         purchases.map((purchase, index) => (
           <div key={purchase.id} className="purchase-card">
-            <h2 className='purchase-date'>Fecha: {purchase.date.substring(0, 10)}</h2>
-            <p className='purchase-paymentType'>Tipo de pago: {purchase.paymentType}</p>
-            <p className='purchase-subTotal'>Sub total: ${purchase.subtotal.toFixed(2)}</p>
-            <p className='purchase-iva'>IVA: ${purchase.iva.toFixed(2)}</p>
-            <p className='purchase-total'>Total: ${purchase.total.toFixed(2)}</p>
+            <p>Fecha: {purchase.date.substring(0, 10)}</p>
+            <p>Tipo de pago: {purchase.paymentType}</p>
+            <p>Sub total: ${purchase.subtotal.toFixed(2)}</p>
+            <p>IVA: ${purchase.iva.toFixed(2)}</p>
+            <p>Total: ${purchase.total.toFixed(2)}</p>
             <button className="card-btn" onClick={() => {openModal(index);}}>Detalles</button>
           </div>
         ))
