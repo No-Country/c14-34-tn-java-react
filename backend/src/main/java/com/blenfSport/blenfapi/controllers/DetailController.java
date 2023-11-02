@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +41,7 @@ public class DetailController {
 
 			detailResponseDto.products().add(new DetailResponseDto.ProductInfo(detail.getProduct()));
 			
-			if(!(detailResponseDto.finalPurchases().isEmpty())) {
+			if((detailResponseDto.finalPurchases().isEmpty())) {
 				detailResponseDto.finalPurchases().add(new DetailResponseDto.FinalPurchaseInfo(detail.getFinalPurchase()));	
 			}else {
 			
