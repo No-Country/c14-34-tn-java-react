@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 function Navbar() {
   const [user, setUser] = useState(null);
   const [userVisible, setUserVisible] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
-    localStorage.removeItem("jwtToken");
+    localStorage.removeItem("token");
     setUser(null);
     setUserVisible(false);
+    navigate("/");
   };
 
   useEffect(() => {
-    const jwtToken = localStorage.getItem("jwtToken");
+    const jwtToken = localStorage.getItem("token");
     if (jwtToken) {
       fetch("http://18.220.229.238/auth/details", {
         headers: {

@@ -21,7 +21,7 @@ function Login() {
       if (response.ok) {
         // La solicitud se realizó con éxito, puedes manejar la respuesta
         const responseData = await response.json();
-        localStorage.setItem("jwtToken", responseData.token);
+        localStorage.setItem("token", responseData.token);
         document.getElementById("rta-login").innerHTML =
           "Inicio de sesión exitoso";
         window.location.href = "/";

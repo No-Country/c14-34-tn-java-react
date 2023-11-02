@@ -7,7 +7,8 @@ function Perfil() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const jwtToken = localStorage.getItem("jwtToken");
+    const jwtToken = localStorage.getItem('token');
+
     if (jwtToken) {
       fetch("http://18.220.229.238/auth/details", {
         headers: {

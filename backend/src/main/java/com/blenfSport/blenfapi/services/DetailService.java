@@ -26,12 +26,12 @@ public class DetailService {
 		detailRepository.save(detail);
 	}
 
-	public List<DetailResponseDto> getDetailByFinalPurchase(Long finalPurchaseId) {
+	public List<Detail> getDetailByFinalPurchase(Long finalPurchaseId) {
 		if (!detailRepository.existsByFinalPurchase_id(finalPurchaseId)) {
 			throw new ResourceNotFoundException("Esta compra no existe");
 		}
 		List<Detail> details = detailRepository.findByFinalPurchase_Id(finalPurchaseId);
-		return details.stream().map(DetailResponseDto::new).toList(); 
+		return details; 
 	}
 
 	public List<Detail> getAll() {
