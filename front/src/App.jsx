@@ -12,6 +12,7 @@ import ProductDetailContainer from "./Components/ProductDetailContainer";
 import Terminos from "./Components/Terminos";
 import Faqs from "./Components/Faqs";
 import Perfil from "./Components/Perfil";
+import Compras from "./Components/Compras";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/T&C" element={<Terminos />} />
           <Route path="/FAQs" element={<Faqs />} />
           <Route path="/Perfil" element={<Perfil />}/>
+          <Route path="/Compras" element={<Compras />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -24,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class FinalPurchaseController {
 
 	private final FinalPurchaseService finalPurchaseService;
-
+	
 	@GetMapping(value = "user")
 	public ResponseEntity<List<FinalPurchaseResponseDto>> getByUser() {
 		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
