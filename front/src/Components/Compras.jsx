@@ -29,12 +29,7 @@ function Compras() {
   }, [token]);
 
   const openModal = async (purchaseId) => {
-    const modal = document.querySelector('.modal');
-  if (modal) {
-    modal.classList.add('show');
-  } else {
-    console.error('El elemento del modal no se encontró en el DOM.');
-  }
+   
     
     try {
       const response = await axios.get(`http://18.220.229.238/FinalPurchaseDetail/${purchaseId}`, {
@@ -53,8 +48,7 @@ function Compras() {
   };
 
   const closeModal = () => {
-    const modal = document.querySelector('.modal');
-    modal.classList.remove('show');
+    setSelectedPurchases([])
   };
 
   
@@ -84,18 +78,18 @@ function Compras() {
             <h2 className="modal-title">Detalles de la Compra</h2>
             <div className="modal-details">
               <div className="modal-text">
-                {selectedPurchases.products.map((product, productIndex) => (
+                {selectedPurchases[0].products.map((product, productIndex) => (
                   <div key={productIndex}>
                     <p><strong>Producto:</strong> {product.productName}</p>
                     <p><strong>Precio:</strong> ${product.productPrice}</p>
                   </div>
                 ))}
-                <p><strong>Cantidad:</strong> {selectedPurchases.amount}</p>
-                <p><strong>Fecha:</strong> {selectedPurchases.finalPurchases.date.substring(0, 10)}</p>
-                <p><strong>Tipo de pago:</strong> {selectedPurchases.finalPurchases.paymentType}</p>
-                <p><strong>Subtotal:</strong> ${selectedPurchases.finalPurchases.subtotal.toFixed(2)}</p>
-                <p><strong>IVA:</strong> ${selectedPurchases.finalPurchases.iva.toFixed(2)}</p>
-                <p><strong>Total:</strong> ${selectedPurchases.finalPurchases.total.toFixed(2)}</p>
+                <p><strong>Cantidad:</strong> {selectedPurchases[0].amount}</p>
+                <p><strong>Fecha:</strong> {selectedPurchases[0].finalPurchases[0].date.substring(0, 10)}</p>
+                <p><strong>Tipo de pago:</strong> {selectedPurchases[0].finalPurchases[0].paymentType}</p>
+                <p><strong>Subtotal:</strong> ${selectedPurchases[0].finalPurchases[0].subtotal.toFixed(2)}</p>
+                <p><strong>IVA:</strong> ${selectedPurchases[0].finalPurchases[0].iva.toFixed(2)}</p>
+                <p><strong>Total:</strong> ${selectedPurchases[0].finalPurchases[0].total.toFixed(2)}</p>
               </div>
             </div>
           </div>
