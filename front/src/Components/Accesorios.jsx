@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import useFetch from "./useFetch";
+import Carrito from "./Carrito";
+import Blon from "./Blon";
 
 function Accesorios() {
   const { data, cargando } = useFetch(
@@ -9,6 +11,8 @@ function Accesorios() {
   return (
     <div>
       <h1 className="products-title">Accesorios</h1>
+      <Blon />
+      <Carrito />
       {cargando ? (
         <p>Cargando...</p>
       ) : (

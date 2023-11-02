@@ -6,9 +6,9 @@ function Register() {
     password: "",
     name: "",
     lastname: "",
-    age: ""
+    age: "",
   });
-  const [passwordConfirm, setPasswordConfirm] = useState(""); 
+  const [passwordConfirm, setPasswordConfirm] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -36,7 +36,7 @@ function Register() {
         const responseData = await response.json();
         localStorage.setItem("jwtToken", responseData.token);
         setSuccessMessage("Registro exitoso");
-        console.log(responseData)
+        console.log(responseData);
         window.location.href = "/";
       } else {
         // Error en la solicitud
@@ -55,7 +55,6 @@ function Register() {
     } else {
       setFormData((prevData) => ({ ...prevData, [id]: value }));
     }
-   
   };
 
   return (
@@ -68,24 +67,27 @@ function Register() {
               Regístrate ahora y obtén acceso completo a nuestra app.
             </p>
             <div className="flex">
+              <label htmlFor="nombre" />
+
               <label htmlFor="name">
                 <input
                   id="name"
                   className="input"
                   type="text"
-                  placeholder="Juan"
                   required
                   value={formData.name}
                   onChange={handleInputChange}
                 />
                 <span>Nombre</span>
               </label>
+
+              <label htmlFor="apellido" />
+
               <label htmlFor="lastname">
                 <input
                   id="lastname"
                   className="input"
                   type="text"
-                  placeholder="Perez"
                   required
                   value={formData.lastname}
                   onChange={handleInputChange}
@@ -99,7 +101,6 @@ function Register() {
                 id="email"
                 className="input"
                 type="email"
-                placeholder="Ejemplo@ejemplo.com"
                 required
                 value={formData.email}
                 onChange={handleInputChange}
@@ -112,13 +113,15 @@ function Register() {
                 id="age"
                 className="input"
                 type="number"
-                placeholder="Ingrese su edad"
                 required
                 value={formData.age}
                 onChange={handleInputChange}
               />
               <span>Edad</span>
             </label>
+
+            <label htmlFor="pass" />
+
             <label htmlFor="password">
               <input
                 id="password"
@@ -158,5 +161,4 @@ function Register() {
     </div>
   );
 }
-
 export default Register;
