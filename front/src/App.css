@@ -1210,6 +1210,7 @@ p {
 
 .purchase-card {
   border: 1px solid #ddd;
+  backdrop-filter: blur(50px);
   padding: 5px;
   margin: 10px;
   box-shadow: 2px 2px 5px #ccc;
@@ -1238,6 +1239,9 @@ p {
   align-items: center;
 }
 
+.modal.show {
+  display: block;
+}
 
 .modal-content {
   background-color: #ffffffde;
@@ -1297,6 +1301,8 @@ p {
 .modal-close-btn:hover {
   background-color: #ff0000;
 }
+
+
 
 
   
