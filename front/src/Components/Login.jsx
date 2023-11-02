@@ -21,10 +21,10 @@ function Login() {
       if (response.ok) {
         // La solicitud se realizó con éxito, puedes manejar la respuesta
         const responseData = await response.json();
+        localStorage.setItem("jwtToken", responseData.token);
         document.getElementById("rta-login").innerHTML =
           "Inicio de sesión exitoso";
-        console.log("Inicio de sesión exitoso");
-        console.log("Respuesta del servidor:", responseData);
+        window.location.href = "/";
       } else {
         // Ocurrió un error en la solicitud, puedes manejarlo
         console.error("Error al iniciar sesión");
@@ -58,7 +58,7 @@ function Login() {
                 value={formData.email}
                 onChange={handleInputChange}
               />
-              <label htmlhtmlFor="email"> Email</label>
+              <label htmlFor="email"> Email</label>
             </div>
             <div className="user-box">
               <input
@@ -68,7 +68,7 @@ function Login() {
                 value={formData.password}
                 onChange={handleInputChange}
               />
-              <label htmlhtmlFor="password">Contraseña</label>
+              <label htmlFor="password">Contraseña</label>
             </div>
             <center>
               <button type="submit">Enviar</button>

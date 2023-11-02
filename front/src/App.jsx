@@ -11,6 +11,7 @@ import Register from "./Components/Register";
 import ProductDetailContainer from "./Components/ProductDetailContainer";
 import Terminos from "./Components/Terminos";
 import Faqs from "./Components/Faqs";
+import Perfil from "./Components/Perfil";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/T&C" element={<Terminos />} />
           <Route path="/FAQs" element={<Faqs />} />
+          <Route path="/Perfil" element={<Perfil />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

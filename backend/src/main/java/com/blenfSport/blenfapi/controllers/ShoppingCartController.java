@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,12 +50,19 @@ public class ShoppingCartController {
 		return ResponseEntity.created(url).body("Producto añadido correctamente");
 	}
 	
-	@DeleteMapping(value = "clean/{item_id}")
+	@DeleteMapping(value = "detele/{item_id}")
 	public ResponseEntity<String> removeProduct(@PathVariable Long item_id){
 		this.shoppingCartService.removeProduct(item_id);
 		return ResponseEntity.ok("Eliminado");
 	}
-	
+	@PutMapping(value = "updateAmount/{id}")
+	@Transactional
+	public ResponseEntity<ShoppingCartResponseDto> updateAmount(@RequestBody ShoppingCartDto cartDto, @PathVariable Long id){
+		ShoppingCart shoppingCart = shoppingCartService.getById(id);
+		shoppingCart.setAmount(cartDto.amount());
+		return ResponseEntity.ok(new ShoppingCartResponseDto(shoppingCart));
+		
+	}
 	
 
 }

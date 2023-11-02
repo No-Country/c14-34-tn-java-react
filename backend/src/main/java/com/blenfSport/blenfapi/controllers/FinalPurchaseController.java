@@ -16,7 +16,6 @@ import com.blenfSport.blenfapi.dtos.FinalPurchaseResponseDto;
 import com.blenfSport.blenfapi.dtos.PaymentTypeDto;
 import com.blenfSport.blenfapi.persitence.entities.FinalPurchase;
 import com.blenfSport.blenfapi.services.FinalPurchaseService;
-import com.blenfSport.blenfapi.utils.PaymentType;
 import lombok.RequiredArgsConstructor;
 
 @RestController
