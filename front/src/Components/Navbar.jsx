@@ -89,7 +89,7 @@ function Navbar() {
                         <NavLink to={"/Perfil"}>Mi Perfil</NavLink>
                       </li>
                       <li className="UserInfoMenu">
-                        <NavLink to={"/ListaCompras"}>Mis compras</NavLink>
+                        <NavLink to={"/Compras"}>Mis compras</NavLink>
                       </li>
                       <li className="UserInfoMenu">
                         <button className="cerrarSesion" onClick={handleLogout}>
