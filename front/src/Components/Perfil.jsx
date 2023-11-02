@@ -30,26 +30,28 @@ function Perfil() {
   }, []);
 
   return (
-    <div className="profile-container">
-      {user ? (
-        <div>
-          <h1 className="profile-title">Mi perfil</h1>
-          <Blon />
-          <div className="profile-general">
-            <div className="profile">
-              <div className="profile-body">
-                <h2 className="profile-name">
-                  Nombre y apellido: {user.name} {user.lastname}
-                </h2>
-                <p className="profile-email">Email: {user.email}</p>
-                <p className="profile-age">Edad: {user.age}</p>
+    <div className="profil-container-gral">
+      <h1 className="profile-title">Mi perfil</h1>
+      <div className="profile-container">
+        {user ? (
+          <div>
+            <Blon />
+            <div className="profile-general">
+              <div className="profile">
+                <div className="profile-body">
+                  <h2 className="profile-name">
+                    Nombre y apellido: {user.name} {user.lastname}
+                  </h2>
+                  <p className="profile-email">Email: {user.email}</p>
+                  <p className="profile-age">Edad: {user.age}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <p>Cargando...</p>
-      )}
+        ) : (
+          <p>Cargando...</p>
+        )}
+      </div>
     </div>
   );
 }
