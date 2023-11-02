@@ -30,7 +30,7 @@ function Compras() {
 
   const openModal = async (index) => {
     try {
-      const response = await axios.get(`http://localhost:8080/FinalPurchaseDetail/${purchases[index].id}`, {
+      const response = await axios.get(`http://18.220.229.238/FinalPurchaseDetail/${purchases[index].id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
