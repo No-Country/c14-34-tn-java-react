@@ -29,9 +29,8 @@ function Compras() {
   }, [token]);
 
   const openModal = async (index) => {
-   
     try {
-        const response = await axios.get(`http://18.220.229.238/FinalPurchaseDetail/${purchases[index].id}`, {
+      const response = await axios.get(`http://localhost:8080/FinalPurchaseDetail/${purchases[index].id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -40,10 +39,8 @@ function Compras() {
       if (response.status !== 200) {
         throw new Error('No se pudieron obtener los detalles de la compra.');
       } else {
-        
         setSelectedPurchases(response.data);
         setSelectedPurchaseIndex(index);
-        
       }
     } catch (error) {
       console.error('Error al obtener detalles de la compra', error);
@@ -53,9 +50,8 @@ function Compras() {
   const closeModal = () => {
     setSelectedPurchaseIndex(null);
   };
-
-console.log(selectedPurchaseIndex)
-console.log(selectedPurchases)
+  console.log(selectedPurchaseIndex)
+  console.log(selectedPurchases)
   return (
     <div className="compras-container">
       <h1 className="compras-title">Mis compras</h1>
@@ -74,31 +70,30 @@ console.log(selectedPurchases)
         ))
       )}
 
-{selectedPurchases[selectedPurchaseIndex] && (selectedPurchases.map(details =>
-  <div className="modal">
-    <div className="modal-content">
-      <button className="modal-close-btn" onClick={closeModal}>X</button>
-      <h2 className="modal-title">Detalles de la Compra</h2>
-      <div className="modal-details">
-        <div className="modal-text">
-          <p><strong>Nombre del producto:</strong> {details[selectedPurchaseIndex].product.name}</p>
-          <p><strong>Precio del producto:</strong> ${details[selectedPurchaseIndex].product.price}</p>
-          <p><strong>Cantidad:</strong> {details[selectedPurchaseIndex].amount}</p>
-          <p><strong>Fecha:</strong> {details[selectedPurchaseIndex].finalPurchase.date.substring(0, 10)}</p>
-          <p><strong>Tipo de pago:</strong> {details[selectedPurchaseIndex].finalPurchase.paymentType}</p>
-          <p><strong>Subtotal:</strong> ${details[selectedPurchaseIndex].finalPurchase.subtotal.toFixed(2)}</p>
-          <p><strong>IVA:</strong> ${details[selectedPurchaseIndex].finalPurchase.iva.toFixed(2)}</p>
-          <p><strong>Total:</strong> ${details[selectedPurchaseIndex].finalPurchase.total.toFixed(2)}</p>
+      {selectedPurchases[selectedPurchaseIndex] && (
+        <div className="modal">
+          <div className="modal-content">
+            <button className="modal-close-btn" onClick={closeModal}>X</button>
+            <h2 className="modal-title">Detalles de la Compra</h2>
+            <div className="modal-details">
+              <div className="modal-text">
+                {selectedPurchases[selectedPurchaseIndex].products.map((product, productIndex) => (
+                  <div key={productIndex}>
+                    <p><strong>Producto:</strong> {product.productName}</p>
+                    <p><strong>Precio:</strong> ${product.productPrice}</p>
+                  </div>
+                ))}
+                <p><strong>Cantidad:</strong> {selectedPurchases[selectedPurchaseIndex].amount}</p>
+                <p><strong>Fecha:</strong> {selectedPurchases[selectedPurchaseIndex].finalPurchases[selectedPurchaseIndex].date.substring(0, 10)}</p>
+                <p><strong>Tipo de pago:</strong> {selectedPurchases[selectedPurchaseIndex].finalPurchases[selectedPurchaseIndex].paymentType}</p>
+                <p><strong>Subtotal:</strong> ${selectedPurchases[selectedPurchaseIndex].finalPurchases[selectedPurchaseIndex].subtotal.toFixed(2)}</p>
+                <p><strong>IVA:</strong> ${selectedPurchases[selectedPurchaseIndex].finalPurchases[selectedPurchaseIndex].iva.toFixed(2)}</p>
+                <p><strong>Total:</strong> ${selectedPurchases[selectedPurchaseIndex].finalPurchases[selectedPurchaseIndex].total.toFixed(2)}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="modal-image">
-          <img src={details[selectedPurchaseIndex].product.urlImg} alt={details[selectedPurchaseIndex].product.name} />
-        </div>
-      </div>
-    </div>
-  </div>
-))}
-
-
+      )}
     </div>
   );
 }
