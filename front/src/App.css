@@ -417,7 +417,7 @@ center button{
 }
 
 
-/*------------------------------------------------ REGISTER CONFIG------------------------------------- */
+/*-------------------------------- REGISTER CONFIG------------------------------------- */
 .register-shadow{
 width: 75%;
 height: 110%;
@@ -829,12 +829,11 @@ p {
 
 /* --------------------------------cards configurations---------------------------------- */
 .card-general{
-  display: grid; 
-  grid-gap: 5px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   width: 100%;
-  place-items: center;
+ display: grid;
+ grid-template-columns: repeat(3,1fr); 
+ justify-content: space-between;
+ align-items: center;
 }
 .card-titles{
   display: block;
@@ -1052,7 +1051,7 @@ p {
 
 .card:hover .card-body{
 right: 0;
-transition: 2s;
+transition: 1s;
 }
 .card-title{
 text-align: center;
