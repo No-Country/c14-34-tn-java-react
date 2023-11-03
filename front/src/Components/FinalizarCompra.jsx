@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function FinalizarCompra() {
-
+  const navigate = useNavigate();
   const location = useLocation();
   const { items } = location.state;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -48,7 +48,7 @@ function FinalizarCompra() {
 
     const token = localStorage.getItem('token');
     try {
-        const responsePurchase = await fetch('http://localhost:8080/FinalPurchase/buy', {
+        const responsePurchase = await fetch('http://18.220.229.238/FinalPurchase/buy', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -81,6 +81,7 @@ function FinalizarCompra() {
 
         setIsModalOpen(false);
         alert('Compra exitosa');
+        navigate('/');
     } catch (error) {
         console.error('Error al procesar la compra:', error);
         alert('Ocurrió un error al procesar la compra. Por favor, inténtalo de nuevo más tarde.');
@@ -122,8 +123,8 @@ function FinalizarCompra() {
       <button className='card-btn' onClick = {openModal}>Finalizar Compra</button> 
       </div>
       {isModalOpen && (
-        <div className='modal'>
-          <div className='modal-content'>
+        <div className='modalfinal'>
+          <div className='modal-contentfinal'>
             <span className='close' onClick={closeModal}>
               &times;
             </span>
@@ -163,7 +164,7 @@ function FinalizarCompra() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
-            <button onClick={handlePurchase}>Confirmar Compra</button>
+            <button className = "btnFinalizarCompra" onClick={handlePurchase}>Confirmar Compra</button>
           </div>
         </div>
       )}
