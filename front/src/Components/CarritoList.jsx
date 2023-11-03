@@ -115,16 +115,12 @@ function CarritoList() {
         </div>
         {items.length > 0 && (
           <div className="buttom-comprar">
-            <button
-              className="carritoList-btn"
-              onClick={() => setShowTotal(true)}
-            >
-              Comprar
-            </button>
+            {items.length > 0 && <button className="carritoList-btn" onClick={handleComprar} >Comprar</button>}
+            <TotalCarrito items={items} />
           </div>
         )}
-          <TotalCarrito items={items} />
-        {items.length > 0 && <button className="carritoList-btn" onClick={handleComprar} >Comprar</button>}
+         
+       
        
       </div>    
     </div>

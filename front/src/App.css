@@ -2481,7 +2481,6 @@ z-index: 1999;
     justify-content: end;
     margin: 100px 100px 0px 0px;
   }
-<<<<<<< HEAD
   
 }
 
@@ -2620,6 +2619,7 @@ z-index: 1999;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 25px;
 }
 
 .finalizarCompra-container h1{
@@ -2649,13 +2649,14 @@ td {
 
 
 .totalCarrito h2 {
-  color: #fff;
+  color: rgb(194, 197, 197);
   font-size: 18px;
-=======
+}
 .buttom-comprar{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   width: 100%;
   justify-content: center;
-}
->>>>>>> 5ff88cdf2f6943f20fa2000866370e6b9aeb9745
 }
