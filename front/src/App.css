@@ -2309,8 +2309,8 @@ padding: 10px;
   backdrop-filter: blur(50px);
   height: 100px;
   width: 100px;
-  left: 62%;
-  bottom: 0px;
+  left: 85%;
+  bottom: 330px;
   align-items: center;
   text-align: center;
   justify-content: center; /* Centrado horizontal */
@@ -2326,6 +2326,7 @@ z-index: 1999;
   height: 70px;
   display: block;
   margin: 0;
+ 
   color: #fff;
   z-index: 2000;
   border: 2px solid rgb(246, 246, 249);
@@ -2359,7 +2360,7 @@ z-index: 1999;
     display: flex;
     left: 80%;
     transition: all .5s;
-    bottom: 90px;
+    bottom: 350px;
   }
 }
 /*----------------------------------- PROFIL config-------------------------- */
@@ -2384,54 +2385,94 @@ z-index: 1999;
 
 /*----------------------------------- CarritoList config-------------------------- */
 /* Estilos para la tarjeta del carrito */
-
 .carritoList-Container{
   display: flex;
   flex-direction: column;
   align-items: center;
   
 }
-
+.carrito-title-container{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: 50px 100px 0px 0px;
+}
+.carritoList-title{
+  color: #bdb8b8;
+  font-family: 'poppins',sans-serif;
+}
 .carritoList-card {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
   background-color: #000000;
   width: 30%;
   text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .carritoList-card p {
-  margin: 0;
-  padding: 4px 0;
+  font-family: 'poppins',sans-serif;
+  text-align: center;
 }
 
-.carritoList-card button {
+.carritoList-card svg{
   background-color: #e74c3c;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
-
-.carritoList-card button:hover {
-  background-color: #c0392b;
+.carritoList-x{
+  display: flex;
+  justify-content: end;
+  margin: 10px;
+}
+.carritoList-card svg:hover {
+  background-color: #b43f32;
 }
 
 /* Estilos para el botón "Comprar" */
 .carritoList-btn {
-  background-color: #3498db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 50px;
   color: #fff;
+  background-color: #2980b9;
   border: none;
   border-radius: 4px;
-  padding: 8px 16px;
   cursor: pointer;
-  margin-top: 16px;
 }
 
 .carritoList-btn:hover {
   background-color: #2980b9;
+}
+@media screen and (max-width: 767px){
+  .carritoList-card {
+    width: 40%;
+    height: 250px;
+    text-align: center;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+   
+  }
+  .carritoList-x{
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+  }
+  .carrito-title-container{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin: 100px 100px 0px 0px;
+  }
+  
 }
