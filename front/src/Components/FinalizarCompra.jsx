@@ -24,70 +24,69 @@ function FinalizarCompra() {
     return total;
   };
   const totalAmount = items.reduce((acc, item) => acc + calculateTotal(item), 0);
-
-
+  const token = localStorage.getItem('token');
+  console.log(token)
   
   const handlePurchase = async () => {
-    const token = localStorage.getItem('token');
-    if (paymentType === ('Tarjeta de Débito')) {
-      setPaymentType("DEBIT_CARD")
+    if (paymentType === 'Tarjeta de Débito') {
+        setPaymentType('DEBIT_CARD');
+    } else if (paymentType === 'Tarjeta de Crédito') {
+        setPaymentType('CREDIT_CARD');
     }
-    if(paymentType === ('Tarjeta de Crédito')) {
-      setPaymentType("CREDIT_CARD")
-    }
-  
-    console.log(paymentType)
+
+    console.log(paymentType);
+
     if (!paymentType) {
-      alert('Por favor selecciona un tipo de pago.');
-      return;
+        alert('Por favor selecciona un tipo de pago.');
+        return;
     }
 
-    if (  !address || !phoneNumber) {
-      alert('Por favor completa todos los campos.');
-      return;
+    if (!address || !phoneNumber) {
+        alert('Por favor completa todos los campos.');
+        return;
     }
 
+    const token = localStorage.getItem('token');
     try {
-      const responsePurchase = await axios.post('http://18.220.229.238/FinalPurchase/buy', {
-        headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          paymentType : `${paymentType}`
-        }),
-      
-      });
+        const responsePurchase = await fetch('http://localhost:8080/FinalPurchase/buy', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                paymentType: "DEBIT_CARD"
+            }),
+        });
 
-      if (!responsePurchase.status === 201) {
-        
-        throw new Error('No se pudo procesar la compra. buy');
-      }
+        if (responsePurchase.status !== 201) {
+            throw new Error('No se pudo procesar la compra. buy');
+        }
 
-      
-      const responseUpdateFacturationInfo = await axios.put('http://18.220.229.238/user/updateFacturationInfo', {
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          address,
-          phoneNumber
-        }),
-      });
+        const responseUpdateFacturationInfo = await fetch('http://18.220.229.238/user/updateFacturationInfo', {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                address,
+                phoneNumber
+            }),
+        });
 
-      if (!responseUpdateFacturationInfo.ok) {
-        throw new Error('No se pudo actualizar la información de facturación.');
-      }
+        if (!responseUpdateFacturationInfo.ok) {
+            throw new Error('No se pudo actualizar la información de facturación.');
+        }
 
-
-      setIsModalOpen(false);
-      alert('Compra exitosa');
+        setIsModalOpen(false);
+        alert('Compra exitosa');
     } catch (error) {
-      console.error('Error al procesar la compra:', error);
-      alert('Ocurrió un error al procesar la compra. Por favor, inténtalo de nuevo más tarde.');
+        console.error('Error al procesar la compra:', error);
+        alert('Ocurrió un error al procesar la compra. Por favor, inténtalo de nuevo más tarde.');
     }
-  };
+};
+
 
 
   return (
@@ -135,7 +134,7 @@ function FinalizarCompra() {
                 value={paymentType}
                 onChange={(e) => setPaymentType(e.target.value)}
               >
-                <option value=''>Selecciona el tipo de pago</option>
+                <option >Selecciona el tipo de pago</option>
                 <option >Tarjeta de Débito</option>
                 <option >Tarjeta de Crédito</option>
               </select>
