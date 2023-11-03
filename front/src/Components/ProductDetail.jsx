@@ -1,7 +1,7 @@
 import Carrito from "./Carrito";
 import { useState } from "react";
 import axios from "axios";
-// eslint-disable-next-line react/prop-types
+
 export const ProductDetail = ({
   id,
   name,
@@ -13,8 +13,8 @@ export const ProductDetail = ({
   stock,
 }) =>  {
   const [amount, setAmount] = useState(1);
-const [isModalOpen, setIsModalOpen] = useState(false);
-const [modalMessage, setModalMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
   const openModal = (message) => {
     setModalMessage(message);
     setIsModalOpen(true);
