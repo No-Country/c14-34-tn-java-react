@@ -2387,9 +2387,8 @@ z-index: 1999;
 /* Estilos para la tarjeta del carrito */
 .carritoList-Container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .carrito-title-container{
   width: 100%;
@@ -2410,14 +2409,16 @@ z-index: 1999;
   background-color: #000000;
   width: 30%;
   text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  
 }
 
 .carritoList-card p {
   font-family: 'poppins',sans-serif;
   text-align: center;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .carritoList-card svg{
@@ -2454,6 +2455,11 @@ z-index: 1999;
 .carritoList-btn:hover {
   background-color: #2980b9;
 }
+.buttom-comprar{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 @media screen and (max-width: 767px){
   .carritoList-card {
     width: 40%;
@@ -2470,9 +2476,14 @@ z-index: 1999;
   }
   .carrito-title-container{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: end;
     margin: 100px 100px 0px 0px;
   }
-  
+.buttom-comprar{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 }
