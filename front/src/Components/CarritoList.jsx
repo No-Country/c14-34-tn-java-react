@@ -1,11 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
+import FinalizarCompra from "./FinalizarCompra";
 
 
 
 function CarritoList(){
     const [items, setItems] = useState([]);
+    const [showTotal, setShowTotal] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
     const openModal = (message) => {
@@ -88,7 +90,7 @@ return(
                     <p>Cantidad: {item.amount}</p>
                 </div>
             )))}
-            {items.length > 0 && <button className="carritoList-btn">Comprar</button>}
+            {items.length > 0 && <button className="carritoList-btn" onClick={() => setShowTotal(true)} >Comprar</button>}
    </div>
 );
 }
