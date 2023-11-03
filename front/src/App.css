@@ -2379,3 +2379,60 @@ z-index: 1999;
   text-align: center;
 }
 
+
+
+
+
+/*----------------------------------- CarritoList config-------------------------- */
+/* Estilos para la tarjeta del carrito */
+
+.carritoList-Container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.carritoList-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #000000;
+  width: 30%;
+  text-align: center;
+}
+
+.carritoList-card p {
+  margin: 0;
+  padding: 4px 0;
+}
+
+.carritoList-card button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.carritoList-card button:hover {
+  background-color: #c0392b;
+}
+
+/* Estilos para el botón "Comprar" */
+.carritoList-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.carritoList-btn:hover {
+  background-color: #2980b9;
+}

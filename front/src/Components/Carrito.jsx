@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Carrito() {
   const token = localStorage.getItem("token");
@@ -55,7 +56,11 @@ function Carrito() {
     fetchData();
   }, [user]);
 
+
+
   return (
+
+    <Link to={"/CarritoList"}>
     <div className="cars-container">
       <a href="/"></a>
       <svg
@@ -71,6 +76,7 @@ function Carrito() {
       </svg>
       <div id="cars-count">{count}</div>
     </div>
+    </Link>
   );
 }
 

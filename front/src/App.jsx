@@ -13,6 +13,7 @@ import Terminos from "./Components/Terminos";
 import Faqs from "./Components/Faqs";
 import Perfil from "./Components/Perfil";
 import Compras from "./Components/Compras";
+import CarritoList from "./Components/CarritoList";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/FAQs" element={<Faqs />} />
           <Route path="/Perfil" element={<Perfil />}/>
           <Route path="/Compras" element={<Compras />}/>
+          <Route path="/CarritoList" element={<CarritoList />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

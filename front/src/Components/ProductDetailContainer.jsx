@@ -10,7 +10,6 @@ const ProductDetailContainer = () => {
   useEffect(() => {
     getElementById(productId)
       .then((response) => {
-        console.log(response); // Agrega esto para depurar
         setProductos(response);
       })
       .catch((error) => {
@@ -18,7 +17,7 @@ const ProductDetailContainer = () => {
       });
   }, [productId]);
 
-  console.log(productos);
+
   return (
     <div>
       <ProductDetail {...productos} />
