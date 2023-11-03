@@ -72,204 +72,6 @@ body {
     display: block;
   }
 }
-/* --------------------------------cards configurations---------------------------------- */
-.card-general{
-  display: grid; 
-  grid-gap: 5px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  /* margin: 30px; */
-  width: 100%;
-  place-items: center;
-}
-.card-titles{
-  display: block;
-  font-weight: 700;
-  border-radius: 50px;
-  padding: 20px;
-  text-align: center;
-  margin-top:20px ;
-}
-.card-titles-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-  border: 1px double #000;
-  border-radius: 50%;
-  text-align: center;
-}
-.card-h4 {
-  margin-top:40px ;
-  font-family: 'poppins',sans-serif;
-  font-weight: 700;
- 
-  
-  
-}
-.card-h2{
-  font-family: 'poppins',sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 40px;
-  
-}
-.card-h5{
-  font-family: 'poppins',sans-serif;
-  font-size: 20px;
-  font-weight: 100;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.card{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 320px;
-  gap: 10px;
-  border-radius: 20px;
-  background: rgba(0,0,0,.1);
-  margin: 10px;
-  overflow: hidden; 
-  width:220px ;
- 
-}
-.card-img{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  object-fit: cover;
-  justify-content: center;
-
- 
-  
-}
-.card-body{
-  width: 100%;
-  height: 100%;
-  right: -100%;;
-  position:absolute ;
-  background: #1f3d4738;
-  backdrop-filter: blur(5px);
-  border-radius: 15px;
-  color: #fff;
-  /* padding: 40px; */
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: 2s;
-}
-.card:hover .card-body{
-right: 0;
-}
-.card-title{
-text-align: center;
-text-transform: uppercase;
-font-size: 27px;
-font-weight: 500;
-}
-.card-sub-title{
-text-align: center;
-text-transform: capitalize;
-font-size:14px ;
-font-weight: 200;
-}
-.card-info{
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-}
-.card-btn{
-    --color: #00A97F;
-    --color2: rgb(10, 25, 30);
-    padding: 0.8em 1.75em;
-    background-color: transparent;
-    border-radius: 6px;
-    border: .3px solid var(--color);
-    transition: .5s;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    z-index: 1;
-    font-weight: 300;
-    font-size: 17px;
-    font-family: 'Roboto', 'Segoe UI', sans-serif;
-    text-transform: uppercase;
-    color: var(--color);
-   }
-   
-   .card-btn::after, .card-btn::before {
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%;
-    transform: skew(90deg) translate(-50%, -50%);
-    position: absolute;
-    inset: 50%;
-    left: 25%;
-    z-index: -1;
-    transition: .5s ease-out;
-    background-color: var(--color);
-   }
-   
-   .card-btn::before {
-    top: -50%;
-    left: -25%;
-    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
-   }
-   
-   .card-btn:hover::before {
-    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-   }
-   
-   .card-btn:hover::after {
-    transform: skew(45deg) translate(-50%, -50%);
-   }
-   
-   .card-btn:hover {
-    color: var(--color2);
-   }
-   
-   .card-btn:active {
-    filter: brightness(.7);
-    transform: scale(.98);
-   }
-   @media screen and (max-width: 768px) {
-    .card-general{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      justify-content: space-evenly;
-    }
-  
-   }
-   @media screen and (max-width: 600px) {
-    .card-general{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      justify-content: space-evenly;
-      align-items: center;
-      justify-items: center;
-    }
-   }
-
-
-.card-btn:hover{
- background: rgb(156, 218, 208);
-}
-
 
   /* --------------------------------------Footer config -------------------------------------*/
 .footer-container{
@@ -1025,82 +827,12 @@ p {
   color: #fff;
 }
 
-
-
-
-
-/* ---------------------------------CarsButton Config-------------------------- */
-.carsbutton-container{
-   display: flex;
-   width: 100%;
-   height: 80%;
-   justify-content: space-evenly;
-   align-items: flex-end;
-   position: fixed;
-   z-index: 1000;
-
-   
-   
-}
-.cars-btn,.arrow-btn{
-  width: 15vh;
-  height: 15vh;
-  background: transparent;
-  border: none;
-  z-index: 1001;
-}
-.cars-btn svg,.arrow-btn svg {
-  width: 60%;
-  height: 60%;
-}
-.cars, .arrow {
-  width: 30px;
-  height: 30px;
-}
-.shadow-drop-2-center {
-	-webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@-webkit-keyframes shadow-drop-2-center {
-  0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-  100% {
-    -webkit-transform: translateZ(50px);
-            transform: translateZ(50px);
-    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-  }
-}
-@keyframes shadow-drop-2-center {
-  0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-  100% {
-    -webkit-transform: translateZ(50px);
-            transform: translateZ(50px);
-    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-  }
-}
-@media (min-height: 500px) {
-  .cars-btn, .arrow-btn {
-    display: block;
-  }
-}
 /* --------------------------------cards configurations---------------------------------- */
 .card-general{
   display: grid; 
   grid-gap: 5px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  /* margin: 30px; */
   width: 100%;
   place-items: center;
 }
@@ -1126,9 +858,6 @@ p {
   margin-top:40px ;
   font-family: 'poppins',sans-serif;
   font-weight: 700;
- 
-  
-  
 }
 .card-h2{
   font-family: 'poppins',sans-serif;
@@ -1139,8 +868,7 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 40px;
-  
+  margin-top: 40px; 
 }
 .card-h5{
   font-family: 'poppins',sans-serif;
@@ -1163,7 +891,6 @@ p {
   margin: 10px;
   overflow: hidden; 
   width:220px ;
- 
 }
 .card-img{
   width: 100%;
@@ -1171,9 +898,6 @@ p {
   display: flex;
   object-fit: cover;
   justify-content: center;
-
- 
-  
 }
 .card-body{
   width: 100%;
@@ -1184,14 +908,13 @@ p {
   backdrop-filter: blur(5px);
   border-radius: 15px;
   color: #fff;
-  /* padding: 40px; */
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px;
+
   
 }
 /* -------------------------------------Compras config---------------------------------- */
@@ -2436,6 +2159,7 @@ z-index: 1999;
 }
 .carritoList-card svg:hover {
   background-color: #b43f32;
+  transition: all .3s;
 }
 
 /* Estilos para el botón "Comprar" */
@@ -2453,7 +2177,8 @@ z-index: 1999;
 }
 
 .carritoList-btn:hover {
-  background-color: #2980b9;
+  background-color: #0e4569;
+  transition: all .5s;
 }
 .buttom-comprar{
   display: flex;
@@ -2481,9 +2206,251 @@ z-index: 1999;
     justify-content: end;
     margin: 100px 100px 0px 0px;
   }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.finalizarCompra-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.finalizarCompra-container h1{
+  color: #804d4d;
+}
+
+table {
+  width: 55%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background: #000000;
+  text-align: left;
+  padding: 8px;
+  color: #fff;
+}
+
+td {
+  border: 1px solid #ccc;
+  text-align: left;
+  color: #fff;
+  padding: 8px;
+}
+
+
+.totalCarrito h2 {
+  color: rgb(194, 197, 197);
+  font-size: 18px;
+}
 .buttom-comprar{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   width: 100%;
   justify-content: center;
 }
+
+/* Estilo para el fondo oscuro detrás del modal */
+.modalfinal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Estilo para el contenido del modal */
+.modal-contentfinal {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilo para el botón de cierre (la "X" en la esquina superior derecha) */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #aaa;
+}
+
+/* Estilo para los elementos de formulario dentro del modal */
+.form-group {
+  margin: 10px 0;
+  text-align: left;
+}
+
+/* Estilo para el botón de confirmación */
+.btnFinalizarCompra {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Estilo para las etiquetas de formulario */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Estilo para los campos de entrada de texto */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
