@@ -33,9 +33,9 @@ public class ShoppingCart {
 	private User user;
 	private Integer amount;
 	
-	public ShoppingCart(ShoppingCartDto shoppingCartDto) {
-		this.product = shoppingCartDto.product();
-		this.user = shoppingCartDto.user();
+	public ShoppingCart(ShoppingCartDto shoppingCartDto, User user,Product product) {
+		this.product = product;
+		this.user = user;
 		this.amount = shoppingCartDto.amount();
 	}
 

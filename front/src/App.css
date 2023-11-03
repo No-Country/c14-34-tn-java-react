@@ -943,12 +943,15 @@ padding: 10px;
   color: #fff;
   width: 30px;
   height: 30px;
+  
+  
 }
 .detail-addToCars{
   width: 10rem;
   height: 5rem;
   background-color: #00A97F;
 }
+
 .detail-price{
   color: #fff;
 }
@@ -957,7 +960,9 @@ padding: 10px;
 }
 .detail-detail{
   display: flex;
-  justify-content: center;
+  
+  justify-content: space-between;
+  gap: 55px;
   background: #000;
   border-radius: 20px;
   padding: 20px;
@@ -1300,10 +1305,27 @@ p {
   background-color: #ff0000;
 }
 
-
-
-
+.modal-cart{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
+}
+
+.modal-cart-content {
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 
 .card:hover .card-body{
 right: 0;
@@ -1445,7 +1467,7 @@ margin: 10px;
   .user-container{
     display: flex;
     width: 100%;
-    justify-content: start;
+    justify-content: flex-start;
     
   }
 }
@@ -2082,7 +2104,7 @@ padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
- padding: 5px;
+  padding: 5px;
   border-radius: 20px;
 
 }
@@ -2129,6 +2151,7 @@ padding: 10px;
   color: #fff;
   width: 30px;
   height: 30px;
+  
 }
 .detail-addToCars{
   width: 12rem;
@@ -2141,8 +2164,10 @@ padding: 10px;
 }
 .addToCars-container{
   display: flex;
-  justify-content: end;
+  justify-content:flex-end;
   margin-right: 25%;
+  
+  
 }
 
 @media screen and (max-width: 767px){
@@ -2255,11 +2280,16 @@ padding: 10px;
   backdrop-filter: blur(50px);
   border-radius: 20px;
   padding: 10px;
+  
 }
 .btn-contador{ 
   display: grid;
   grid-template-columns: repeat(3,1fr);
   text-align: center;
+}
+.contador{
+  display: flex;
+  flex-direction: row;
 }
 .cantidad{
   text-align: center;

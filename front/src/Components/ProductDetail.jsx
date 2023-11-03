@@ -1,6 +1,6 @@
 import Carrito from "./Carrito";
-import Contador from "./Contador";
 import { useState } from "react";
+import axios from "axios";
 // eslint-disable-next-line react/prop-types
 export const ProductDetail = ({
   id,
@@ -11,13 +11,60 @@ export const ProductDetail = ({
   color,
   size,
   stock,
-}) => {
+}) =>  {
+  const [amount, setAmount] = useState(1);
+const [isModalOpen, setIsModalOpen] = useState(false);
+const [modalMessage, setModalMessage] = useState("");
+  const openModal = (message) => {
+    setModalMessage(message);
+    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 1000);
+  };
+
+  const addToCart = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const productData = {
+        id,
+        amount
+      };
+
+      const response = await axios.post(
+        "http://18.220.229.238/shoppingCart/addProduct",
+        productData,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (response.status === 201) {
+        openModal("Producto agregado al carrito");
+      } 
+    } catch (error) {
+      console.error("Error al realizar la solicitud", error);
+    }
+  };
+
+
+{
   return (
+   
     <div className="detail-container-gral">
+       {isModalOpen && (
+      <div className="modal-cart">
+        <div className="modal-cart-content">
+          <p>{modalMessage}</p>
+        </div>
+      </div>
+    )}
       <Carrito />
       <h1 className="detail-title">Detalle del Producto</h1>
       <div className="detail-container">
-        <div key={id} className="contador">
+        <div key={id} className="detail-producto">
           <h2 className="detail-name">{name}</h2>
           <div className="detail-grid">
             <img className="detail-img" src={UrlImg} alt={name} />
@@ -53,7 +100,7 @@ export const ProductDetail = ({
               </button>
             </div>
 
-            <p className="detail-size">{<b>{size}</b>}</p>
+            <p className="detail-size">{<b>Talla: {size}</b>}</p>
 
             <h3 className="detail-price">
               <div className="price-shadow">
@@ -61,8 +108,7 @@ export const ProductDetail = ({
               </div>
             </h3>
 
-            {/* <Contador stock={stock} /> */}
-
+            
             <div className="contador-container">
               <div className="contador">
                 <h3>Cantidad:</h3>
@@ -73,19 +119,21 @@ export const ProductDetail = ({
                   id="cantidad"
                   name="cantidad"
                   min="1"
-                  max="{ stock }"
+                  max={stock}
                   step="1"
+                  value={amount}
+                  onChange={(e) => setAmount(parseInt(e.target.value, 10))}
                 />
               </div>
             </div>
-          </div>
-          <div className="addToCars-container">
+            <div className="addToCars-container" onClick={addToCart}>
             <button className="detail-addToCars card-btn">
               Agregar al carrito
             </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}};

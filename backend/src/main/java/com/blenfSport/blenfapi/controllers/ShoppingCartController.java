@@ -19,6 +19,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.blenfSport.blenfapi.dtos.ShoppingCartDto;
 import com.blenfSport.blenfapi.dtos.ShoppingCartResponseDto;
 import com.blenfSport.blenfapi.persitence.entities.ShoppingCart;
+import com.blenfSport.blenfapi.persitence.entities.User;
+import com.blenfSport.blenfapi.services.AuthService;
 import com.blenfSport.blenfapi.services.ShoppingCartService;
 
 import jakarta.validation.Valid;
@@ -30,7 +32,7 @@ import lombok.RequiredArgsConstructor;
 public class ShoppingCartController {
 	
 	private final ShoppingCartService shoppingCartService;
-	
+	private final AuthService authService;
 	
 	@GetMapping
 	public ResponseEntity<List<ShoppingCartResponseDto>> getListByUser(){ 
@@ -45,7 +47,9 @@ public class ShoppingCartController {
 	}
 	@PostMapping(value = "addProduct") 
 	public ResponseEntity<String> addProduct(@RequestBody @Valid ShoppingCartDto shoppingCartDto, UriComponentsBuilder builder){
-		ShoppingCart shoppingCart =  shoppingCartService.addProduct(shoppingCartDto);
+		String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User) authService.getByEmail(email).get();
+		ShoppingCart shoppingCart =  shoppingCartService.addProduct(shoppingCartDto, user);
 		URI url = builder.path("/shoppingCart/{id}").buildAndExpand(shoppingCart.getId()).toUri();
 		return ResponseEntity.created(url).body("Producto añadido correctamente");
 	}
