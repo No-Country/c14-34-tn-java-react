@@ -1,11 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
-import FinalizarCompra from "./FinalizarCompra";
+import TotalCarrito from "./TotalCarrito";
+import { useNavigate } from "react-router-dom";
 
 function CarritoList() {
+    const navigate = useNavigate();
     const [items, setItems] = useState([]);
-    const [showTotal, setShowTotal] = useState(false)
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
     const openModal = (message) => {
@@ -16,6 +17,11 @@ function CarritoList() {
         }, 1000);
 
       };
+      const handleComprar = () => {
+        navigate('/finalizarCompra', { state: { items } });
+      }
+
+
       const CarritoItemList = async()=> {
         try{
             const token = localStorage.getItem('token');
@@ -106,8 +112,10 @@ function CarritoList() {
             </div>
           ))
         )}
-        {items.length > 0 && <button className="carritoList-btn" onClick={() => setShowTotal(true)} >Comprar</button>}
-      </div>
+          <TotalCarrito items={items} />
+        {items.length > 0 && <button className="carritoList-btn" onClick={handleComprar} >Comprar</button>}
+       
+      </div>    
     </div>
     </div>
   );

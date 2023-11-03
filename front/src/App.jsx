@@ -14,6 +14,7 @@ import Faqs from "./Components/Faqs";
 import Perfil from "./Components/Perfil";
 import Compras from "./Components/Compras";
 import CarritoList from "./Components/CarritoList";
+import FinalizarCompra from './Components/FinalizarCompra';
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
           <Route path="/Perfil" element={<Perfil />}/>
           <Route path="/Compras" element={<Compras />}/>
           <Route path="/CarritoList" element={<CarritoList />}/>
+          <Route path="/FinalizarCompra" element={<FinalizarCompra />} />
+          
         </Routes>
         <Footer />
       </BrowserRouter>

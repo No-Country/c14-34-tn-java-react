@@ -2476,3 +2476,171 @@ z-index: 1999;
   }
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.finalizarCompra-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.finalizarCompra-container h1{
+  color: #804d4d;
+}
+
+table {
+  width: 55%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background: #000000;
+  text-align: left;
+  padding: 8px;
+  color: #fff;
+}
+
+td {
+  border: 1px solid #ccc;
+  text-align: left;
+  color: #fff;
+  padding: 8px;
+}
+
+
+.totalCarrito h2 {
+  color: #fff;
+  font-size: 18px;
+}
