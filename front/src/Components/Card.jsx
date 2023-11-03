@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import Blon from "./Blon";
 import ImgPrincipal from "./ImgPrincipal";
+import Carrito from "./Carrito";
 
 function Card() {
   return (
     <>
       <ImgPrincipal />
       <Blon />
+      <Carrito />
       <div className="card-general">
         {/* Calzado*/}
         <div className="card">

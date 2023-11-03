@@ -3,6 +3,8 @@ import Blon from "./Blon";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Carrito from "./Carrito";
+
 
 function Productos() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -21,6 +23,7 @@ function Productos() {
     <div>
       <h1 className="products-title">Productos</h1>
       <Blon />
+      <Carrito />
       {cargando ? (
         <p>Cargando...</p>
       ) : (

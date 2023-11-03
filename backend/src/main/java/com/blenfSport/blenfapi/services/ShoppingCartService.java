@@ -9,7 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.blenfSport.blenfapi.dtos.ShoppingCartDto;
 import com.blenfSport.blenfapi.exceptions.ResourceNotFoundException;
+import com.blenfSport.blenfapi.persitence.entities.Product;
 import com.blenfSport.blenfapi.persitence.entities.ShoppingCart;
+import com.blenfSport.blenfapi.persitence.entities.User;
 import com.blenfSport.blenfapi.persitence.repositories.ShoppingCartRepository;
 
 import jakarta.validation.Valid;
@@ -21,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class ShoppingCartService {
 	
 	private final ShoppingCartRepository shoppingCartRepository;
+	private final ProductService productService;
 	
 	public List<ShoppingCart> getListByUser(String UserEmail){
 		return this.shoppingCartRepository.findByUser_Email(UserEmail);
@@ -36,8 +39,9 @@ public class ShoppingCartService {
 		shoppingCartRepository.deleteById(id);
 	}
 	
-	public ShoppingCart addProduct(@Valid ShoppingCartDto shoppingCartDto) {
-		return shoppingCartRepository.save(new ShoppingCart(shoppingCartDto));
+	public ShoppingCart addProduct(@Valid ShoppingCartDto shoppingCartDto, User user) {
+		Product product = productService.FindProductById(shoppingCartDto.id()).get();
+		return shoppingCartRepository.save(new ShoppingCart(shoppingCartDto, user, product));
 	}
 	
 	public Long getCountByUser(Long userId) {
