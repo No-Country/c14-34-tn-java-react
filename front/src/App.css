@@ -2109,14 +2109,14 @@ padding: 10px;
 /* Estilos para la tarjeta del carrito */
 .carritoList-Container{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .carrito-title-container{
   width: 100%;
   display: flex;
-  justify-content: end;
-  margin: 50px 100px 0px 0px;
+  justify-content: center;
+  margin-top: 30px;
 }
 .carritoList-title{
   color: #bdb8b8;
@@ -2141,6 +2141,7 @@ padding: 10px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
 }
 
 .carritoList-card svg{
