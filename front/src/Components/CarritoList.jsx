@@ -1,37 +1,47 @@
 import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
-import FinalizarCompra from "./FinalizarCompra";
+import TotalCarrito from "./TotalCarrito";
+import { useNavigate } from "react-router-dom";
 
 function CarritoList() {
-  const [items, setItems] = useState([]);
-  const [showTotal, setShowTotal] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalMessage, setModalMessage] = useState("");
-  const openModal = (message) => {
-    setModalMessage(message);
-    setIsModalOpen(true);
-    setTimeout(() => {
-      setIsModalOpen(false);
-    }, 1000);
-  };
-  const CarritoItemList = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.get(`http://18.220.229.238/shoppingCart`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (response.status === 200) {
-        setItems(response.data);
-      } else {
-        throw new Error("No se pudieron obtener los detalles del carrito");
+    const navigate = useNavigate();
+    const [items, setItems] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalMessage, setModalMessage] = useState("");
+    const openModal = (message) => {
+        setModalMessage(message);
+        setIsModalOpen(true);
+        setTimeout(() => {
+        setIsModalOpen(false);
+        }, 1000);
+
+      };
+      const handleComprar = () => {
+        navigate('/finalizarCompra', { state: { items } });
       }
-    } catch (error) {
-      console.error("Error al obtener detalles de la compra", error);
+
+
+      const CarritoItemList = async()=> {
+        try{
+            const token = localStorage.getItem('token');
+            const response = await axios.get(`http://18.220.229.238/shoppingCart`, {
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                }
+              })
+              if(response.status === 200){
+                setItems(response.data)
+              }else{
+                throw new Error('No se pudieron obtener los detalles del carrito');
+              }
+
+
+        }catch(error){
+            console.error('Error al obtener detalles de la compra', error);
+        }
     }
-  };
+  
   const deleteItem = async (itemId) => {
     console.log(itemId);
     try {
@@ -105,15 +115,14 @@ function CarritoList() {
         </div>
         {items.length > 0 && (
           <div className="buttom-comprar">
-            <button
-              className="carritoList-btn"
-              onClick={() => setShowTotal(true)}
-            >
-              Comprar
-            </button>
+            {items.length > 0 && <button className="carritoList-btn" onClick={handleComprar} >Comprar</button>}
+            <TotalCarrito items={items} />
           </div>
         )}
-      </div>
+         
+       
+       
+      </div>    
     </div>
   );
 }
