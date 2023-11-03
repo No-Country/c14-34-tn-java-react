@@ -95,6 +95,7 @@ function Navbar() {
                       <li className="UserInfoMenu">
                         <NavLink to={"/Compras"}>Mis compras</NavLink>
                       </li>
+
                       <li className="UserInfoMenu">
                         <button className="cerrarSesion" onClick={handleLogout}>
                           Cerrar Sesión
