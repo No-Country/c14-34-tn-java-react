@@ -2309,8 +2309,8 @@ padding: 10px;
   backdrop-filter: blur(50px);
   height: 100px;
   width: 100px;
-  left: 62%;
-  bottom: 0px;
+  left: 85%;
+  bottom: 330px;
   align-items: center;
   text-align: center;
   justify-content: center; /* Centrado horizontal */
@@ -2326,6 +2326,7 @@ z-index: 1999;
   height: 70px;
   display: block;
   margin: 0;
+ 
   color: #fff;
   z-index: 2000;
   border: 2px solid rgb(246, 246, 249);
@@ -2359,7 +2360,7 @@ z-index: 1999;
     display: flex;
     left: 80%;
     transition: all .5s;
-    bottom: 90px;
+    bottom: 350px;
   }
 }
 /*----------------------------------- PROFIL config-------------------------- */

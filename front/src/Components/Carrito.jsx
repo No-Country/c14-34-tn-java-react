@@ -57,6 +57,7 @@ function Carrito() {
 
   return (
     <div className="cars-container">
+      <a href="/"></a>
       <svg
         className="bi bi-cart-check"
         xmlns="http://www.w3.org/2000/svg"
