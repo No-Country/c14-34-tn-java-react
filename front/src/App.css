@@ -762,7 +762,6 @@ padding: 10px;
 }
 .detail-detail{
   display: flex;
-  
   justify-content: space-between;
   gap: 55px;
   background: #000;
@@ -2012,7 +2011,7 @@ padding: 10px;
 }
 .contador{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .cantidad{
   text-align: center;
@@ -2038,8 +2037,8 @@ padding: 10px;
   text-align: center;
   justify-content: center; /* Centrado horizontal */
   align-items: center; /* Centrado vertical */
-border-radius: 50%;
-z-index: 1999;
+  border-radius: 50%;
+  z-index: 1999;
 
 }
 .cars-container svg{
