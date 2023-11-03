@@ -2,9 +2,8 @@ import React from "react";
 
 function Carrito() {
   return (
-    <div className="cars-container vibrate-1">
+    <div className="cars-container">
       <svg
-        className=""
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
