@@ -2436,6 +2436,7 @@ z-index: 1999;
 }
 .carritoList-card svg:hover {
   background-color: #b43f32;
+  transition: all .3s;
 }
 
 /* Estilos para el botón "Comprar" */
@@ -2453,7 +2454,8 @@ z-index: 1999;
 }
 
 .carritoList-btn:hover {
-  background-color: #2980b9;
+  background-color: #0e4569;
+  transition: all .5s;
 }
 .buttom-comprar{
   display: flex;
