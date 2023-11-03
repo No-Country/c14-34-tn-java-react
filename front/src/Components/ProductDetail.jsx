@@ -1,5 +1,4 @@
 import Carrito from "./Carrito";
-import Contador from "./Contador";
 import { useState } from "react";
 import axios from "axios";
 // eslint-disable-next-line react/prop-types
@@ -33,7 +32,7 @@ const [modalMessage, setModalMessage] = useState("");
       };
 
       const response = await axios.post(
-        "http://localhost:8080/shoppingCart/addProduct",
+        "http://18.220.229.238/shoppingCart/addProduct",
         productData,
         {
           headers: {
@@ -44,10 +43,7 @@ const [modalMessage, setModalMessage] = useState("");
 
       if (response.status === 201) {
         openModal("Producto agregado al carrito");
-      } else {
-        
-        console.error("Error al agregar el producto al carrito");
-      }
+      } 
     } catch (error) {
       console.error("Error al realizar la solicitud", error);
     }
