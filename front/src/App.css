@@ -2310,7 +2310,7 @@ padding: 10px;
   height: 100px;
   width: 100px;
   left: 62%;
-  bottom: 395px;
+  bottom: 0px;
   align-items: center;
   text-align: center;
   justify-content: center; /* Centrado horizontal */
@@ -2326,12 +2326,13 @@ z-index: 1999;
   height: 70px;
   display: block;
   margin: 0;
-  color: #000;
+  color: #fff;
   z-index: 2000;
   border: 2px solid rgb(246, 246, 249);
   border-radius: 50%;
   padding: 15px;
-  background-color: #31f413;
+  background:rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
   
 }
 #cars-count{
@@ -2345,73 +2346,20 @@ z-index: 1999;
   border: 2px solid rgb(246, 246, 249);
   border-radius: 50%;
   position: absolute;
-  color: #000;
-  background-color: #31f413;
+  color: #fff;
+  background:rgba(0, 0, 0, .2);
+  backdrop-filter: blur(50px);
   font-weight: 700;
   font-family: 'poppins',sans-serif;
   z-index: 2001;
 }
-.vibrate-1 {
-	-webkit-animation: vibrate-1 0.3s linear infinite both;
-	        animation: vibrate-1 0.3s linear infinite both;
-}
-@-webkit-keyframes vibrate-1 {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
-@keyframes vibrate-1 {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-            transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-            transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-            transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-            transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-}
+
 @media screen and (max-width: 767px){
   .cars-container{
     display: flex;
     left: 80%;
     transition: all .5s;
+    bottom: 90px;
   }
 }
 /*----------------------------------- PROFIL config-------------------------- */
