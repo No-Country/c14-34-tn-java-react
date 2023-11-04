@@ -36,10 +36,8 @@ function Register() {
         const responseData = await response.json();
         localStorage.setItem("jwtToken", responseData.token);
         setSuccessMessage("Registro exitoso");
-        console.log(responseData);
         window.location.href = "/";
       } else {
-        // Error en la solicitud
         setErrorMessage("Error al registrar");
       }
     } catch (error) {

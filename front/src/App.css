@@ -762,7 +762,6 @@ padding: 10px;
 }
 .detail-detail{
   display: flex;
-  
   justify-content: space-between;
   gap: 55px;
   background: #000;
@@ -2012,7 +2011,7 @@ padding: 10px;
 }
 .contador{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .cantidad{
   text-align: center;
@@ -2038,8 +2037,8 @@ padding: 10px;
   text-align: center;
   justify-content: center; /* Centrado horizontal */
   align-items: center; /* Centrado vertical */
-border-radius: 50%;
-z-index: 1999;
+  border-radius: 50%;
+  z-index: 1999;
 
 }
 .cars-container svg{
@@ -2110,14 +2109,14 @@ z-index: 1999;
 /* Estilos para la tarjeta del carrito */
 .carritoList-Container{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .carrito-title-container{
   width: 100%;
   display: flex;
-  justify-content: end;
-  margin: 50px 100px 0px 0px;
+  justify-content: center;
+  margin-top: 30px;
 }
 .carritoList-title{
   color: #bdb8b8;
@@ -2142,6 +2141,7 @@ z-index: 1999;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
 }
 
 .carritoList-card svg{

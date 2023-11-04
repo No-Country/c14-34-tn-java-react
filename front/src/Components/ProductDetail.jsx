@@ -107,7 +107,6 @@ export const ProductDetail = ({
                 <p className="price">Precio: ${price} </p>
               </div>
             </h3>
-
             
             <div className="contador-container">
               <div className="contador">
