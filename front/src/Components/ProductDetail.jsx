@@ -32,7 +32,7 @@ export const ProductDetail = ({
       };
 
       const response = await axios.post(
-        "http://18.220.229.238/shoppingCart/addProduct",
+        "https://blonsport.onrender.com/shoppingCart/addProduct",
         productData,
         {
           headers: {

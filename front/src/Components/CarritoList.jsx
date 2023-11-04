@@ -25,7 +25,7 @@ function CarritoList() {
       const CarritoItemList = async()=> {
         try{
             const token = localStorage.getItem('token');
-            const response = await axios.get(`http://18.220.229.238/shoppingCart`, {
+            const response = await axios.get(`https://blonsport.onrender.com/shoppingCart`, {
                 headers: {
                   'Authorization': `Bearer ${token}`
                 }
@@ -47,7 +47,7 @@ function CarritoList() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.delete(
-        `http://18.220.229.238/shoppingCart/detele/${itemId}`,
+        `https://blonsport.onrender.com/shoppingCart/detele/${itemId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

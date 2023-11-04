@@ -1,5 +1,5 @@
 export const getElementById = (productId) => {
-    const url = `http://18.220.229.238/products/find/${productId}`;
+    const url = `https://blonsport.onrender.com/products/find/${productId}`;
   
     return fetch(url)
       .then((response) => {
