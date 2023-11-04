@@ -24,8 +24,13 @@ export const ProductDetail = ({
   };
 
   const addToCart = async () => {
+    const token = localStorage.getItem('token');
+    if(!token){
+      alert("Debes estar registrado para agregar productos al carrito")
+      return
+    }
     try {
-      const token = localStorage.getItem('token');
+    
       const productData = {
         id,
         amount
