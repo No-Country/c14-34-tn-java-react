@@ -4,7 +4,7 @@
 
 ### Descripción del proyecto
 
-¡Bienvenido a nuestra tienda en línea de artículos deportivos! En nuestro ecommerce, te ofrecemos una amplia variedad de productos para satisfacer todas tus necesidades deportivas. Puedes explorar y comprar productos en tres categorías principales: prendas deportivas, accesorios y calzado. Ya sea que estés buscando ropa deportiva de alta calidad, accesorios para mejorar tu desempeño o calzado cómodo, tenemos todo lo que necesitas.
+¡Bienvenido! En nuestro ecommerce, te ofrecemos una amplia variedad de productos para satisfacer todas tus necesidades deportivas. Puedes explorar y comprar productos en tres categorías principales: prendas deportivas, accesorios y calzado. Ya sea que estés buscando ropa deportiva de alta calidad, accesorios para mejorar tu desempeño o calzado cómodo, tenemos todo lo que necesitas.
 
 Además, nuestra plataforma te brinda la comodidad de realizar un seguimiento de tus compras pasadas mediante un historial de compra detallado. Así, puedes revisar fácilmente los productos que has adquirido en el pasado y tomar decisiones de compra más informadas.
 
