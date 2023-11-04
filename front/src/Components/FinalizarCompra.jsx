@@ -25,7 +25,7 @@ function FinalizarCompra() {
   };
   const totalAmount = items.reduce((acc, item) => acc + calculateTotal(item), 0);
   const token = localStorage.getItem('token');
-  console.log(token)
+  
   
   const handlePurchase = async () => {
     if (paymentType === 'Tarjeta de Débito') {
@@ -34,7 +34,7 @@ function FinalizarCompra() {
         setPaymentType('CREDIT_CARD');
     }
 
-    console.log(paymentType);
+   
 
     if (!paymentType) {
         alert('Por favor selecciona un tipo de pago.');

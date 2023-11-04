@@ -3,7 +3,7 @@
 function ImgPrincipal() {
   return (
     <div className="img-prinsipal ">
-      <img src="src\img\botines.PNG" alt="Botines" />
+      <img src="https://i.postimg.cc/63V0Ljpk/botines.png" alt="Botines" />
     </div>
   );
 }

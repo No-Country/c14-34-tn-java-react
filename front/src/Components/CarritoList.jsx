@@ -43,7 +43,7 @@ function CarritoList() {
     }
   
   const deleteItem = async (itemId) => {
-    console.log(itemId);
+    
     try {
       const token = localStorage.getItem("token");
       const response = await axios.delete(

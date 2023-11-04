@@ -52,7 +52,7 @@ function Compras() {
   };
 
   
-  console.log("esto", selectedPurchases)
+  
   return (
     <div className="purchase-container">
       <h1 className="purchase-title">Mis compras</h1>

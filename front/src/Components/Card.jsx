@@ -14,7 +14,7 @@ function Card() {
         {/* Calzado*/}
         <div className="card">
           <div className="card-img">
-            <img src="src\img\zapatillas\zapatillas05.webp" alt="" />
+            <img src="https://i.postimg.cc/28pgCMMS/zapatillas05.webp" alt="" />
           </div>
           <div className="card-body">
             <h1 className="card-title">Zapatillas</h1>
@@ -32,7 +32,7 @@ function Card() {
         {/* REMERAS */}
         <div className="card">
           <div className="card-img">
-            <img src="src\img\rememras\remera02.webp" alt="" />
+            <img src="https://i.postimg.cc/L4jN3XQm/remera02.webp" alt="" />
           </div>
           <div className="card-body">
             <h1 className="card-title">Remeras</h1>
@@ -49,7 +49,7 @@ function Card() {
         {/* CONJUNTOS */}
         <div className="card">
           <div className="card-img">
-            <img src="src\img\conjuntos\conjunto05.jpg" alt="" />
+            <img src="https://i.postimg.cc/7ZR3k8tB/conjunto05.jpg" alt="" />
           </div>
           <div className="card-body">
             <h1 className="card-title">Conjuntos</h1>
@@ -66,7 +66,7 @@ function Card() {
         <div className="card">
           <div className="card-img">
             <img
-              src="src\img\conjuntos\conjunto02.webp"
+              src="https://i.postimg.cc/C1GkkZht/conjunto02.webp"
               alt="Conjunto de Dama"
             />
           </div>
@@ -86,7 +86,7 @@ function Card() {
         <div className="card">
           <div className="card-img">
             <img
-              src="src\img\pantalosnes-calzas\pantalones (8).webp"
+              src="https://i.postimg.cc/0jt60DLt/pantalones-8.webp"
               alt="Pantalones"
             />
           </div>
@@ -105,7 +105,7 @@ function Card() {
         <div className="card">
           <div className="card-img">
             <img
-              src="src\img\conjuntos\conjunto08.webp"
+              src="https://i.postimg.cc/RVyhCS9n/conjunto08.webp"
               alt="Conjunto de Hombre"
             />
           </div>
