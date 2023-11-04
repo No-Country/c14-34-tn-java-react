@@ -9,7 +9,7 @@ function Carrito() {
 
   const userInfo = async () => {
     try {
-      const response = await axios.get(`http://18.220.229.238/auth/details`, {
+      const response = await axios.get(`https://blonsport.onrender.com/auth/details`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -28,7 +28,7 @@ function Carrito() {
   const countInfo = async (userid) => {
     try {
       const response = await axios.get(
-        `http://18.220.229.238/shoppingCart/count/${userid}`,
+        `https://blonsport.onrender.com/shoppingCart/count/${userid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

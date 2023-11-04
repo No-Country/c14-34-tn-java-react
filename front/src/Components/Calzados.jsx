@@ -4,7 +4,7 @@ import Blon from "./Blon";
 import Carrito from "./Carrito";
 
 function Calzados() {
-  const { data, cargando } = useFetch("http://18.220.229.238/products/Zapatos");
+  const { data, cargando } = useFetch("https://blonsport.onrender.com/products/Zapatos");
 
   return (
     <div>

@@ -23,7 +23,7 @@ function Register() {
       return;
     }
 
-    const url = "http://18.220.229.238/auth/register";
+    const url = "https://blonsport.onrender.com/auth/register";
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
