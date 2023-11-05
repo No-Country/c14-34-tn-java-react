@@ -105,7 +105,7 @@ export const ProductDetail = ({
               </button>
             </div>
 
-            <p className="detail-size">{<b>Talla: {size}</b>}</p>
+           {size ? <p className="detail-size">{<b>Talla: {size}</b>}</p>: null}
 
             <h3 className="detail-price">
               <div className="price-shadow">

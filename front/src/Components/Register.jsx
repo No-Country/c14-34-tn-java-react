@@ -32,18 +32,15 @@ function Register() {
 
     try {
       const response = await fetch(url, requestOptions);
-      if (response.ok) {
-        const responseData = await response.json();
-        localStorage.setItem("jwtToken", responseData.token);
+        console.log(response.token)
+        localStorage.setItem("jwtToken", response.token);
         setSuccessMessage("Registro exitoso");
-        window.location.href = "/";
-      } else {
-        setErrorMessage("Error al registrar");
-      }
+     
     } catch (error) {
       console.error("Error en la solicitud:", error);
       setErrorMessage("Error en la solicitud");
     }
+    window.location.href = "/";
   };
 
   const handleInputChange = (e) => {

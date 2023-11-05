@@ -8,6 +8,9 @@ function Carrito() {
   const [count, setCount] = useState(0);
 
   const userInfo = async () => {
+    if(!token){
+      return
+    }
     try {
       const response = await axios.get(`https://blonsport.onrender.com/auth/details`, {
         headers: {
@@ -18,10 +21,10 @@ function Carrito() {
       if (response.status === 200) {
         setUser(response.data);
       } else {
-        throw new Error("No se pudieron obtener los detalles de la compra.");
+        
       }
     } catch (error) {
-      console.error("Error al obtener detalles de la compra", error);
+     
     }
   };
 

@@ -41,10 +41,12 @@ function Perfil() {
               <div className="profile">
                 <div className="profile-body">
                   <h2 className="profile-name">
-                    Nombre y apellido: {user.name} {user.lastname}
+                   {user.name} {user.lastname}
                   </h2>
-                  <p className="profile-email">Email: {user.email}</p>
-                  <p className="profile-age">Edad: {user.age}</p>
+                  <p className="profile-email"><strong>Email</strong>: {user.email}</p>
+                  <p className="profile-age"><strong>Edad</strong>: {user.age}</p>
+                  {user.facturation ? <p className="profile-email"><strong>Direccion</strong>: {user.facturation.address}</p>: null}
+                  {user.facturation ? <p className="profile-email"><strong>Telefono</strong>: {user.facturation.phoneNumber}</p>: null}
                 </div>
               </div>
             </div>
