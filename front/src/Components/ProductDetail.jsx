@@ -24,8 +24,13 @@ export const ProductDetail = ({
   };
 
   const addToCart = async () => {
+    const token = localStorage.getItem('token');
+    if(!token){
+      alert("Debes estar registrado para agregar productos al carrito")
+      return
+    }
     try {
-      const token = localStorage.getItem('token');
+    
       const productData = {
         id,
         amount
@@ -100,7 +105,7 @@ export const ProductDetail = ({
               </button>
             </div>
 
-            <p className="detail-size">{<b>Talla: {size}</b>}</p>
+           {size ? <p className="detail-size">{<b>Talla: {size}</b>}</p>: null}
 
             <h3 className="detail-price">
               <div className="price-shadow">
