@@ -24,7 +24,7 @@ function Card() {
               Mercado al Mejor Precio
             </p>
             <Link to={`/calzados`}>
-              <button className="card-btn">Detalles</button>
+              <button className="card-btn BtnC">Detalles</button>
             </Link>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Card() {
               Dama y el Caballero
             </p>
             <Link to={`/prendas`}>
-              <button className="card-btn">Detalles</button>
+              <button className="card-btn BtnC ">Detalles</button>
             </Link>
           </div>
         </div>
@@ -58,7 +58,7 @@ function Card() {
               Variedad en Colores y Los Mas Atractivos Conjuntos.
             </p>
             <Link to={`/prendas`}>
-              <button className="card-btn">Detalles</button>
+              <button className="card-btn BtnC">Detalles</button>
             </Link>
           </div>
         </div>
@@ -77,7 +77,7 @@ function Card() {
               Amplio Stock en Accesorios Deportivos Ingresa y encontra el tuyo
             </p>
             <Link to={`/accesorios`}>
-              <button className="card-btn ">Detalles</button>
+              <button className="card-btn BtnC ">Detalles</button>
             </Link>
           </div>
         </div>
@@ -97,7 +97,7 @@ function Card() {
               Encontra aca el que mas Te guste y arma tu pedido con un click
             </p>
             <Link to={`/prendas`}>
-              <button className="card-btn">Detalles</button>
+              <button className="card-btn BtnC">Detalles</button>
             </Link>
           </div>
         </div>
@@ -116,7 +116,7 @@ function Card() {
               Encontra aca el que mas Te guste y arma tu pedido con un click
             </p>
             <Link to={`/prendas`}>
-              <button className="card-btn">Detalles</button>
+              <button className="card-btn BtnC">Detalles</button>
             </Link>
           </div>
         </div>

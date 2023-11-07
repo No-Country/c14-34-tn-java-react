@@ -5,43 +5,39 @@ import TotalCarrito from "./TotalCarrito";
 import { useNavigate } from "react-router-dom";
 
 function CarritoList() {
-    const navigate = useNavigate();
-    const [items, setItems] = useState([]);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalMessage, setModalMessage] = useState("");
-    const openModal = (message) => {
-        setModalMessage(message);
-        setIsModalOpen(true);
-        setTimeout(() => {
-        setIsModalOpen(false);
-        }, 1000);
+  const navigate = useNavigate();
+  const [items, setItems] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const openModal = (message) => {
+    setModalMessage(message);
+    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 1000);
+  };
+  const handleComprar = () => {
+    navigate("/finalizarCompra", { state: { items } });
+  };
 
-      };
-      const handleComprar = () => {
-        navigate('/finalizarCompra', { state: { items } });
+  const CarritoItemList = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.get(`http://18.220.229.238/shoppingCart`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.status === 200) {
+        setItems(response.data);
+      } else {
+        throw new Error("No se pudieron obtener los detalles del carrito");
       }
-
-
-      const CarritoItemList = async()=> {
-        try{
-            const token = localStorage.getItem('token');
-            const response = await axios.get(`http://18.220.229.238/shoppingCart`, {
-                headers: {
-                  'Authorization': `Bearer ${token}`
-                }
-              })
-              if(response.status === 200){
-                setItems(response.data)
-              }else{
-                throw new Error('No se pudieron obtener los detalles del carrito');
-              }
-
-
-        }catch(error){
-            console.error('Error al obtener detalles de la compra', error);
-        }
+    } catch (error) {
+      console.error("Error al obtener detalles de la compra", error);
     }
-  
+  };
+
   const deleteItem = async (itemId) => {
     console.log(itemId);
     try {
@@ -79,7 +75,7 @@ function CarritoList() {
         </div>
       )}
       <div className="carrito-container-gral">
-        <div className="carritoList-Container">
+        <div className="carritoList-Container text-focus-in">
           <div className="carrito-title-container">
             <h1 className="carritoList-title">Mi Carrito</h1>
           </div>
@@ -87,14 +83,14 @@ function CarritoList() {
             <p>No hay productos en el carrito</p>
           ) : (
             items.map((item) => (
-              <div key={item.id} className="carritoList-card">
-                <div className="carritoList-x">
+              <div key={item.id} className="carritoList-card ">
+                <div className="carritoList-x ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    clasName="bi bi-x-square"
+                    clasName="bi bi-x-square "
                     viewBox="0 0 16 16"
                     onClick={() => {
                       deleteItem(item.id);
@@ -115,14 +111,15 @@ function CarritoList() {
         </div>
         {items.length > 0 && (
           <div className="buttom-comprar">
-            {items.length > 0 && <button className="carritoList-btn" onClick={handleComprar} >Comprar</button>}
+            {items.length > 0 && (
+              <button className="carritoList-btn" onClick={handleComprar}>
+                Comprar
+              </button>
+            )}
             <TotalCarrito items={items} />
           </div>
         )}
-         
-       
-       
-      </div>    
+      </div>
     </div>
   );
 }

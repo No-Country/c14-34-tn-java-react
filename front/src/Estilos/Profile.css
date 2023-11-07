@@ -1,0 +1,17 @@
+
+/*----------------------------------- PROFILE config--------------------------2 */
+.profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-general{
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    font-family: 'poppins',sans-serif;
+    border-radius: 20px;
+  }
+  .profile-body{
+    text-align: center;
+  }
+  

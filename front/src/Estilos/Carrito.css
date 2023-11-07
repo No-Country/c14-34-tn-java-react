@@ -1,0 +1,62 @@
+/* --------------------------------Carrito Config----------------------------------- 3*/
+.cars-container{
+    display: flex;
+    position: fixed;
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    height: 100px;
+    width: 100px;
+    left: 85%;
+    bottom: 330px;
+    align-items: center;
+    text-align: center;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+  border-radius: 50%;
+  z-index: 1999;
+  
+  }
+  .cars-container svg{
+    position: absolute;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0;
+   
+    color: #fff;
+    z-index: 2000;
+    border: 2px solid rgb(246, 246, 249);
+    border-radius: 50%;
+    padding: 15px;
+    background:rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    
+  }
+  #cars-count{
+    display: flex;
+    right: 65px;
+    bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgb(246, 246, 249);
+    border-radius: 50%;
+    position: absolute;
+    color: #fff;
+    background:rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    font-weight: 700;
+    font-family: 'poppins',sans-serif;
+    z-index: 2001;
+  }
+  
+  @media screen and (max-width: 767px){
+    .cars-container{
+      display: flex;
+      left: 80%;
+      transition: all .5s;
+      bottom: 350px;
+    }
+  }
