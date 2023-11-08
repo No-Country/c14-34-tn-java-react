@@ -1,0 +1,230 @@
+/* --------------------------------CARDS----------------------------------19 */
+.card-general{
+   width: 100%;
+   display: grid;
+   gap: 20px;
+   grid-template-columns: repeat(3,1fr); 
+   place-items: center;
+  }
+  .card{
+    display: flex;
+    place-items: center;
+    width: 100%;
+    height: 320px;
+    border-radius: 20px;
+    background: rgba(35, 30, 30, 0.1);
+    overflow: hidden; 
+    width:220px ;
+  }
+  
+  /* Otras reglas CSS de tu código... */
+  
+  .card-titles{
+    display: block;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 20px;
+    text-align: center;
+    margin-top:20px ;
+  }
+  .card-titles-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 1px double #000;
+    border-radius: 50%;
+    text-align: center;
+  }
+  .card-h4 {
+    margin-top:40px ;
+    font-family: 'poppins',sans-serif;
+    font-weight: 700;
+  }
+  .card-h2{
+    font-family: 'poppins',sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px; 
+  }
+  .card-h5{
+    font-family: 'poppins',sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+  }
+  .card-body{
+    width: 100%;
+    height: 100%;
+    right: -100%;;
+    position:absolute ;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    
+  }
+
+   .card:hover .card-body{
+    right: 0;
+    transition: all .7s;
+    }
+    .card-title{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    }
+    .card-sub-title{
+    text-transform: capitalize;
+    font-size:14px ;
+    font-weight: 300;
+    }
+    .BtnC {
+      position: relative;
+      width: 150px;
+      height: 55px;
+      border-radius: 45px;
+      border: none;
+      background-color: rgb(50, 41, 66);
+      color: white;
+      box-shadow: 0px 10px 10px rgb(209, 200, 227) inset,
+      0px 5px 10px rgba(5, 5, 5, 0.212),
+      0px -10px 10px rgb(201, 191, 225) inset;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .BtnC::before {
+      width: 70%;
+      height: 2px;
+      position: absolute;
+      background-color: rgba(250, 250, 250, 0.678);
+      content: "";
+      filter: blur(1px);
+      top: 7px;
+      border-radius: 50%;
+    }
+    
+    .BtnC::after {
+      width: 70%;
+      height: 2px;
+      position: absolute;
+      background-color: rgba(250, 250, 250, 0.137);
+      content: "";
+      filter: blur(1px);
+      bottom: 7px;
+      border-radius: 50%;
+    }
+    
+    .BtnC:hover {
+      animation: jello-horizontal 0.9s both;
+    }
+    
+    @keyframes jello-horizontal {
+      0% {
+        transform: scale3d(1, 1, 1);
+      }
+    
+      30% {
+        transform: scale3d(1.25, 0.75, 1);
+      }
+    
+      40% {
+        transform: scale3d(0.75, 1.25, 1);
+      }
+    
+      50% {
+        transform: scale3d(1.15, 0.85, 1);
+      }
+    
+      65% {
+        transform: scale3d(0.95, 1.05, 1);
+      }
+    
+      75% {
+        transform: scale3d(1.05, 0.95, 1);
+      }
+    
+      100% {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    /* Estilos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px) {
+ .card-general {
+  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .card{
+    width: 180px;
+    display: flex;
+    justify-content: center;
+  }
+  .card-body{
+    width: 100%;
+    height: 100%;
+  }
+  .card-img{
+    width: 80px;
+  }
+}
+@media screen and (max-width: 1067px){
+  .card-general {
+    width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(3,1fr);
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+       margin-right: 50px;
+    }
+    .card{
+      width: 16em;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+     
+    }
+    .card-body{
+      width: 100%;
+      height: 100%;
+    }
+    .card-img{
+      width: 100px;
+    }
+    .img{
+      width: 100px;
+    }
+}

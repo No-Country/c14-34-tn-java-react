@@ -1,0 +1,75 @@
+/*---------------------------- BLON config-------------- 10*/
+.waviy {
+    --i: 1;
+    position: relative;
+    -webkit-box-reflect: below -20 linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  }
+  .blon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    text-transform: uppercase;
+    animation: waviy 2s infinite;
+    animation-delay: calc(0.1s * var(--i));
+  }
+  .waviy p{
+    text-align: center;
+  }
+  @keyframes waviy {
+    0%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-20px);
+    }
+  }
+  .focus-in-contract {
+    letter-spacing: 0.3em;
+    -webkit-animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  @-webkit-keyframes focus-in-contract {
+    0% {
+      letter-spacing: 1em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-contract {
+    0% {
+      letter-spacing: 1em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+@media (max-width: 768px) {
+  .blon-container {
+   width: 100%;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}

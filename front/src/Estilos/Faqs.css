@@ -1,0 +1,35 @@
+/*--------------------------- FAQS Configurations -------------------------8*/
+.preguntas-gral{
+    display: grid;
+    grid-template-columns:repeat(1,1fr) ;
+    grid-template-rows:repeat(4,1fr) ;
+  }
+  .faqs-container h1{
+    text-align: center;
+    color: #bdb8b8;
+    font-family: 'poppins', sans-serif;
+  }
+  .faqs-info{
+    width: 90%;
+    text-align: center;
+    color:#ffffff;
+    font-family: 'poppins', sans-serif;
+    margin: 10px;
+  }
+  .pregunta-container{
+    text-align: center;
+    display: block;
+    width: 60%;
+    height: auto;
+    position:relative;
+    color:#fff;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    margin:10px;
+    padding: 2rem;
+  }
+  @media screen and (max-width: 767px){
+    .pregunta-container{
+      width: 100%;
+    }
+  }

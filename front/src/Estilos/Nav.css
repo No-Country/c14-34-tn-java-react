@@ -1,0 +1,253 @@
+/* --------------------------------------NAVBAR-------------------------------------- */
+
+/* comienzo de efecto rebote titulo nav -------------*/
+.bounce-in-top {
+	-webkit-animation: bounce-in-top 1.8s both;
+	        animation: bounce-in-top 1.8s both;
+}
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+/* finaliza el efecto de rebote del titulo nav --------------*/
+.container-fluid{
+  display: flex;
+}
+/* CONTENEDOR DE BOTONES INGRESAR Y REGISTRAR */
+.ing-nav-btn{
+  display: grid;
+ width: 320px;
+ height: 80px;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+/* BOTON INGRESAR */
+.btn-nav-ingresar{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+/* BOTON REGISTRATE */
+.btn-nav-registrate{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.btn-nav-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ 
+
+}
+.nav-menu{
+  display: flex;
+}
+
+.nav-menu a{
+  text-decoration: none;
+  font-family: 'poppins',sans-serif;
+  font-weight: 600;
+  color: #000; 
+}
+.nav-menu ul {
+ list-style: none;
+ display: grid;
+ width: 100%;
+ grid-template-columns: repeat(4,1fr);
+ grid-template-rows: repeat(1,1fr);
+ gap: 20px;
+ margin-top: 15px;
+ 
+}
+.nav-menu li {
+  padding: 10px;
+  
+}
+.nav-menu li:hover {
+  background: rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  transition: all .5s;
+    }
+    @media screen and (max-width: 767px) {
+      /* Estilos para pantallas pequeñas (menos de 767px) */
+      .nav-menu ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+      }
+      .nav-menu li:hover {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        width: 40%;
+      }
+      .nav-menu a {
+        font-size: 23px;
+      }
+      .nav-title {
+        text-align: center;
+        font-weight: 700;
+      }
+      .navGral {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      .ing-nav-btn{
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+border-top: 1px solid #000;
+      }
+ 
+  }
+  @media screen and (max-width: 1067px){
+    .nav-menu ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+    .nav-menu li:hover {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      width: 40%;
+    }
+    .nav-menu a {
+      font-size: 23px;
+    }
+    .nav-title {
+      text-align: center;
+      font-weight: 700;
+    }
+    .navGral {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .ing-nav-btn{
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+border-top: 1px solid #000;
+    }
+  
+ .btn{
+    width: 8em;
+  }
+  }

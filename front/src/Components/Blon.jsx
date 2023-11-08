@@ -11,7 +11,7 @@ export default function Blon() {
         <span style={{ "--i": 5 }}>.</span>
         <span style={{ "--i": 6 }}>.</span>
         <span style={{ "--i": 7 }}>.</span>
-        <p>Sports</p>
+        <p className="focus-in-contract">Sports</p>
       </div>
     </div>
   );

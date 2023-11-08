@@ -1,0 +1,18 @@
+/*---------------------------- Terminos Configurations----------------------------------------9 */
+.terminos-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    margin: 10px;
+    color: #fff;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+  }
+  .terminos-title{
+    text-align: center;
+    color: #bdb8b8;
+    font-family: 'poppins',sans-serif;
+    font-weight: 700;
+  }
