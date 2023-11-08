@@ -40,6 +40,136 @@ padding: 50px;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .finalizarCompra-container{
   display: flex;
   align-items: center;
@@ -78,14 +208,7 @@ td {
   color: rgb(194, 197, 197);
   font-size: 18px;
 }
-.buttom-comprar{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  justify-content: center;
-}
+
 
 /* Estilo para el fondo oscuro detrás del modal */
 .modalfinal {

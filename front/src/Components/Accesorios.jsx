@@ -5,7 +5,7 @@ import Blon from "./Blon";
 
 function Accesorios() {
   const { data, cargando } = useFetch(
-    "http://18.220.229.238/products/Accesorios"
+    "https://blonsport.onrender.com/products/Accesorios"
   );
 
   return (

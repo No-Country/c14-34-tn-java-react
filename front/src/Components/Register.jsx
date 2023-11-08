@@ -23,7 +23,7 @@ function Register() {
       return;
     }
 
-    const url = "http://18.220.229.238/auth/register";
+    const url = "https://blonsport.onrender.com/auth/register";
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,20 +32,15 @@ function Register() {
 
     try {
       const response = await fetch(url, requestOptions);
-      if (response.ok) {
-        const responseData = await response.json();
-        localStorage.setItem("jwtToken", responseData.token);
+        console.log(response.token)
+        localStorage.setItem("jwtToken", response.token);
         setSuccessMessage("Registro exitoso");
-        console.log(responseData);
-        window.location.href = "/";
-      } else {
-        // Error en la solicitud
-        setErrorMessage("Error al registrar");
-      }
+     
     } catch (error) {
       console.error("Error en la solicitud:", error);
       setErrorMessage("Error en la solicitud");
     }
+    window.location.href = "/";
   };
 
   const handleInputChange = (e) => {

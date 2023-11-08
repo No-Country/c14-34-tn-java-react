@@ -18,7 +18,7 @@ function Navbar() {
   useEffect(() => {
     const jwtToken = localStorage.getItem("token");
     if (jwtToken) {
-      fetch("http://18.220.229.238/auth/details", {
+      fetch("https://blonsport.onrender.com/auth/details", {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
         },

@@ -8,27 +8,30 @@ function Carrito() {
   const [count, setCount] = useState(0);
 
   const userInfo = async () => {
+    if (!token) {
+      return;
+    }
     try {
-      const response = await axios.get(`http://18.220.229.238/auth/details`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.get(
+        `https://blonsport.onrender.com/auth/details`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (response.status === 200) {
         setUser(response.data);
       } else {
-        throw new Error("No se pudieron obtener los detalles de la compra.");
       }
-    } catch (error) {
-      console.error("Error al obtener detalles de la compra", error);
-    }
+    } catch (error) {}
   };
 
   const countInfo = async (userid) => {
     try {
       const response = await axios.get(
-        `http://18.220.229.238/shoppingCart/count/${userid}`,
+        `https://blonsport.onrender.com/shoppingCart/count/${userid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

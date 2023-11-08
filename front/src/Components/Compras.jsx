@@ -12,7 +12,7 @@ function Compras() {
     const fetchData = async () => {
       if (token) {
         try {
-          const response = await axios.get('http://18.220.229.238/FinalPurchase/user', {
+          const response = await axios.get('https://blonsport.onrender.com/FinalPurchase/user', {
             headers: {
               'Authorization': `Bearer ${token}`
             }
@@ -32,7 +32,7 @@ function Compras() {
    
     
     try {
-      const response = await axios.get(`http://18.220.229.238/FinalPurchaseDetail/${purchaseId}`, {
+      const response = await axios.get(`https://blonsport.onrender.com/FinalPurchaseDetail/${purchaseId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -52,7 +52,7 @@ function Compras() {
   };
 
   
-  console.log("esto", selectedPurchases)
+  
   return (
     <div className="purchase-container">
       <h1 className="purchase-title">Mis compras</h1>

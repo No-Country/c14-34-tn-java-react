@@ -9,7 +9,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = "http://18.220.229.238/auth/login"; // URL de autenticación
+    const url = "https://blonsport.onrender.com/auth/login"; // URL de autenticación
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

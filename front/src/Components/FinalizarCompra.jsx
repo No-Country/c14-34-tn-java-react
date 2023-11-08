@@ -25,7 +25,7 @@ function FinalizarCompra() {
   };
   const totalAmount = items.reduce((acc, item) => acc + calculateTotal(item), 0);
   const token = localStorage.getItem('token');
-  console.log(token)
+  
   
   const handlePurchase = async () => {
     if (paymentType === 'Tarjeta de Débito') {
@@ -34,7 +34,7 @@ function FinalizarCompra() {
         setPaymentType('CREDIT_CARD');
     }
 
-    console.log(paymentType);
+   
 
     if (!paymentType) {
         alert('Por favor selecciona un tipo de pago.');
@@ -48,7 +48,7 @@ function FinalizarCompra() {
 
     const token = localStorage.getItem('token');
     try {
-        const responsePurchase = await fetch('http://18.220.229.238/FinalPurchase/buy', {
+        const responsePurchase = await fetch('https://blonsport.onrender.com/FinalPurchase/buy', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -63,7 +63,7 @@ function FinalizarCompra() {
             throw new Error('No se pudo procesar la compra. buy');
         }
 
-        const responseUpdateFacturationInfo = await fetch('http://18.220.229.238/user/updateFacturationInfo', {
+        const responseUpdateFacturationInfo = await fetch('https://blonsport.onrender.com/user/updateFacturationInfo', {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,

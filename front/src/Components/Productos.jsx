@@ -10,7 +10,7 @@ function Productos() {
   const [currentPage, setCurrentPage] = useState(0);
 
   const { data, cargando } = useFetch(
-    `http://18.220.229.238/products/show?page=${currentPage}`
+    `https://blonsport.onrender.com/products/show?page=${currentPage}`
   );
 
   const handlePageChange = (page) => {
